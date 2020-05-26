@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+.login-register{
+	background-image: url("../images/login-register.jpg") !important;
+}
+
+.panel-margin {
+	width:25%;
+}
+
+.panel-informe {
+	margin-bottom: 2%;
+}
+
+.btn-acoes {
+	margin-left: 5px;
+	color: #fff !important;
+}
+
+.modal-resultado-ofertas {
+	background: #eaeaea !important;
+}
+
+.modal-border {
+	border-bottom: 1px solid #77797b !important;
+}
+
+.msg-substituicao {
+	font-weight: 400;
+}
+
+.label-detalhes {
+    font-weight: bold;
+}
+
+.visulizar-outras-ofertas {
+	margin-left: -90px;
+}
+
+.title-oferta {
+	margin-right:15px;
+}
+
+.box-cursos{
+	margin-top:5px;
+}
+
+.text-vagas {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.text-semestre {
+    font-size: 10px;
+    font-weight: 500;
+	
+}
+
+.container-fluid{
+	padding-top: 25px;
+	padding-bottom: 50px;
+}
+
+.text-color-black{
+	color: black;
+}
+
+.footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+.has-error .help-block {
+	color: #e46a76;
+}
+
+.has-error .form-control {
+	border-color: #e46a76;
+}
+
+div.inline{
+	display: inline;
+}
+
+table tbody tr td {
+	vertical-align: middle !important;
+}

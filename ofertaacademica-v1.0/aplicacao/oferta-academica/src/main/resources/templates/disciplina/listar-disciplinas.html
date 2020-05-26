@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	th:with="disciplinaActive='active'">
+
+<title>Listar Disciplinas</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<h3 class="card-title">Disciplinas</h3>
+						</div>
+						<div class="col-6">
+							<a th:href="@{/disciplinas/cadastrar}" class="btn btn-success pull-right waves-effect waves-light"
+								data-toggle="tooltip">
+								<i class="fa fa-plus" aria-hidden="true"></i> Nova Disciplina</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="table-responsive">
+								<table class="table table-hover table-striped">
+									<thead>
+										<tr>
+											<th>Código</th>
+											<th>Nome</th>
+											<th class="text-center">Créditos</th>
+											<th class="text-center">Status</th>
+											<th class="text-right"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="disciplina : ${disciplinas}">
+											<td th:inline="text"><b>[[${disciplina.codigo}]]</b></td>
+											<td th:inline="text">[[${disciplina.nome}]]</td>
+											<td class="text-center" th:text="${disciplina.creditos}"></td>
+											<td class="text-center" th:unless="${disciplina.arquivada}">
+												<span class="label label-success">Ativa</span>
+											</td>
+											<td class="text-center" th:if="${disciplina.arquivada}">
+												<span class="label label-danger">Arquivada</span>
+											</td>
+											<td class="text-right">
+												<a th:href="@{/disciplinas/detalhes-disciplina/{id}(id=${disciplina.id})}"
+												   class="btn btn-outline-info btn-circle" data-toggle="tooltip" title="Detalhes">
+													<i class="fa fa-info"></i></a>
+												<a th:href="@{/disciplinas/editar/{id}(id=${disciplina.id})}"
+												   class="btn btn-outline-secondary btn-circle" data-toggle="tooltip" title="Editar">
+													<i class="fa fa-pencil"></i></a>
+												<a th:if="${disciplina.arquivada ==  false}"
+													th:href="@{/disciplinas/{id}/arquivar(id=${disciplina.id})}"
+													class="btn btn-outline-danger btn-circle model_img img-responsive confirmacao"
+													data-toggle="modal" data-target="#responsive-modal" title="Arquivar">
+													<i class="fa fa-archive"></i></a>
+												<a th:unless="${disciplina.arquivada == false}" 
+													th:href="@{/disciplinas/{id}/arquivar(id=${disciplina.id})}"
+													class="btn btn-outline-success btn-circle model_img img-responsive confirmacao" 
+													data-toggle="modal" title="Desarquivar" data-target="#responsive-modal">
+													<i class="fa fa-archive"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script type="text/javascript">
+		$('table').DataTable({
+			"language" : {
+				url : _context + '/js/Portuguese-Brasil.json'
+			},
+			"iDisplayLength" : 25,
+			"bLengthChange" : false,
+			"order" : [ 1, 'asc' ],
+			"columnDefs" : [ {
+				"orderable" : false,
+				"targets" : 4
+			} ]
+		});
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="modal"]').tooltip();
+	</script>
+</section>
+</html>

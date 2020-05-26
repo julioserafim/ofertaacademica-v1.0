@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorator="base/base" th:with="checkListActive='active'">
+
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/plugins/images/favicon.png}"></link>
+<title>CheckList | Alocação Professores</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Checklist</h3>
+						<form id="checklistForm" method="POST" class="form-horizontal m-b-20" th:action="@{/checklist/salvarItem}" th:object="${itemCheckList}">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="control-label">* Novo Item</label>
+										<input type="text" class="form-control" th:field="*{texto}" required="required" />
+									</div>
+								</div>
+							</div>
+							<div class="text-right">
+								<button type="submit" class="btn btn-success waves-effect waves-light">Cadastrar</button>
+							</div>
+						</form>
+
+					<div class="alert alert-warning" th:if="${#lists.isEmpty(checkListSI)}">
+						Não há nenhum item de checklist cadastrado
+					</div>
+					<div class="table-responsive" th:if="${not #lists.isEmpty(checkListSI)}">
+						<table class="table">
+							<thead>
+								<tr>
+									<th width="65%">Item</th>
+									<th width="5%">SI</th>
+									<th width="5%">ES</th>
+									<th width="5%">RC</th>
+									<th width="5%">CC</th>
+									<th width="5%">DD</th>
+									<th width="5%">EC</th>
+									<th width="5%"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="itemCheckList, indice: ${listaItensChecklist}">
+									<td th:text="${itemCheckList.texto}"></td>
+									<td th:if="${checkListSI[indice.index].resposta}">
+										<i class="btn btn-outline-info btn-circle fa fa-check"></i>
+									</td>
+									<td th:unless="${checkListSI[indice.index].resposta}"></td>
+
+									<td th:if="${checkListES[indice.index].resposta}"><a href=""
+										class="btn btn-outline-info btn-circle">
+										<i class="fa fa-check"></i></a>
+									</td>
+									<td th:unless="${checkListES[indice.index].resposta}"></td>
+
+									<td th:if="${checkListRC[indice.index].resposta}"><a href=""
+										class="btn btn-outline-info btn-circle">
+										<i class="fa fa-check"></i></a>
+									</td>
+									<td th:unless="${checkListRC[indice.index].resposta}"></td>
+
+									<td th:if="${checkListCC[indice.index].resposta}">
+										<i class="btn btn-outline-info btn-circle fa fa-check"></i>
+									</td>
+									<td th:unless="${checkListCC[indice.index].resposta}"></td>
+
+									<td th:if="${checkListDD[indice.index].resposta}"><a href=""
+										class="btn btn-outline-info btn-circle">
+										<i class="fa fa-check"></i></a></td>
+									<td th:unless="${checkListDD[indice.index].resposta}"></td>
+
+									<td th:if="${checkListEC[indice.index].resposta}"><a href=""
+										class="btn btn-outline-info btn-circle">
+										<i class="fa fa-check"></i></a></td>
+									<td th:unless="${checkListEC[indice.index].resposta}"></td>
+
+									<td><a title="Excluir" class="btn btn-circle btn-outline-danger sa-btn-excluir excluir"
+										th:href="@{/checklist/{id}/excluirItem(id=${itemCheckList.id})}"
+										data-toggle="modal" data-placement="top" data-target="#responsive-modal">
+										<i class="fa fa-trash"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<section layout:fragment="js">
+	<script th:src="@{/js/oferta/listar-oferta.js}"></script>
+	<script th:inline="javascript">
+        // Validação do formulário
+        $(document).ready(function() {
+            $("#checklistForm").bootstrapValidator({
+                row : {
+                    valid : 'has-success',
+                    invalid : 'error'
+                }
+            });
+            $(".excluir").click(function() {
+                var link = $(this).attr("href");
+                $("#confirmAcao").attr("href", link);
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="modal"]').tooltip();
+        });
+	</script>
+</section>
+</html>

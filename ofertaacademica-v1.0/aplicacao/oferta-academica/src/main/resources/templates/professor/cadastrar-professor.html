@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	th:with="professorActive='active'">
+
+<head>
+	<title>Cadastrar Professor | Alocação Professores</title>
+</head>
+	
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Cadastrar Professor(a)</h3>
+					<form id="cadastrarProfessorForm" data-toggle="validator" th:action="@{/professores/cadastrar-professor}" method="POST" th:object="${professor}">
+						<div class="row">						
+							<div class="col-md-6" th:classappend="${#fields.hasErrors('cpf')} ? has-error">
+								<div class="form-group">	
+									<label for="cpf">* CPF</label>
+									<input class="form-control" id="cpf" type="text" name="cpf" th:field="*{cpf}" required="required"/>
+									<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class=" col-md-6" th:classappend="${#fields.hasErrors('apelido')} ? has-error">
+								<div class="form-group">
+									<label for="apelido">* Apelido</label>
+									<input class="form-control" id="apelido" name="apelido" type="text"  maxlength="20" th:field="*{apelido}" required="required"/>
+									<span th:if="${#fields.hasErrors('apelido')}" th:errors="*{apelido}" class="help-block with-errors"></span>																	
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6" th:classappend="${#fields.hasErrors('relacionamento')} ? has-error">
+								<div class="form-group">
+									<label for="relacionamento">Relacionamento:</label>	
+									<select id="relacionamento" th:field="*{relacionamento}" class="form-control" data-placeholder="Selecione os professores">
+										<option value="" selected="selected">Nenhum</option>
+										<option th:each="professor : ${professores}" th:value="${{professor}}" th:text="${professor.nome}"></option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('cargaHorariaMinima')} ? has-error">
+								<div class="form-group">
+									<label for="cargaHorariaMinima">* CH Mínima</label>
+									<span class="badge btn-secondary"><i class="fa fa-question" data-toggle="tooltip" data-placement="top" title="Mínimo de horas-aula semanais"></i></span>
+									<input class="form-control" id="cargaHorariaMinima" name="cargaHorariaMinima" type="number" min="0" max="20" th:field="*{cargaHorariaMinima}" required="required"/>
+									<span th:if="${#fields.hasErrors('cargaHorariaMinima')}" th:errors="*{cargaHorariaMinima}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('cargaHorariaMaxima')} ? has-error">
+								<div class="form-group">
+									<label for="carga-horaria-maxima">* CH Máxima</label>
+									<span class="badge btn-secondary"><i class="fa fa-question" data-toggle="tooltip" data-placement="top" title="Maxímo de horas-aula semanais"></i></span>
+									<input class="form-control" id="carga-horaria-maxima" name="cargaHorariaMaxima" th:type="number" min="0" max="20" th:field="*{cargaHorariaMaxima}" required="required"/>
+									<span th:if="${#fields.hasErrors('cargaHorariaMaxima')}" th:errors="*{cargaHorariaMaxima}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="text-right">
+							<a th:href="@{/professores}" class="btn btn-secondary waves-effect waves-light">Cancelar</a>
+							<button type="submit" class="btn btn-success waves-effect waves-light">Cadastrar</button>
+						</div>
+					</form>					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script th:inline="javascript">
+		// Validação do formulário
+		$(document).ready(function() {
+			$("#cadastrarProfessorForm")
+				.bootstrapValidator(
+						{
+							row : {
+								valid : 'has-success',
+								invalid : 'error'
+							},
+							fields : {
+								cargaHorariaMaxima : {
+									validators : {
+										callback : {
+											message : 'Carga Horária Máxima deve ser maior ou igual à Carga Horária Mínima',
+											callback : function(value, validator) {
+												var cargaHorariaMinima = $("#cargaHorariaMinima").val();
+												return parseInt(value) >= parseInt(cargaHorariaMinima);
+											}
+										}
+									}
+								},
+								cpf : {
+									validators : {
+										regexp : {
+											regexp : /^[0-9]{11}/,
+											message : 'Não está de acordo com o modelo'
+										}
+									}
+								}
+							}
+						});
+				})
+				.on(
+					'change', '#cargaHorariaMaxima,#cargaHorariaMinima',
+					function(e) {
+						$('#cadastrarProfessorForm').bootstrapValidator(
+								'revalidateField', 'cargaHorariaMaxima');
+					});
+	</script>
+</section>
+</html>

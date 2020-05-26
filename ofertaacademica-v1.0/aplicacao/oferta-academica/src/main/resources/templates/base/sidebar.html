@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<aside class="left-sidebar" th:fragment="sidebar">
+	<!-- Sidebar scroll-->
+	<div class="scroll-sidebar">
+		<!-- Sidebar navigation-->
+		<nav class="sidebar-nav">
+			<ul id="sidebarnav">
+				<li th:class="${ofertaCursoActive} == 'active' ? ${ofertaCursoActive} : ${ofertaCampusActive}">
+					<a class="waves-effect waves-dark" aria-expanded="false"> 
+						<i class="fa fa-graduation-cap"></i> 
+						<span class="hide-menu">Ofertas</span>
+					</a>
+					<ul class="collapse" aria-expanded="false">
+						<li th:class="${ofertaCursoActive}">
+							<a th:class="${ofertaCursoActive}" th:href="@{/ofertas}">Cursos</a>
+						</li>
+						<li th:class="${ofertaCampusActive}">
+							<a th:class="${ofertaCampusActive}" th:href="@{/oferta-campus}">Campus</a>
+						</li>
+					</ul>
+				</li>
+				<li th:class="${empilhamentoActive}">
+					<a class="waves-effect waves-dark" th:href="@{/empilhamentos}" aria-expanded="false">
+						<i class="fa fa-bars"></i> 
+						<span class="hide-menu">Empilhamentos</span>
+					</a>
+				</li>
+				<li th:class="${periodoActive}">
+					<a class="waves-effect waves-dark" th:href="@{/periodos}" aria-expanded="false">
+						<i class="fa fa-calendar"></i>
+						<span class="hide-menu">Períodos</span>
+					</a>
+				</li>
+				<li th:class="${disciplinaActive}">
+					<a class="waves-effect waves-dark" th:href="@{/disciplinas}" aria-expanded="false"> 
+						<i class="fa fa-book"></i> 
+						<span class="hide-menu">Disciplinas</span>
+					</a>
+				</li>
+				<li th:class="${professorActive}">
+					<a sec:authorize="hasAnyAuthority('DIRECAO')" class="waves-effect waves-dark" th:href="@{/professores}" aria-expanded="false">
+						<i class="fa fa-user"></i>
+						<span class="hide-menu">Professores</span>
+					</a>
+				</li>
+				<li th:class="${cursoActive}">
+           	  		<a sec:authorize="hasAnyAuthority('DIRECAO')" class="waves-effect waves-dark" th:href="@{/cursos}" aria-expanded="false">
+           	  			<i class="fa fa-university"></i>
+           	  			<span class="hide-menu">Cursos</span>
+           	  		</a>
+		   		</li>
+				<li th:class="${exportacaoActive}">
+					<a sec:authorize="hasAnyAuthority('DIRECAO')" class="waves-effect waves-dark" th:href="@{/exportacao}" aria-expanded="false">
+						<i class="fa fa-external-link"></i>
+						<span class="hide-menu">Exportação</span>
+					</a>
+				</li>
+				<li th:class="${checklistActive}">
+					<a sec:authorize="hasAnyAuthority('DIRECAO')" class="waves-effect waves-dark" th:href="@{/checklist/checklist-direcao}" aria-expanded="false">
+						<i class="fa fa-check"></i>
+						<span class="hide-menu">CheckList</span>
+					</a>
+				</li>
+				<li th:class="${checklistActive}">
+					<a sec:authorize="hasAnyAuthority('COORDENACAO')" class="waves-effect waves-dark" th:href="@{/checklist/checklist-coordenacao}" aria-expanded="false">
+						<i class="fa fa-check"></i>
+						<span class="hide-menu">CheckList</span>
+					</a>
+				</li>			
+				<li th:class="${configuracaoActive}">
+					<a sec:authorize="hasAnyAuthority('DIRECAO')" class="waves-effect waves-dark" th:href="@{/configuracao}" aria-expanded="false">
+						<i class="fa fa-cogs"></i>
+						<span class="hide-menu">Configurações</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</aside>
+</html>

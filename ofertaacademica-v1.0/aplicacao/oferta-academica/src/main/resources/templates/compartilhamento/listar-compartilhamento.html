@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	th:with="ofertaCampusActive='active'">
+
+<head>
+<title>Compartilhamentos | Alocação Professores</title>
+</head>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<input type="hidden" name="siglaCurso" id="siglaCurso" th:value="siglaCurso == null ? '' : ${siglaCurso}"></input>
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<h3 class="card-title" th:inline="text">Ofertas de [[${periodo.ano}]].[[${periodo.semestre.numero}]]</h3>
+						</div>
+						<div class="col-6">
+							<a th:if="${periodo.isDirecao() or periodo.isAjuste()}" th:href="@{/ofertas/cadastrar}"
+							   class="btn btn-success pull-right m-l-10 hidden-xs hidden-sm waves-effect waves-light">
+								<i class="fa fa-plus" aria-hidden="true"></i> Nova Oferta
+							</a>
+						</div>
+					</div>
+
+					<div class="table-responsive">
+						<table class="table table-hover dt-body-center">
+							<thead>
+								<tr class="text-center">
+									<th>Disciplina</th>
+									<th>Turma</th>
+									<th>Vagas</th>
+									<th>Total</th>
+									<th>Turno</th>
+									<th>CC</th>
+									<th>ES</th>
+									<th>SI</th>
+									<th>RD</th>
+									<th>EC</th>
+									<th>DD</th>
+									<th>ME</th>
+									<th></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr th:each="oferta : ${ofertas}">
+									<td th:text="${oferta.disciplina.nome}"></td>
+									<td class="text-center" th:inline="text">[[${oferta.turma.curso.sigla}]]-[[${oferta.turma.semestre.numero}]]</td>
+									<td class="text-center" th:text="${oferta.vagas}"></td>
+									<td class="text-center"><span class="text-left"><b th:inline="text">[[${oferta.totalVagas}]]</b></span></td>
+									<td class="text-center" th:text="${oferta.turno.descricao}"></td>
+
+									<td class="text-center" th:with="compartilhamentoCC=${oferta.getCompartilhamentoPorCurso('CC')}">
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoCC}" >
+											<span th:text="${compartilhamentoCC} ? ${compartilhamentoCC.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoCC} ? ${compartilhamentoCC.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoCC} ? ${compartilhamentoCC.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoCC} ? ${compartilhamentoCC.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+									</td>
+
+									<td class="text-center" th:with="compartilhamentoES=${oferta.getCompartilhamentoPorCurso('ES')}">
+
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoES}">
+											<span th:text="${compartilhamentoES} ? ${compartilhamentoES.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoES} ? ${compartilhamentoES.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoES} ? ${compartilhamentoES.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoES} ? ${compartilhamentoES.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+									</td>
+
+									<td class="text-center" th:with="compartilhamentoSI=${oferta.getCompartilhamentoPorCurso('SI')}">
+
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoSI}">
+											<span th:text="${compartilhamentoSI} ? ${compartilhamentoSI.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+										   	<span th:text="${compartilhamentoSI} ? ${compartilhamentoSI.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoSI} ? ${compartilhamentoSI.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+										   	<span th:text="${compartilhamentoSI} ? ${compartilhamentoSI.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+									</td>
+
+									<td class="text-center" th:with="compartilhamentoRD=${oferta.getCompartilhamentoPorCurso('RC')}">
+
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoRC}">
+											<span th:text="${compartilhamentoRD} ? ${compartilhamentoRD.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+										   	<span th:text="${compartilhamentoRD} ? ${compartilhamentoRD.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoRD} ? ${compartilhamentoRD.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+										   	<span th:text="${compartilhamentoRD} ? ${compartilhamentoRD.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+									</td>
+
+									<td class="text-center" th:with="compartilhamentoEC=${oferta.getCompartilhamentoPorCurso('EC')}">
+
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoEC}">
+											<span th:text="${compartilhamentoEC} ? ${compartilhamentoEC.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoEC} ? ${compartilhamentoEC.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoEC} ? ${compartilhamentoEC.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoEC} ? ${compartilhamentoEC.turma.semestre.descricao}+' Sem.' : ''" class="text-semestre"></span>
+										</div>
+									</td>
+
+									<td class="text-center" th:with="compartilhamentoDD=${oferta.getCompartilhamentoPorCurso('DD')}">
+
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoDD}">
+											<span th:text="${compartilhamentoDD} ? ${compartilhamentoDD.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoDD} ? ${compartilhamentoDD.turma.semestre.descricao}+' Sem.'  : ''" class="text-semestre"></span>
+										</div>
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoDD} ? ${compartilhamentoDD.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoDD} ? ${compartilhamentoDD.turma.semestre.descricao}+' Sem.'  : ''" class="text-semestre"></span>
+										</div>
+
+									</td>
+									<td class="text-center" th:with="compartilhamentoME=${oferta.getCompartilhamentoPorCurso('ME')}">
+
+										<div sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${compartilhamentoME}">
+											<span th:text="${compartilhamentoME} ? ${compartilhamentoME.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoME} ? ${compartilhamentoME.turma.semestre.descricao}+' Sem.'  : ''" class="text-semestre"></span>
+										</div>
+
+										<div th:if="${oferta.canChange(#authentication.getPrincipal().getUsername())}">
+											<span th:text="${compartilhamentoME} ? ${compartilhamentoME.vagas} + ' ' + vagas : ''" class="badge badge-info"></span><br/>
+											<span th:text="${compartilhamentoME} ? ${compartilhamentoME.turma.semestre.descricao}+' Sem.'  : ''" class="text-semestre"></span>
+										</div>
+
+									</td>
+
+									<td class="text-right nowrap">
+										<a th:href="@{/ofertas/{id}/visualizar-oferta/(id=${oferta.id})}" data-toggle="tooltip" title="Detalhes" class="btn btn-circle btn-outline-info"> <i class="fa fa-info"></i></a>
+										<a sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${oferta.periodo.isDirecao() or oferta.periodo.isAjuste()}"
+										   th:href="@{/ofertas/__${oferta.id}__/editar}" data-toggle="tooltip" title="Editar" class="btn btn-circle btn-outline-secondary"> <i class="fa fa-pencil"></i></a>
+										<a sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${oferta.periodo.isDirecao()}"
+										   th:href="@{/ofertas/__${oferta.id}__/solicitar-compartilhamento}" data-toggle="tooltip" data-placement="top" data-original-title="Solicitar compartilhamento" title=""
+										   class="btn btn-outline-secondary btn-circle waves-effect waves-light">
+											<i class="fa fa-share-alt"></i>
+										</a>
+										<a sec:authorize="hasAnyAuthority('COORDENACAO')" th:if="${oferta.periodo.isCoordenacao()}"
+										   th:href="@{/ofertas/__${oferta.id}__/solicitar-compartilhamento}" data-toggle="tooltip" data-placement="top" data-original-title="Solicitar compartilhamento" title=""
+										   class="btn btn-outline-secondary btn-circle waves-effect waves-light">
+											<i class="fa fa-share-alt"></i>
+										</a>
+										<a th:if="${oferta.periodo.isAjuste()}"
+										   th:href="@{/ofertas/__${oferta.id}__/solicitar-compartilhamento}" data-toggle="tooltip" data-placement="top" data-original-title="Solicitar compartilhamento" title=""
+										   class="btn btn-outline-secondary btn-circle waves-effect waves-light">
+											<i class="fa fa-share-alt"></i>
+										</a>
+										<a sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${oferta.periodo.isDirecao() or oferta.periodo.isAjuste()}"
+										   th:href="@{/ofertas/{id}/excluir(id=${oferta.id})}"
+										   class="btn btn-outline-danger btn-circle sa-btn-excluir excluirComp"
+										   data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+											<i class="fa fa-trash"></i>
+										</a>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- .row -->
+</section>
+<section layout:fragment="js">
+	<script type="text/javascript">
+	 $('[data-toggle="tooltip"]').tooltip();
+     $('[data-toggle="modal"]').tooltip();
+		$(".excluirComp").click(function() {
+			var link = $(this).attr("href");
+			$("#confirmAcao").attr("href", link);
+		});
+	</script>
+	<script th:src="@{/js/compartilhamento/compartilhamento.js}"></script>
+	
+	
+	<script type="text/javascript">
+        $('table').DataTable({
+            "language": {
+                url: _context + '/js/Portuguese-Brasil.json'
+            },
+            "iDisplayLength" : 25,
+            "order": [ 1, 'asc' ],
+            "columnDefs" : [ {
+    			"orderable" : false,
+    			"targets" : 12
+    		} ]
+        });
+
+	</script>
+	
+</section>
+</html>

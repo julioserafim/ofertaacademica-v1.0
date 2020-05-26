@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	th:with="ofertaCursoActive='active'">
+
+<head>
+<title>Cadastrar Oferta | Alocação Professores</title>
+</head>
+
+<section layout:fragment="conteudo">
+	
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title" th:text="${action == 'editar' ? 'Editar' : 'Cadastrar'} + ' Oferta __${periodoAtivo.ano}__ .__${periodoAtivo.semestre.numero}__'"></h3>
+					<form id="cadastrarOfertaForm" th:action="@{${action == 'cadastrar' ? '/ofertas/cadastrar' : '/ofertas/editar'}}" method="POST" th:object="${oferta}">
+						<input type="hidden" th:field="*{id}"/>
+						<input sec:authorize="hasAnyAuthority('COORDENACAO')" type="hidden" th:field="*{mesmoDia}" />
+						<div class="row">
+							<div class="col-md-12" th:if="${action == 'cadastrar'}">
+								<h4 th:text="${cursoAtual?.nome}"></h4>
+							</div>
+						</div>
+						<div class="row" sec:authorize="hasAnyAuthority('DIRECAO')">
+							<div class="col-md-6">
+								<div class="form-group" th:if="${action == 'cadastrar'}">
+									<label for="cursos" class="control-label">* Curso</label>
+									<select id="cursos" class="form-control" required="required" name="curso">
+										<option value="">Selecione...</option>
+										<option th:each="curso, iterStat : ${cursos}" th:value="${curso.id}" th:text="${curso.nome}"
+											th:attr="data-el_id='#curso' + ${iterStat.index}"></option>
+									</select>
+								</div>
+								<div class="form-group" th:if="${action == 'editar'}">
+									<label for="cursos" class="control-label">Curso</label>
+									<h4 class="font-weight-bold" th:text="${cursoAtual?.nome}"></h4>
+								</div>
+							</div>
+							<div class="col-md-2" th:classappend="${#fields.hasErrors('mesmoDia')} ? has-error">
+								<div class="form-group">
+									<label>Mesmo dia</label><br/>
+									<input id="mesmoDia" th:field="*{mesmoDia}" type="checkbox" th:checked="*{mesmoDia}" data-toggle="toggle" class="form-control"
+										   data-on="SIM" data-off="NÃO" data-onstyle="success" data-offstyle="danger"/>
+									<span th:if="${#fields.hasErrors('mesmoDia')}" th:errors="*{mesmoDia}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6" th:classappend="${#fields.hasErrors('disciplina')} ? has-error">
+								<div class="form-group">
+									<label for="disciplina" class="control-label">* Disciplina</label>
+									<select id="disciplina" th:field="*{disciplina}" class="form-control select2" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="disciplina : ${disciplinas}" th:value="${{disciplina}}"
+												th:text="${disciplina.codigo} + '-' + ${disciplina.nome}"></option>
+									</select>
+									<span th:if="${#fields.hasErrors('disciplina')}" th:errors="*{disciplina}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('turma')} ? has-error">
+								<div class="form-group">
+									<label for="turma" class="control-label">* Turma</label>
+									<select id="turma" th:field="*{turma}" class="form-control" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="turma : ${cursoAtual?.turmas}" th:value="${{turma}}"
+												th:text="${turma.semestre.descricao + ' Semestre - ' + turma.curso.nome}"></option>
+									</select>
+									<span th:if="${#fields.hasErrors('turma')}" th:errors="*{turma}" class="help-block with-errors"></span>
+								</div>
+								<div th:each="curso, iterStat : ${cursos}" class="form-group hide"  th:classappend="${#fields.hasErrors('turma')} ? has-error">
+									<select th:id="'curso' + ${iterStat.index}">
+										<option th:each="turma : ${curso.turmas}" th:value="${{turma}}"
+												th:text="${turma.semestre.descricao + ' Semestre - ' + turma.curso.nome}"></option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('turno')} ? has-error">
+								<div class="form-group">
+									<label for="turno" class="control-label">* Turno</label>
+									<select id="turno" th:field="*{turno}" class="form-control" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="turno : ${T(ufc.quixada.npi.ap.model.Oferta.Turno).values()}"
+												th:value="${turno}" th:text="${turno.descricao}"></option>
+									</select>
+									<span th:if="${#fields.hasErrors('turno')}" th:errors="*{turno}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('vagas')}? has-error">
+								<div class="form-group">
+									<label class="control-label" for="vagas">* Quantidade de vagas</label>
+									<input type="number" id="vagas" th:field="*{vagas}" class="form-control" min="1" required="required" />
+									<span th:if="${#fields.hasErrors('vagas')}" th:errors="*{vagas}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('aulasEmLaboratorio')}? has-error">
+								<div class="form-group">
+									<label for="aulasEmLaboratorio">* Aulas em laboratório</label>
+									<select id="aulasEmLaboratorio" class="form-control" th:field="*{aulasEmLaboratorio}" required="required">
+										<option value="">Selecione...</option>
+										<option value="0">0</option>
+										<option value="2">2</option>
+										<option value="4">4</option>
+										<option value="6">6</option>
+									</select>
+									<span th:if="${#fields.hasErrors('aulasEmLaboratorio')}" th:errors="*{aulasEmLaboratorio}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('numeroProfessores')}? has-error">
+								<div class="form-group">
+									<label for="numeroProfessores">* Quantidade de professores</label>
+									<input type="number" id="numeroProfessores" th:field="*{numeroProfessores}" min="1" class="form-control" required="required"/>
+									<span th:if="${#fields.hasErrors('numeroProfessores')}" th:errors="*{numeroProfessores}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-3" th:classappend="${#fields.hasErrors('horarioInicio')} ? has-error">
+								<div class="form-group">
+									<label>Início do turno</label><br />
+									<input id="horarioInicio" th:field="*{horarioInicio}" type="checkbox" th:checked="*{horarioInicio}" data-toggle="toggle" class="form-control"
+										   data-on="SIM" data-off="NÃO" data-onstyle="success" data-offstyle="danger"/>
+									<span th:if="${#fields.hasErrors('horarioInicio')}" th:errors="*{horarioInicio}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="professores">Professores sugeridos</label>
+									<select id="professores" th:field="*{professores}" class="form-control select2 select2-multiple"
+										multiple="multiple" data-placeholder="Selecione...">
+										<option th:each="professor : ${professores}" th:value="${{professor}}" th:text="${professor.nome}"></option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" th:classappend="${#fields.hasErrors('observacao')}? has-error">
+								<div class="form-group">
+									<label for="observacoes">Observações</label>
+									<textarea id="observacoes" th:field="*{observacao}" class="form-control" rows="5"></textarea>
+									<span th:if="${#fields.hasErrors('observacao')}" th:errors="*{observacao}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="text-right">
+							<a th:href="@{/ofertas/}" class="btn btn-secondary waves-effect waves-light">Cancelar</a>
+							<button type="submit" class="btn btn-success waves-effect waves-light">Salvar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section layout:fragment="js">
+	<!-- Select2 Tradução Português Brasileiro -->
+	<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+
+	<script type="text/javascript">
+		$(".select2").select2({
+			"language" : "pt-BR"
+		});
+
+		$('select#cursos').change(
+				function(event) {
+					var id_curso = $("select#cursos option:selected").data("el_id");
+					var options = $(id_curso + ' option').sort().clone();
+					$('select#turma option').remove();
+					$('select#turma').append(options);
+
+					$("#theSelect option:selected")
+							.attr('disabled', 'disabled').siblings()
+							.removeAttr('disabled');
+
+					if (!(id_curso == "")) {
+						$("select#turma").removeAttr('disabled');
+					} else {
+						$("select#turma").attr('disabled', 'disabled')
+					}
+				});
+
+		$('.addAll').on('click', function() {
+			var options = $('select.multiselect1 option').sort().clone();
+			$('select#multiselect2').append(options);
+		});
+
+        // Validação do formulário
+        $("#cadastrarOfertaForm")
+            .bootstrapValidator(
+                {
+                    row : {
+                        valid : 'has-success',
+                        invalid : 'error'
+                    }
+                });
+		
+	</script>
+</section>
+</html>

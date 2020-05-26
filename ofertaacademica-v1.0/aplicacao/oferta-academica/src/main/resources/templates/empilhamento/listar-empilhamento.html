@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	layout:decorator="base/base" th:with="empilhamentoActive='active'">
+
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/plugins/images/favicon.png}"></link>
+<title>Listar Empilhamento | Alocação Professores</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<!-- CARD EMPILHAMENTO -->
+		<div class="col-6">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12">
+							<h3 class="card-title">Empilhamentos</h3>
+							<h6 class="card-subtitle">Pares de ofertas que devem ser
+								alocadas no mesmo horário</h6>
+						</div>
+					</div>
+					<div class="row col-12">
+						<div class="table-responsive">
+							<!-- INICIO DIRECAO -->
+							<form th:action="@{${'/empilhamentos/cadastrarEmpilhamento'}}"
+								method="POST" th:object="${restricaoHorario}"
+								sec:authorize="hasAnyAuthority('DIRECAO')">
+								<div class="form-group">
+									<label>Primeira Oferta</label>
+									<select th:field="*{primeiraOferta.id}" id="disciplinaASelect"
+										class="js-example-basic-multiple form-control select2" name="primeiraDisciplina">
+										<option th:each="oferta : ${todasOfertas}"
+											th:value="${oferta.id}" th:inline="text">
+											[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select> 
+									<span th:if="${#fields.hasErrors('primeiraOferta.id')}" th:error="*{primeiraOferta.id}"></span>
+								</div>
+								<div class="form-group">
+									<label>Segunda Oferta</label>
+									<select th:field="*{segundaOferta.id}" id="disciplinaBSelect"
+										name="segundaDisciplina" class="js-example-basic-multiple form-control select2">
+										<option th:each="oferta : ${todasOfertas}"
+											th:value="${oferta.id}" th:inline="text">
+											[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('segundaOferta.id')}" th:error="*{segundaOferta.id}"></span>
+								</div>
+								<div>
+									<button type="submit"
+										class="btn btn-success waves-effect waves-light pull-right">Cadastrar</button>
+								</div>
+							</form>
+							<!-- FIM DIRECAO -->
+
+							<!-- INICIO COORDENACAO -->
+							<form th:action="@{${'/empilhamentos/cadastrarEmpilhamento'}}"
+								method="POST" th:object="${restricaoHorario}"
+								sec:authorize="hasAnyAuthority('COORDENACAO')">
+								<div class="form-group">
+									<label>Primeira Oferta</label>
+									<select th:field="*{primeiraOferta.id}" id="disciplinaASelect"
+										class="js-example-basic-multiple form-control select2" name="primeiraDisciplina">
+										<option th:each="oferta : ${ofertas}" th:value="${oferta.id}"
+											th:inline="text">[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('primeiraOferta.id')}" th:error="*{primeiraOferta.id}"></span>
+								</div>
+								<div class="form-group">
+									<label>Segunda Oferta</label>
+									<select th:field="*{segundaOferta.id}" id="disciplinaBSelect"
+										name="segundaDisciplina" class="js-example-basic-multiple form-control select2">
+										<option th:each="oferta : ${todasOfertas}"
+											th:value="${oferta.id}" th:inline="text">
+											[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('segundaOferta.id')}" th:error="*{segundaOferta.id}"></span>
+								</div>
+								<div class="text-right">
+									<button type="submit"
+										class="btn btn-success waves-effect waves-light">Cadastrar</button>
+								</div>
+							</form>
+							<!-- FIM COORDENACAO -->
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div th:if="${restricaoHorarios.isEmpty()}">
+						<div class="alert alert-warning">Não há empilhamentos cadastrados</div>
+					</div>
+					<div class="table-responsive" th:unless="${restricaoHorarios.isEmpty()}">
+						<table id="myTable" class="table table-striped">
+							<thead>
+								<tr>
+									<th>Primeira Oferta</th>
+									<th>Segunda Oferta</th>
+									<th sec:authorize="hasAnyAuthority('DIRECAO')">Habilitado</th>
+									<th width="21%"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="restricaoHorario : ${restricaoHorarios}">
+
+									<td th:inline="text">
+										[[${restricaoHorario.primeiraOferta.turma.curso.sigla}]]
+										[[${restricaoHorario.primeiraOferta.turma.semestre.numero}]] -
+										[[${restricaoHorario.primeiraOferta.disciplina.apelido}]]</td>
+									<td th:inline="text">
+										[[${restricaoHorario.segundaOferta.turma.curso.sigla}]]
+										[[${restricaoHorario.segundaOferta.turma.semestre.numero}]] -
+										[[${restricaoHorario.segundaOferta.disciplina.apelido}]]</td>
+									<td sec:authorize="hasAnyAuthority('DIRECAO')">
+										<span th:if="${restricaoHorario.habilitada}" class="label label-info">SIM</span>
+										<span th:if="${not restricaoHorario.habilitada}" class="label label-danger">NÃO</span>
+									</td>
+
+									<td><a sec:authorize="hasAnyAuthority('DIRECAO')"
+										th:href="@{/empilhamentos/{id}/desabilitar(id=${restricaoHorario.id})}"
+										th:if="${restricaoHorario.habilitada==true}"
+										class="btn btn-outline-danger btn-circle sa-emp-btn-desabilitar"
+										data-toggle="tooltip" data-placement="top" title="Desabilitar">
+											<i class="fa fa-lock"></i>
+									</a> <a sec:authorize="hasAnyAuthority('DIRECAO')"
+										th:href="@{/empilhamentos/{id}/habilitar(id=${restricaoHorario.id})}"
+										th:if="${restricaoHorario.habilitada==false}"
+										class="btn btn-outline-success btn-circle sa-emp-btn-habilitar"
+										data-toggle="tooltip" data-placement="top" title="Habilitar">
+											<i class="fa fa-unlock"></i>
+									</a> <a sec:authorize="hasAnyAuthority('DIRECAO')"
+										th:href="@{/empilhamentos/{id}/excluir(id=${restricaoHorario.id})}"
+										class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+										data-toggle="modal" title="Excluir"
+										data-target="#responsive-modal"> <i class="fa fa-trash"></i>
+									</a> <a sec:authorize="hasAnyAuthority('COORDENACAO')"
+										th:href="@{/empilhamentos/{id}/excluir(id=${restricaoHorario.id})}"
+										th:if="${restricaoHorario.primeiraOferta.turma.curso == cursoAtual}"
+										class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+										data-toggle="modal" title="Excluir"
+										data-target="#responsive-modal"> <i class="fa fa-trash"></i>
+									</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- CARD DISTINTO -->
+		<div class="col-6">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12">
+							<h3 class="card-title">Distintos</h3>
+							<h6 class="card-subtitle">Pares de ofertas que devem ser
+								alocadas em horários diferentes</h6>
+						</div>
+					</div>
+					<div class="row col-12">
+						<div class="table-responsive">
+							<!-- INICIO DIRECAO -->
+							<form th:action="@{${'/empilhamentos/cadastrarDistinto'}}"
+								method="POST" th:object="${restricaoHorario}"
+								sec:authorize="hasAnyAuthority('DIRECAO')">
+								<div class="form-group">
+									<label>Primeira Oferta</label>
+									<select th:field="*{primeiraOferta.id}" id="disciplinaASelect"
+										class="js-example-basic-multiple form-control select2" name="primeiraDisciplina">
+										<option th:each="oferta : ${todasOfertas}"
+											th:value="${oferta.id}" th:inline="text">
+											[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('primeiraOferta.id')}" th:error="*{primeiraOferta.id}"></span>
+								</div>
+								<div class="form-group">
+									<label>Segunda Oferta</label>
+									<select th:field="*{segundaOferta.id}" id="disciplinaBSelect"
+										name="segundaDisciplina" class="js-example-basic-multiple form-control select2">
+										<option th:each="oferta : ${todasOfertas}"
+											th:value="${oferta.id}" th:inline="text">
+											[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select> 
+									<span th:if="${#fields.hasErrors('segundaOferta.id')}" th:error="*{segundaOferta.id}"></span>
+								</div>
+								<div class="text-right">
+									<button type="submit"
+										class="btn btn-success waves-effect waves-light">Cadastrar</button>
+								</div>
+							</form>
+							<!-- FIM DIRECAO -->
+
+							<!-- INICIO COORDENACAO -->
+							<form th:action="@{${'/empilhamentos/cadastrarDistinto'}}"
+								method="POST" th:object="${restricaoHorario}"
+								sec:authorize="hasAnyAuthority('COORDENACAO')">
+								<div class="form-group">
+									<label>Primeira Oferta</label>
+									<select th:field="*{primeiraOferta.id}" id="disciplinaASelect" 
+										class="js-example-basic-multiple form-control select2" name="primeiraDisciplina">
+										<option th:each="oferta : ${ofertas}" th:value="${oferta.id}"
+											th:inline="text">[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('primeiraOferta.id')}" th:error="*{primeiraOferta.id}"></span>
+								</div>
+								<div class="form-group">
+									<label>Segunda Oferta</label>
+									<select th:field="*{segundaOferta.id}" id="disciplinaBSelect"
+										name="segundaDisciplina" class="js-example-basic-multiple form-control select2">
+										<option th:each="oferta : ${todasOfertas}"
+											th:value="${oferta.id}" th:inline="text">
+											[[${oferta.turma.curso.sigla}]]-
+											[[${oferta.turma.semestre.numero}]]
+											[[${oferta.disciplina.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('segundaOferta.id')}" th:error="*{segundaOferta.id}"></span>
+								</div>
+								<div class="text-right">
+									<button type="submit"
+										class="btn btn-success waves-effect waves-light">Cadastrar</button>
+								</div>
+							</form>
+							<!-- FIM COORDENACAO -->
+						</div>
+
+					</div>
+				</div>
+				<div class="card-body">
+					<div th:if="${restricaoHorariosDistinto.isEmpty()}">
+						<div class="alert alert-warning">Não há horários distintos cadastrados</div>
+					</div>
+					<div class="table-responsive" th:unless="${restricaoHorariosDistinto.isEmpty()}">
+						<table id="myTable" class="table table-striped">
+							<thead>
+								<tr>
+									<th>Primeira Oferta</th>
+									<th>Segunda Oferta</th>
+									<th sec:authorize="hasAnyAuthority('DIRECAO')">Habilitado</th>
+									<th width="21%"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="restricaoHorario : ${restricaoHorariosDistinto}">
+
+									<td th:inline="text">
+										[[${restricaoHorario.primeiraOferta.turma.curso.sigla}]]
+										[[${restricaoHorario.primeiraOferta.turma.semestre.numero}]] -
+										[[${restricaoHorario.primeiraOferta.disciplina.apelido}]]</td>
+									<td th:inline="text">
+										[[${restricaoHorario.segundaOferta.turma.curso.sigla}]]
+										[[${restricaoHorario.segundaOferta.turma.semestre.numero}]] -
+										[[${restricaoHorario.segundaOferta.disciplina.apelido}]]</td>
+									<td sec:authorize="hasAnyAuthority('DIRECAO')">
+										<span th:if="${restricaoHorario.habilitada}" class="label label-info">SIM</span>
+										<span th:if="${not restricaoHorario.habilitada}" class="label label-danger">NÃO</span>
+									</td>
+
+									<td><a sec:authorize="hasAnyAuthority('DIRECAO')"
+										th:href="@{/empilhamentos/{id}/desabilitar(id=${restricaoHorario.id})}"
+										th:if="${restricaoHorario.habilitada==true}"
+										class="btn btn-outline-danger btn-circle sa-emp-btn-desabilitar"
+										data-toggle="tooltip" data-placement="top" title="Desabilitar">
+											<i class="fa fa-lock"></i>
+									</a> <a sec:authorize="hasAnyAuthority('DIRECAO')"
+										th:href="@{/empilhamentos/{id}/habilitar(id=${restricaoHorario.id})}"
+										th:if="${restricaoHorario.habilitada==false}"
+										class="btn btn-outline-success btn-circle sa-emp-btn-habilitar"
+										data-toggle="tooltip" data-placement="top" title="Habilitar">
+											<i class="fa fa-unlock"></i>
+									</a> <a sec:authorize="hasAnyAuthority('DIRECAO')"
+										th:href="@{/empilhamentos/{id}/excluir(id=${restricaoHorario.id})}"
+										class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+										data-toggle="modal" title="Excluir"
+										data-target="#responsive-modal"> <i class="fa fa-trash"></i>
+									</a> <a sec:authorize="hasAnyAuthority('COORDENACAO')"
+										th:href="@{/empilhamentos/{id}/excluir(id=${restricaoHorario.id})}"
+										th:if="${restricaoHorario.primeiraOferta.turma.curso == cursoAtual}"
+										class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+										data-toggle="modal" title="Excluir"
+										data-target="#responsive-modal"> <i class="fa fa-trash"></i>
+									</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</section>
+<section layout:fragment="js">
+	<script th:src="@{/js/oferta/listar-oferta.js}"></script>
+</section>
+<section layout:fragment="js">
+	<!-- Select2 Tradução Português Brasileiro -->
+	<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+	
+	<script type="text/javascript">
+		$(".select2").select2({
+			"language" : "pt-BR"
+		});
+	</script>
+</section>
+</html>

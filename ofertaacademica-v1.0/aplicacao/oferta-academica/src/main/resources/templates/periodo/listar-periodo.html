@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	th:with="periodoActive='active'">
+
+
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/plugins/images/favicon.png}"></link>
+<title>Listar Períodos | Alocação Professores</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<h3 class="card-title">Períodos</h3>
+						</div>
+						<div class="col-6">
+							<input type="hidden" name="periodoAtivo" id="periodoAtivo" th:value="${periodoAtivo} == null ? false : ${periodoAtivo}"></input>
+							<a sec:authorize="hasAnyAuthority('DIRECAO')" name="buttonNovoPeriodo" id="buttonNovoPeriodo"
+								th:href="@{/periodos/cadastrar}" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
+								<i class="fa fa-plus" aria-hidden="true"></i> Novo Período
+							</a>
+						</div>						
+					</div>
+					
+					<div class="row">
+						<div class="col-12">
+							<div class="table-responsive">
+								<table class="table hover">
+									<thead>
+										<tr>
+											<th class="text-center">Ano/Semestre</th>
+											<th class="text-center">Período Coordenação</th>
+											<th class="text-center">Período Direção</th>
+											<th class="text-center">Período Ajuste</th>
+											<th class="text-center">Status</th>
+											<th class="text-center"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="periodo : ${periodos}">
+											<td class="text-center" th:inline="text">[[${periodo.ano}]].[[${periodo.semestre.numero}]]</td>
+											<td class="text-center" th:inline="text">[[${#dates.format(periodo.inicioPeriodoCoordenacao,
+												'dd/MM/yyyy')}]] -
+												[[${#dates.format(periodo.fimPeriodoCoordenacao,
+												'dd/MM/yyyy')}]]</td>
+											<td class="text-center" th:inline="text">[[${#dates.format(periodo.inicioPeriodoDirecao,
+												'dd/MM/yyyy')}]] -
+												[[${#dates.format(periodo.fimPeriodoDirecao,
+												'dd/MM/yyyy')}]]</td>
+											<td class="text-center" th:inline="text">[[${#dates.format(periodo.inicioPeriodoAjuste,
+												'dd/MM/yyyy')}]] -
+												[[${#dates.format(periodo.fimPeriodoAjuste, 'dd/MM/yyyy')}]]</td>
+											<td class="text-center" th:if="${periodo.ativo}">
+												<span class="label label-success">ativo</span>
+											</td>
+											<td class="text-center" th:unless="${periodo.ativo}">
+												<span class="label label-danger">encerrado</span>
+											</td>
+											<td class="text-center">
+												<a sec:authorize="hasAnyAuthority('DIRECAO')" th:if="${periodo.ativo} == true" id="editarPeriodo"
+													th:href="@{/periodos/{id}/editar(id=${periodo.id})}"
+													class="btn btn-outline-secondary btn-circle"
+													data-toggle="tooltip" data-placement="top" title="Editar">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script th:src="@{/js/periodo/periodo.js}"></script>
+	<script type="text/javascript">
+        $('table').DataTable({
+            "language" : {
+                url : _context + '/js/Portuguese-Brasil.json'
+            },
+            "paging": false,
+            "info": false,
+            "searching": false,
+            "bLengthChange" : false,
+            "ordering" : false
+        });
+	</script>
+</section>
+</html>

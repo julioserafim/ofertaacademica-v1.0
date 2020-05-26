@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base" th:with="disciplinaActive='active'">
+
+<head>
+	<title>Detalhes da Disciplina | Alocação Professores</title>
+</head>
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-6">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Informações da disciplina</h3>
+					<div class="row">
+						<div class="col-md-5">
+							<label class="font-weight-bold">Código</label>
+							<p th:text="${disciplina.codigo}"></p>
+						</div>
+						<div class="col-md-5">
+							<label class="font-weight-bold">Nome</label>
+							<p th:text="${disciplina.nome}"></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<label class="font-weight-bold">Apelido</label>
+							<p th:text="${disciplina.apelido}"></p>
+						</div>
+						<div class="col-md-5">
+							<label class="font-weight-bold">Créditos</label>
+							<p th:text="${disciplina.creditos}"></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<label class="font-weight-bold">Carga horária teórica</label>
+							<p th:text="${disciplina.cargaHorariaTeorica}"></p>
+						</div>
+						<div class="col-md-4">
+							<label class="font-weight-bold">Carga horária prática</label>
+							<p th:text="${disciplina.cargaHorariaPratica}"></p>
+						</div>
+						<div class="col-md-4">
+							<label class="font-weight-bold">Status</label>
+							<p th:if="${disciplina.arquivada}"><span class="badge badge-danger">arquivada</span></p>
+							<p th:unless="${disciplina.arquivada}"><span class="badge badge-success">ativa</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-6">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Preferências de professores</h3>
+					<div th:if="${not disciplina.preferencias.isEmpty()}" class="table-responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Professor</th>
+									<th>Nível de Preferência</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="preferencia : ${disciplina.preferencias}">
+									<td th:text="${preferencia.professor.nome}"></td>
+									<td th:text="${preferencia.nivel}"></td>
+									<td><a th:href="@{/disciplinas/detalhes-disciplina/{id}/excluir/{idp}(id=${disciplina.id},idp=${preferencia.professor.id})}"
+											class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+											data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+										<i class="fa fa-trash"></i>
+									</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div th:if="${disciplina.preferencias.isEmpty()}" class="col-md-12">
+						<div class="alert alert-warning">
+							Não foram cadastrados professores com preferência para esta disciplina
+						</div>
+					</div>
+					<h4 class="card-title">Adicionar professor(a)</h4>
+					<form id="preferenciaForm" th:action="@{/disciplinas/detalhes-disciplina/{id}/cadastrar(id=${disciplina.id})}" th:object="${preferencia}" method="POST">
+						<input type="hidden" th:field="*{disciplina}" />
+						<div class="row">
+							<div class="col-md-8">
+								<div class="form-group">
+									<label>* Professor(a)</label>
+									<select id="professor" th:field="*{professor}" class="select2 form-control" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="professor : ${professores}" th:value="${professor.id}" th:text="${professor.nome}"></option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>* Nível de preferência</label>
+									<select id="nivel" th:field="*{nivel}" class="form-control" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="nivel : ${niveis}" th:text="${nivel.descricao}" th:value="${nivel}"></option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<button type="submit" name="action" class="btn btn-success pull-right waves-effect waves-light">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section layout:fragment="js">
+	<!-- Select2 Tradução Português Brasileiro -->
+	<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+	<!-- JS Excluir -->
+	<script th:src="@{/js/professor/excluir_objeto.js}"></script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+			$(".select2").select2({
+				"language" : "pt-BR"
+			});
+
+			// Validação do formulário
+			$("#preferenciaForm").bootstrapValidator({
+				row : {
+					valid : 'has-success',
+					invalid : 'error'
+				}
+			});
+		});
+	</script>
+
+</section>
+</html>

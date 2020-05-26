@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorator="base/base">
+
+<title>CheckList | Alocação Professores</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Checklist</h3>
+					<div class="alert alert-warning" th:if="${#lists.isEmpty(itensCheckList)}">
+						Não há nenhum item de checklist cadastrado
+					</div>
+					<div class="table-responsive" th:unless="${#lists.isEmpty(itensCheckList)}">
+						<table class="table">
+							<thead>
+								<tr>
+									<th width="90%">Itens do Checklist</th>
+									<th width="10%"></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr th:each="itemCheckList, indice : ${itensCheckList}">
+									<td th:text="${itemCheckList.texto}"></td>
+									<td>
+											<input id="${checkListCoordenador[indice.index].id}" type="checkbox" data-toggle="toggle"
+												   th:id="${checkListCoordenador[indice.index].id}" th:checked="${checkListCoordenador[indice.index].resposta}"
+												   data-on="Feito" data-off="Não feito" data-onstyle="success" data-offstyle="danger" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script type="text/javascript">
+        $(function() {
+            $(':checkbox').change(function() {
+                var request = $.ajax({
+                    url: "checklist-coordenacao/" + $(this).attr('id') + "/atualizarItemCheckList",
+                    type: "GET"
+                });
+            })
+        });
+	</script>
+</section>
+</html>

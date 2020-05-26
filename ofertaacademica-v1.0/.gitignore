@@ -1,0 +1,13 @@
+*.mvn/
+*.settings/
+
+.metadata
+.classpath
+.project
+target
+*.class
+*.jar
+*.war
+*.ear
+*.log
+/bin/

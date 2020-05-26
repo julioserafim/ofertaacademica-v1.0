@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	th:with="professorActive='active'">
+
+<title>Listar Professores</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<h3 class="card-title">Professores</h3>
+						</div>
+						<div class="col-6">
+							<a th:href="@{/professores/cadastrar-professor}" class="btn btn-success pull-right waves-effect waves-light"
+								data-toggle="tooltip">
+								<i class="fa fa-plus" aria-hidden="true"></i> Novo(a) Professor(a)</a>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-12">
+							<div class="table-responsive">
+								<table class="table table-hover table-striped">
+									<thead>
+										<tr>
+											<th>Nome</th>
+											<th>Apelido</th>
+											<th>Email</th>
+											<th>CPF</th>
+											<th>Relacionamento</th>
+											<th class="text-center">CH Mínima</th>
+											<th class="text-center">CH M´xxima</th>
+											<th class="text-center">Status</th>
+											<th class="text-right"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="professor : ${professores}">
+											<td th:text="${professor.nome} ? ${professor.nome} : ${professor.apelido}"></td>
+											<td th:text="${professor.apelido}"></td>
+											<td th:text="${professor.email}"></td>
+											<td th:text="${professor.cpf}"></td>
+											<td th:text="${professor.relacionamento?.apelido}"></td>
+											<td class="text-center" th:text="${professor.cargaHorariaMinima}"></td>
+											<td class="text-center" th:text="${professor.cargaHorariaMaxima}"></td>
+											<td class="text-center" th:if="${professor.ativo}"><span class="badge badge-success">ativo</span></td>
+											<td class="text-center" th:unless="${professor.ativo}"><span class="badge badge-danger">inativo</span></td>
+											<td class="text-right">
+												<a th:href="@{/professores/detalhes-professor/{id}(id=${professor.id})}"
+													class="btn btn-outline-info btn-circle" data-toggle="tooltip" title="Detalhes">
+													<i class="fa fa-info"></i></a>
+												
+												<a th:href="@{/professores/editar-professor/{id}(id=${professor.id})}"
+													 class="btn btn-outline-secondary btn-circle" data-toggle="tooltip" title="Editar">
+													<i class="fa fa-pencil"></i></a> 
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section layout:fragment="js">
+	<script type="text/javascript">
+		$('table').DataTable({
+			"language" : {
+				url : _context + '/js/Portuguese-Brasil.json'
+			},
+			"iDisplayLength" : 25,
+			"bLengthChange" : false,
+			"order" : [ 1, 'asc' ],
+			"columnDefs" : [ {
+				"orderable" : false,
+				"targets" : 6
+			} ]
+		});
+	</script>
+</section>
+</html>

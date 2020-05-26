@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/logo.png}"/>
+	<title>Oferta Acadêmica</title>
+
+	<!-- DataTable plugin CSS -->
+	<link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" type="text/css" />
+	<!-- Animation CSS -->
+	<link th:href="@{/css/animate.css}" rel="stylesheet" />
+	<!-- Select2 CSS -->
+	<link th:href="@{/css/select2.min.css}" rel="stylesheet" />
+	<!-- Bootstrap Validator -->
+	<link th:href="@{/css/bootstrapValidator.min.css}" rel="stylesheet" type="text/css"></link>
+	<!-- Elite Admin CSS -->
+	<link th:href="@{/css/style.min.css}" rel="stylesheet"/>
+
+	<!-- Bootstrap Toggle -->
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"/>
+	<!-- Date picker plugins css -->
+	<link th:href="@{/css/bootstrap-datepicker/bootstrap-datepicker.css}" rel="stylesheet" type="text/css"></link>
+
+	<!-- Bootstrap Switch -->
+	<link th:href="@{/css/bootstrap-switch.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Custom CSS -->
+	<link th:href="@{/css/alocacao_professores.css}" rel="stylesheet" type="text/css"></link>
+
+	<!-- CONFIGURACAO DO CONTEXTO -->
+	<meta name="_context" th:content="${#httpServletRequest.getContextPath()}" />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script th:src="@{https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script th:src="@{https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-19175540-9', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+
+<body class="horizontal-nav skin-megna fixed-layout">
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader__figure"></div>
+			<p class="loader__label">Oferta Acadêmica</p>
+		</div>
+	</div>
+
+	<div id="main-wrapper">
+		<div th:replace="base/navbar-header :: navbar-header"></div>
+		<div th:replace="base/sidebar :: sidebar"></div>
+
+		<div id="page-wrapper">
+			<div class="container-fluid">
+				<div class="alert alert-danger alert-rounded" th:if="${error}" th:inline="text"><b>[[${error}]]</b>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>
+                 <div class="alert alert-info alert-rounded" th:if="${info}" th:inline="text"><b>[[${info}]]</b>
+                	<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>                 
+                <div class="alert alert-success alert-rounded" th:if="${success}" th:inline="text"><b>[[${success}]]</b>
+                	<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>
+                                             
+				<section layout:fragment="conteudo"></section>
+				<!-- sample modal content -->
+				<div id="responsive-modal" class="modal fade" tabindex="-1"
+					 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Confirmação</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body">
+								<label>Tem certeza de que deseja realizar essa ação?</label>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default waves-effect"
+										data-dismiss="modal">Cancelar</button>
+								<a href="" id="confirmAcao" class="btn btn-success waves-effect waves-light">Sim, desejo continuar.</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer text-center"> 2017 NPI - UFC Quixadá</footer>
+		</div>
+	</div>
+
+	<!-- JQuery -->
+	<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+	<!-- Popper -->
+	<script th:src="@{/js/popper.min.js}"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<!-- Custom Theme JavaScript -->
+	<script th:src="@{/js/custom.min.js}"></script>
+	<!-- Menu Plugin JavaScript -->
+	<script th:src="@{/js/perfect-scrollbar.jquery.min.js}"></script>
+	<!-- Wave Effects -->
+	<script th:src="@{/js/waves.js}"></script>
+	<!-- Sidebarmenu -->
+	<script th:src="@{/js/sidebarmenu.js}"></script>
+
+	<!-- Select2 JavaScript -->
+	<script th:src="@{/js/select2.min.js}"></script>
+	<!-- Bootstrap Toggle -->
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<!-- Data tables -->
+	<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+	<!-- Jquery Validation -->
+	<script th:src="@{/js/bootstrapValidator.min.js}"></script>
+	<script th:src="@{/js/pt_BR.js}"></script>
+	
+	<!-- Date Picker Plugin JavaScript -->
+	<script th:src="@{/js/bootstrap-datepicker/bootstrap-datepicker.js}"></script>
+	<script	th:src="@{/js/bootstrap-datepicker/locale/bootstrap-datepicker_pt-BR_js.js}"></script>
+	<script	th:src="@{/js/moment-with-locales.js}"></script>
+			
+	<!--<script th:src="@{/js/pt_BR.js}"></script>-->
+	<script type="text/javascript">
+        moment.locale('pt-BR');
+        //$(':checkbox').bootstrapToggle();
+        var _context = $("meta[name='_context']").attr("content");
+
+        if(_context == null){
+            _context = "";
+        }
+		$('[data-toggle="tooltip"]').tooltip();
+     $('[data-toggle="modal"]').tooltip();
+		$(".confirmacao").click(function() {
+			var link = $(this).attr("href");
+			$("#confirmAcao").attr("href", link);
+		});
+	</script>
+	<section layout:fragment="js"></section>
+
+</body>
+</html>

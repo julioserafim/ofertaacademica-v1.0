@@ -1,0 +1,105 @@
+ package ufc.quixada.npi.ap.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import ufc.quixada.npi.ap.exception.AlocacaoProfessorException;
+import ufc.quixada.npi.ap.model.Oferta;
+import ufc.quixada.npi.ap.model.Professor;
+import ufc.quixada.npi.ap.model.RelatorioCargaHorariaProfessor;
+import ufc.quixada.npi.ap.repository.ProfessorRepository;
+import ufc.quixada.npi.ap.service.OfertaService;
+import ufc.quixada.npi.ap.service.ProfessorService;
+
+@Service
+public class ProfessorServiceImpl implements ProfessorService{
+
+	@Autowired
+	private ProfessorRepository professorRepository;
+	
+	@Autowired
+	private OfertaService ofertaService;
+	
+	@Override
+	public Professor salvar(Professor professor) throws AlocacaoProfessorException{
+		
+		if(null == professor.getCargaHorariaMinima())
+			professor.setCargaHorariaMinima(0);
+		
+		if(null == professor.getCargaHorariaMaxima())
+		    professor.setCargaHorariaMaxima(0);
+		
+		if(professor.getRelacionamento() != null)
+			professor.getRelacionamento().setRelacionamento(professor);
+		
+		professor.setPassword("123");
+		professor.setAtivo(true); 
+		return professorRepository.save(professor);
+	}
+	
+	@Override
+	public void editar(Professor professor) throws AlocacaoProfessorException{
+
+		if(professor.getRelacionamento()!=null){
+			professor.getRelacionamento().setRelacionamento(professor);
+		}
+		professor.setPassword("123");
+		professorRepository.save(professor);
+	}
+	
+	
+	@Override
+	public Professor buscarProfessor(Integer id) {
+		return professorRepository.findOne(id);
+	}
+	
+	@Override
+	public List<Professor> buscarTodosProfessores() {
+		return professorRepository.findAll(new Sort(Sort.Direction.ASC, "nome"));
+
+	}
+	
+	@Override
+	public List<Professor> buscarTodosProfessoresSemRelacionamento() {
+		return professorRepository.findProfessoresSemRelacionamento();
+	}
+	
+	@Override
+	public RelatorioCargaHorariaProfessor gerarRelatorioCargaHorariaProfessores() {
+		RelatorioCargaHorariaProfessor relatorio = new RelatorioCargaHorariaProfessor();
+		
+		List<Professor> professores = professorRepository.findAll();
+		
+		for (Professor professor : professores){
+			List<Oferta> ofertasProfessor = ofertaService.buscarOfertasPeriodoAtivoPorProfessor(professor);
+			
+			Integer cargaHorariaAtual = 0;
+			
+			for (Oferta o : ofertasProfessor){
+				cargaHorariaAtual += o.getDisciplina().getCreditos();
+			}
+			
+			professor.setCargaHorariaAtual(cargaHorariaAtual);
+			
+			if (cargaHorariaAtual < professor.getCargaHorariaMinima()){
+				relatorio.adicionarProfessorCargaHorariaInsuficiente(professor);
+			}
+			else if (cargaHorariaAtual > professor.getCargaHorariaMaxima()){
+				relatorio.adicionarProfessorCargaHorariaExcedida(professor);
+			}
+			else{
+				relatorio.adicionarProfessorCargaHorariaNormal(professor);
+			}
+		}
+		
+		return relatorio;
+	}
+
+	@Override
+	public Professor buscarProfessorCpf(String cpf) {
+		return professorRepository.findProfessorByCpf(cpf);
+	}
+}

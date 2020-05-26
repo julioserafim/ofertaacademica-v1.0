@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorator="base/base"
+	th:with="ofertaCampusActive='active'">
+
+	<head>
+		<title>Detalhar Oferta | Alocação Professores</title>
+		
+		<meta name="ctx" th:content="${#httpServletRequest.getRequestURL()}"></meta>
+	</head>
+	
+	<section layout:fragment="conteudo">
+		
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Informações da Oferta</h3>
+						<div class="row">
+							<div class="col-md-3">
+								<label class="font-weight-bold">Turma</label>
+								<p th:text="${oferta.turma.curso.nome +' - '+ oferta.turma.semestre.descricao + ' Semestre'}"></p>
+							</div>
+							<div class="col-md-3">
+								<label class="font-weight-bold">Disciplina</label>
+								<p th:text="${oferta.disciplina.nome}"></p>
+							</div>
+							<div class="col-md-3">
+								<label class="font-weight-bold">Turno</label>
+								<p th:text="${oferta.turno.descricao}"></p>
+							</div>
+							<div class="col-md-3">
+								<label class="font-weight-bold">Número de vagas</label>
+								<p th:text="${oferta.vagas}"></p>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label class="font-weight-bold">Observações</label>
+								<p th:text="${oferta.observacao} == ' ' ? '-' : ${oferta.observacao}"></p>
+							</div>
+							<div class="col-md-3">
+								<label class="font-weight-bold">Aulas em laboratório</label>
+								<p th:text="${oferta.aulasEmLaboratorio != null ? oferta.aulasEmLaboratorio : 'N/A'}"></p>		
+							</div>
+							<div class="col-md-3">
+								<label class="font-weight-bold">Número de professores na turma</label>
+								<p th:text="${oferta.numeroProfessores}"></p>
+							</div>
+                            <div class="col-md-3">
+                                <label class="font-weight-bold">Ofertada no início do turno</label>
+                                <p th:text="${oferta.horarioInicio ? 'SIM' : 'NÃO'}"></p>
+                            </div>
+						</div>
+						<div class="row">
+                            <div class="col-md-6">
+                                <label class="font-weight-bold">Professores sugeridos</label>
+                                <div>
+                                    <p th:if="${oferta.professores.isEmpty()}">-</p>
+                                    <span th:each="professor : ${oferta.professores}" th:text="${professor.apelido}" class="label label-info"></span>
+                                </div>
+                            </div>
+							<div sec:authorize="hasAnyAuthority('DIRECAO')" class="col-md-3">
+								<label class="font-weight-bold">Ofertada no mesmo dia</label>
+								<p th:text="${oferta.mesmoDia ? 'SIM' : 'NÃO'}"></p>
+							</div>
+
+						</div>
+						<div th:if="${periodo.isDirecao() or periodo.isAjuste()}" sec:authorize="hasAnyAuthority('DIRECAO')" 
+							class="row pull-right m-r-10">
+							<a th:href="@{/ofertas/{id}/editar(id=${oferta.id})}" class="btn btn-secondary waves-effect waves-light m-r-5">Editar</a>
+                            <a th:href="@{/ofertas/__${oferta.id}__/excluir}"
+                               class="btn btn-danger waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+                               data-toggle="modal" title="Excluir" data-target="#responsive-modal">Excluir</a>
+						</div>
+						<div th:if="${(periodo.isCoordenacao() or periodo.isAjuste()) and (cursoAtual.coordenador.id == #authentication.principal.id or 
+							cursoAtual.viceCoordenador.id == #authentication.principal.id)}" class="row pull-right m-r-10">
+							<a th:href="@{/ofertas/{id}/editar(id=${oferta.id})}" class="btn btn-secondary waves-effect waves-light m-r-5">Editar</a>
+                            <a th:href="@{/ofertas/__${oferta.id}__/excluir}"
+                               class="btn btn-danger waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+                               data-toggle="modal" title="Excluir" data-target="#responsive-modal">Excluir</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Compartilhamentos da Oferta</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<p th:if="${oferta.compartilhamentos.empty}">Não existem compartilhamentos para esta oferta</p>
+								<table th:unless="${oferta.compartilhamentos.empty}" class="table">				
+									<thead>
+										<tr>
+											<th>Turma</th>												
+											<th>Vagas</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>						
+										<tr th:each="compartilhamento : ${oferta.compartilhamentos}">
+											<td th:text="${compartilhamento.turma.curso.nome + ' - ' + compartilhamento.turma.semestre.descricao + ' Semestre'}"
+												th:value="${turma}"></td>
+											<td th:text="${compartilhamento.vagas}"></td>
+											<td>
+                                                <a th:if="${periodo.isDirecao() or periodo.isAjuste()}" sec:authorize="hasAnyAuthority('DIRECAO')"
+                                                   th:href="@{/compartilhamentos/__${compartilhamento.id}__/excluir}"
+                                                   class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+                                                   data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                                <a th:if="${(periodo.isCoordenacao() or periodo.isAjuste()) and
+												    (compartilhamento.turma.curso.coordenador.id == #authentication.principal.id
+												    or compartilhamento.turma.curso.viceCoordenador.id == #authentication.principal.id)}"
+                                                   th:href="@{/compartilhamentos/__${compartilhamento.id}__/excluir}"
+                                                   class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+                                                   data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+											</td>
+										</tr>							
+									</tbody>
+								</table>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6" sec:authorize="hasAnyAuthority('DIRECAO')">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Preferências de Professores</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<p th:if="${oferta.disciplina.preferencias.empty}">Não existem professores com preferência para esta disciplina</p>
+								<table th:unless="${oferta.disciplina.preferencias.empty}" class="table">
+									<thead>
+										<tr>
+											<th>Professor</th>												
+											<th>Nível de Preferência</th>
+										</tr>
+									</thead>
+									<tbody>						
+										<tr th:each="preferencia : ${oferta.disciplina.preferencias}">
+											<td th:text="${preferencia.professor.nome}"></td>
+											<td th:text="${preferencia.nivel}"></td>
+										</tr>							
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+	<section layout:fragment="js">
+		<!-- <script type="text/javascript" th:src="@{/js/oferta/editar-oferta-direcao.js}"></script> -->
+		<!-- Select2 Tradução Português Brasileiro -->
+		<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+		<script type="text/javascript">		
+		$(".select2").select2({
+			"language": "pt-BR"
+		});
+		</script>
+	</section>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	th:with="ofertaCampusActive='active'">
+
+<head>
+<title>Editar Oferta | Alocação Professores</title>
+</head>
+
+<section layout:fragment="conteudo">
+
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Editar Oferta</h3>
+					<form th:action="@{/ofertas/{id}/editar(id=${oferta.id})}" method="POST" th:object="${oferta}">
+						<div class="row">
+							<div class="col-md-12">
+								<label class="label-detalhes" th:if="${cursoAtual.nome}" th:text="${cursoAtual.nome}"></label>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6" th:classappend="${#fields.hasErrors('turma')} ? has-error">
+								<label for="turma">*Turma</label>
+								<select id="turma" th:field="*{turma}" class="form-control" required="required">
+									<option value="">Selecione uma turma</option>
+									<option th:each="turma : ${cursoAtual.turmas}" th:value="${{turma}}"
+										th:text="${turma.semestre.descricao + ' Semestre - ' + turma.curso.nome}"></option>
+								</select> 
+								<span th:if="${#fields.hasErrors('turma')}" th:errors="*{turma}" class="help-block with-errors"></span>
+							</div>
+							<div class="form-group col-md-6" th:classappend="${#fields.hasErrors('disciplina')} ? has-error">
+								<label for="disciplina">*Disciplina</label>
+								<select id="disciplina" th:field="*{disciplina}" class="form-control select2" required="required">
+									<option value="">Selecione uma disciplina</option>
+									<option th:each="disciplina : ${disciplinas}" th:value="${{disciplina}}" 
+										th:inline="text">[[${disciplina.codigo}]] - [[${disciplina.nome}]]</option>
+								</select> 
+								<span th:if="${#fields.hasErrors('disciplina')}" th:errors="*{disciplina}" class="help-block with-errors"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6" th:classappend="${#fields.hasErrors('turno')} ? has-error">
+								<label for="turno">*Turno</label>
+								<select id="turno" th:field="*{turno}" class="form-control" required="required">
+									<option value="">Selecione um turno</option>
+									<option th:each="turno : ${T(ufc.quixada.npi.ap.model.Oferta.Turno).values()}" th:value="${turno}"
+										th:text="${turno.descricao}"></option>
+								</select> 
+								<span th:if="${#fields.hasErrors('turno')}" th:errors="*{turno}" class="help-block with-errors"></span>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="professores">Professores Sugeridos</label>
+								<select id="professores" th:field="*{professores}" class="form-control select2 select2-multiple"
+									multiple="multiple" data-placeholder="Selecione os professores">
+									<option th:each="professor : ${professores}" th:value="${{professor}}" th:text="${professor.nome}"></option>
+								</select> 
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-2" th:classappend="${#fields.hasErrors('vagas')}? has-error">
+								<label for="vagas">*Número de Vagas</label>
+								<input type="number" id="vagas" th:field="*{vagas}" min="1" max="999" class="form-control" required="required" /> 
+								<span th:if="${#fields.hasErrors('vagas')}" th:errors="*{vagas}" class="help-block with-errors"></span>
+							</div>
+							<div class="form-group col-md-2" th:classappend="${#fields.hasErrors('aulasEmLaboratorio')}? has-error">
+								<label for="aulasEmLaboratorio">*Aulas em laboratório</label>
+								<select id="aulasEmLaboratorio" class="form-control" th:field="*{aulasEmLaboratorio}">
+									<option value="0">0</option>
+									<option value="2">2</option>
+									<option value="4">4</option>
+									<option value="6">6</option>
+								</select> 
+								<span th:if="${#fields.hasErrors('aulasEmLaboratorio')}" th:errors="*{aulasEmLaboratorio}" 
+									class="help-block with-errors"></span>
+							</div>
+							<div class="form-group col-md-2" th:classappend="${#fields.hasErrors('numeroProfessores')}? has-error">
+								<label for="numeroProfessores">*Professores na turma</label>
+								<input type="number" id="numeroProfessores" th:field="*{numeroProfessores}" min="0" max="99" class="form-control"
+									required="required" /> 
+								<span th:if="${#fields.hasErrors('numeroProfessores')}" th:errors="*{numeroProfessores}" 
+									class="help-block with-errors"></span>
+							</div>
+							<div class="col-md-2 form-group bt-switch" th:classappend="${#fields.hasErrors('horarioInicio')} ? has-error">
+								<label>*Início do turno</label>
+								<br />
+								<input type="checkbox" class="form-control" th:field="*{horarioInicio}"
+									data-on-color="success" data-off-color="danger" data-on-text="SIM" data-off-text="NÃO" />
+								<span th:if="${#fields.hasErrors('horarioInicio')}" th:errors="*{horarioInicio}" 
+									class="help-block with-errors"></span>
+							</div>
+							<div sec:authorize="hasAnyAuthority('DIRECAO')" class="col-md-2 form-group bt-switch" 
+								th:classappend="${#fields.hasErrors('mesmoDia')} ? has-error">
+								<label>*Mesmo dia</label>
+								<br />
+								<input type="checkbox" class="form-control" th:field="*{mesmoDia}"
+									data-on-color="success" data-off-color="danger" data-on-text="SIM" data-off-text="NÃO" />
+								<span th:if="${#fields.hasErrors('mesmoDia')}" th:errors="*{mesmoDia}" class="help-block with-errors"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 form-group" th:classappend="${#fields.hasErrors('observacao')}? has-error">
+								<label for="observacoes">Observações</label>
+								<textarea id="observacoes" th:field="*{observacao}" class="form-control" rows="5"></textarea>
+								<span th:if="${#fields.hasErrors('observacao')}" th:errors="*{observacao}" class="help-block with-errors"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<a th:href="@{/ofertas/}" class="btn btn-secondary waves-effect waves-light">Cancelar</a>
+								<button type="submit" class="btn btn-success waves-effect waves-light">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<section layout:fragment="js">
+	<!-- Select2 Tradução Português Brasileiro -->
+	<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+	<script type="text/javascript">
+		$(".select2").select2({
+			"language" : "pt-BR"
+		});
+		
+		$(".bt-switch input[type='checkbox'], .bt-switch input[type='radio']").bootstrapSwitch();
+	    var radioswitch = function() {
+	        var bt = function() {
+	            $(".radio-switch").on("switch-change", function() {
+	                $(".radio-switch").bootstrapSwitch("toggleRadioState")
+	            }), $(".radio-switch").on("switch-change", function() {
+	                $(".radio-switch").bootstrapSwitch("toggleRadioStateAllowUncheck")
+	            }), $(".radio-switch").on("switch-change", function() {
+	                $(".radio-switch").bootstrapSwitch("toggleRadioStateAllowUncheck", !1)
+	            })
+	        };
+	        return {
+	            init: function() {
+	                bt()
+	            }
+	        }
+	    }();
+	    $(document).ready(function() {
+	        radioswitch.init()
+	    });
+	</script>
+</section>
+</html>

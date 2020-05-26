@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ptBR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	th:with="cursoActive='active'">
+
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/plugins/images/favicon.png}"></link>
+<title>Listar Cursos | Alocação Professores</title>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<h3 class="card-title">Cursos</h3>
+						</div>
+						<div class="col-6">
+							<a th:href="@{/cursos/cadastrar}" class="btn btn-success pull-right waves-effect waves-light"
+								data-toggle="tooltip">
+								<i class="fa fa-plus" aria-hidden="true"></i> Novo Curso</a>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-12">
+							<div class="table-responsive">
+								<table class="table hover stripe">
+									<thead>
+										<tr>
+											<th class="text-center">Código</th>
+											<th>Nome</th>
+											<th class="text-center">Sigla</th>
+											<th>Turno</th>
+											<th class="text-center">Semestres</th>
+											<th>Coordenador(a)</th>
+											<th>Vice-Coordenador(a)</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="curso : ${cursos}">
+											<td class="text-center" th:inline="text"><b>[[${curso.codigo}]]</b></td>
+											<td th:inline="text">[[${curso.nome}]]</td>
+								            <td class="text-center" th:inline="text">[[${curso.sigla ==  null} ? '' : ${curso.sigla}]]</td>
+											<td th:inline="text">[[${curso.turno}]]</td>
+											<td class="text-center" th:inline="text">[[${curso.semestres}]]</td>
+											<td th:inline="text">[[${curso.coordenador.apelido}]]</td>
+											<td th:inline="text">[[${curso.viceCoordenador.apelido}]]</td>
+											<td>
+												<a th:href="@{/cursos/editar/{id}(id=${curso.id})}" 
+													class="btn btn-outline-secondary btn-circle" data-toggle="tooltip" title="Editar">
+													<i class="fa fa-pencil"></i></a> 
+											</td>
+										</tr>
+									</tbody>
+								</table>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script type="text/javascript">
+
+		$('table').DataTable({
+			"language" : {
+				url : _context + '/js/Portuguese-Brasil.json'
+			},
+            "paging": false,
+			"info": false,
+			"searching": false,
+			"bLengthChange" : false,
+			"order" : [ 1, 'asc' ],
+			"columnDefs" : [ {
+				"orderable" : false,
+				"targets" : 7
+			} ]
+		});
+	</script>
+</section>
+</html>

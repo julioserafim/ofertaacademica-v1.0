@@ -1,0 +1,1220 @@
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (1, '60563903309', 'rayson.ufc@gmail.com', 'Rayson Santos', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (2, '01398758329', 'paulodetarso@gmail.com', 'PAULO DE TARSO GUERRA OLIVEIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (3, '67054790359', 'carlailane@gmail.com', 'CARLA ILANE MOREIRA BEZERRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (4, '63943581349', 'cristianobac@gmail.com', 'Cristiano Bacelar de Oliveira', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (5, '95131922372', 'ingridtm@gmail.com', 'INGRID TEIXEIRA MONTEIRO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (6, '02059472393', 'alisson.uece@gmail.com', 'ALISSON BARBOSA DE SOUZA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (7, '92242480391', 'jeffersoncarvalho@gmail.com', 'JEFFERSON DE CARVALHO SILVA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (8, '25885626391', 'alberto.ufc@gmail.com', 'ALBERTO SAMPAIO LIMA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (9, '61914100344', 'andreia.ufc@gmail.com', 'ANDREIA LIBORIO SAMPAIO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (10, '64789969304', 'dianabraga@gmail.com', 'ANTONIA DIANA BRAGA NOGUEIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (11, '84031131372', 'arthurcallado@gmail.com', 'Arthur de Castro Callado', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (12, '00884821382', 'ararunaufc@gmail.com', 'ARTHUR RODRIGUES ARARUNA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (13, '02054721336', 'brunomateus@gmail.com', 'BRUNO GÓIS MATEUS', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (14, '76875083353', 'camilo.almendra@ufc.br', 'CAMILO CAMILO ALMENDRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (15, '02039091351', 'carlosdiegoa@gmail.com', 'CARLOS DIEGO ANDRADE DE ALMEIDA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (16, '99958201372', 'carlosigorbandeira@yahoo.com.br', 'CARLOS IGOR RAMOS BANDEIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (17, '89883217587', 'cristonsouza@gmail.com', 'CRISTON PEREIRA DE SOUZA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (18, '62793179353', 'daviromero@gmail.com', 'DAVI ROMERO DE VASCONCELOS', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (19, '00427166322', 'sena.ufc@gmail.com', 'DAVID SENA OLIVEIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (20, '03306484970', 'elvis.stancanelli@gmail.com', 'ELVIS MIGUEL GALEAS STANCANELLI', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (21, '00104294337', 'enyo.goncalves@gmail.com', 'ENYO JOSE TAVARES GONCALVES', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (22, '79793053372', 'fabiocsd@gmail.com', 'FABIO CARLOS SOUSA DIAS', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (23, '32319215387', 'aragaoufc@gmail.com', 'FRANCISCO ERIVELTON FERNANDES DE ARAGAO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (24, '54551110353', 'germanafrolim@gmail.com', 'GERMANA FERREIRA ROLIM', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (25, '76561046315', 'jeandro@gmail.com', 'JEANDRO DE MESQUITA BEZERRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (26, '11906561320', 'joaodilavor@gmail.com', 'JOAO FERREIRA DE LAVOR', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (27, '93912072353', 'jmarcelo.alencar@gmail.com', 'JOAO MARCELO UCHOA DE ALENCAR', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (28, '42989540300', 'contato@netofeitosa.com.br', 'JOSE MORAES FEITOSA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (29, '61705110363', 'marcioefmaia@gmail.com', 'MARCIO ESPINDOLA FREIRE MAIA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (30, '82880050472', 'deoliveira.ma@gmail.com', 'MARCOS ANTONIO DE OLIVEIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (31, '89708440310', 'marcosdantas@gmail.com', 'MARCOS DANTAS ORTIZ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (32, '01454644311', 'michelsb@gmail.com', 'MICHEL SALES BONFIM', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (33, '67242227372', 'pauloalr@gmail.com', 'PAULO ANTONIO LEAL REGO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (34, '04376484350', 'phmacedoaraujo@gmail.com', 'PAULO HENRIQUE MACEDO DE ARAUJO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (35, '77014308300', 'paulyne@ufc.br', 'PAULYNE MATTHEWS JUCÁ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (36, '45631697300', 'regispiresmag@gmail.com', 'REGIS PIRES MAGALHÃES', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (37, '75692651300', 'ricardoreispereira@gmail.com', 'RICARDO REIS PEREIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (38, '96791489391', 'rubensfn@gmail.com', 'RUBENS FERNANDES NUNES', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (39, '00255406371', 'samysoares@gmail.com', 'SAMY SOARES PASSOS DE SA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (40, '48924202472', 'taniasmp7@gmail.com', 'TANIA SARAIVA DE MELO PINHEIRO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (41, '03591503304', 'ticianalc@gmail.com', 'TICIANA LINHARES COELHO DA SILVA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (42, '88851290300', 'valdemirpsiqueiroz@gmail.com', 'VALDEMIR PEREIRA DE QUEIROZ NETO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (43, '65685300344', 'wladimirufc@gmail.com', 'WLADIMIR  ARAUJO TAVARES', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (44, '01746255374', 'rodolforbcoutinho@hotmail.com', 'LUIS RODOLFO REBOUÇAS COUTINHO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (45, '01827123389', 'joelcastro@fisica.ufc.br', 'ANTÔNIO JOEL RAMIRO DE CASTRO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (46, '00772302308', 'rafaelbraga@ufc.br', 'ANTONIO RAFAEL BRAGA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (47, '92995454304', 'crrfilho@gmail.com', 'CARLOS ROBERTO RODRIGUES FILHO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (48, '02680541340', 'jefersonkenedy@hotmail.com', 'JEFERSON KENEDY MORAIS VIEIRA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (49, '76762335004', 'josenetodesigner@yahoo.com.br', 'JOSÉ NETO DE FARIA', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (50, '00092349005', 'wgalam@gmail.com', 'WAGNER GUIMARÃES AL-ALAM', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (51, '02664908324', 'ismailybf@gmail.com', 'Lucas Ismaily Bezerra Freitas', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (52, '52531198334', 'helderhdw@gmail.com', 'Francisco Helder Candido dos Santos Filho', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (53, '27240450848', 'raquino@gmail.com', 'Renata Aquino Ribeiro', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (54, '00368794369', 'pvbsousa@gmail.com', 'Paulo Victor Barbosa de Sousa', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (55, '04682023314', 'atriciasabino@gmail.com', 'Maria  Atrícia Sabino Maciel', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (56, '61378720334', 'luizstephany@hotmail.com', 'LUIZ STEPHANY FILHO', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (57, '48078654391', 'medina.diana@gmail.com', 'Diana Patricia Medina Pereira', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (58, '00932706312', 'livia.almada@ufc.br', 'LÍVIA ALMADA CRUZ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (59, '97526878300', 'joaovilnei@gmail.com', 'João Vilnei de Oliveira Filho', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (60, '04824298369', 'victor.aefarias@gmail.com', 'VICTOR AGUIAR EVANGELISTA DE FARIAS ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (61, '81983425320', 'andrerbraga@yahoo.com.br', 'André Ribeiro Braga', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (62, '88423603334', 'francicleber.ferreira@gmail.com', 'Francicleber Martins Ferreira', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (63, '03622903341', 'rainaramaia4@gmail.com', 'RAINARA MAIA CARVALHO ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (64, '62434748368', 'hanibal.ce80@gmail.com', 'Aníbal Cavalcante de Oliveira ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (65, '66224063320', 'pauloaguilar@ufc.br', 'Paulo Armando Cavalcante Aguilar ', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (66, '67196543300', 'vivianemenezes@ufc.br', 'MARIA VIVIANE DE MENEZES', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (67, '02887055569', 'jessykaflavyanne@gmail.com', 'jessyka flavyanne Ferreira Vilela', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (68, '02743023309', 'ffrdamasceno@gmail.com', 'Filipe Francisco Rocha Damasceno', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (69, '04356539389', 'barbarasampaiodemenezes@gmail.com', 'Bárbara Sampaio de Menezes', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (70, '04826501331', 'augusto.peixoto@outlook.com', 'Antonio Augusto Teixeira Peixoto', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (73, '02296561373', 'email', 'Amarildo', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (74, '99920360287', 'email', 'Felip', '123');
+INSERT INTO pessoa (id, cpf, email, nome, password) VALUES (75, '03448632392', 'venicio@ufc.br', 'VENÍCIO GLEISON CHAVES DE OLIVEIRA', '123');
+
+SELECT pg_catalog.setval('pessoa_id_seq', 74, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO papel (id, nome) VALUES (1, 'COORDENACAO');
+INSERT INTO papel (id, nome) VALUES (2, 'DIRECAO');
+
+SELECT pg_catalog.setval('papel_id_seq', 2, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (3, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (7, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (5, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (6, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (4, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (9, 2);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (2, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (64, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (10, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (31, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (59, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (50, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (41, 1);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (9, 2);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (1, 2);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (75, 2);
+INSERT INTO papel_pessoa (pessoa_id, papel_id) VALUES (17, 2);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (1, 'Rayson', 1);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (28, 'JOSE MORAES FEITOSA', 28);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (53, 'Renata Aquino Ribeiro', 53);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (55, 'Maria  Atrícia Sabino Maciel', 55);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (56, 'LUIZ STEPHANY FILHO', 56);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (70, 'Augusto', 70);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (15, 'Diego', 15);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (20, 'Elvis', 20);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (21, 'Enyo', 21);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (22, 'Fabio', 22);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (62, 'Francicleber', 62);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (24, 'Germana', 24);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (5, 'Ingrid', 5);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (25, 'Jeandro', 25);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (48, 'J. Kenedy', 48);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (7, 'Jefferson', 7);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (67, 'Jessyka', 67);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (27, 'Joao Marcelo', 27);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (59, 'Joao Vilnei', 59);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (52, 'Helder', 52);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (45, 'Joel', 45);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (49, 'Jose Neto', 49);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (65, 'Paulo Armando', 65);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (68, 'Filipe', 68);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (8, 'Alberto', 8);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (6, 'Alisson', 6);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (61, 'Andre Braga', 61);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (9, 'Andreia', 9);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (64, 'Anibal', 64);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (23, 'Aragao', 23);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (12, 'Arthur Araruna', 12);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (26, 'Lavor', 26);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (11, 'Arthur Callado', 11);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (69, 'Barbara', 69);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (13, 'Bruno Gois', 13);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (14, 'Camilo', 14);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (3, 'Carla', 3);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (47, 'Carlos Filho', 47);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (16, 'Carlos Igor', 16);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (4, 'Cristiano', 4);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (17, 'Criston', 17);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (18, 'Davi Romero', 18);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (19, 'David Sena', 19);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (57, 'Diana Medina', 57);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (10, 'Diana Nogueira', 10);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (58, 'Livia', 58);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (51, 'Lucas', 51);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (29, 'Marcio', 29);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (31, 'Marcos Dantas', 31);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (30, 'Marcos Oliveira', 30);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (32, 'Michel', 32);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (66, 'Viviane', 66);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (34, 'Paulo Henrique', 34);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (33, 'Paulo Rego', 33);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (54, 'Paulo Vitor', 54);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (2, 'Paulo de Tarso', 2);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (35, 'Paulyne', 35);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (46, 'Rafael', 46);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (63, 'Rainara', 63);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (36, 'Regis', 36);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (37, 'Ricardo', 37);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (44, 'Rodolfo', 44);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (38, 'Rubens', 38);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (39, 'Samy', 39);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (40, 'Tania', 40);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (41, 'Ticiana', 41);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (42, 'Valdemir', 42);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (60, 'Victor', 60);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (50, 'Wagner', 50);
+INSERT INTO professor (id, apelido, pessoa_id) VALUES (43, 'Wladimir', 43);
+
+SELECT pg_catalog.setval('professor_id_seq', 72, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO curso (id, codigo, nome, sigla, coordenador_id, vice_coordenador_id) VALUES (2, '402', 'Engenharia de Software', 'ES', 3, 10);
+INSERT INTO curso (id, codigo, nome, sigla, coordenador_id, vice_coordenador_id) VALUES (3, '403', 'Redes de Computadores', 'RC', 6, 31);
+INSERT INTO curso (id, codigo, nome, sigla, coordenador_id, vice_coordenador_id) VALUES (6, '405', 'Engenharia de Computação', 'EC', 4, 50);
+INSERT INTO curso (id, codigo, nome, sigla, coordenador_id, vice_coordenador_id) VALUES (4, '404', 'Ciência da Computação', 'CC', 2, 41);
+INSERT INTO curso (id, codigo, nome, sigla, coordenador_id, vice_coordenador_id) VALUES (1, '401', 'Sistemas de Informação', 'SI', 1, 64);
+INSERT INTO curso (id, codigo, nome, sigla, coordenador_id, vice_coordenador_id) VALUES (5, '406', 'Design Digital', 'DD', 5, 59);
+
+SELECT pg_catalog.setval('curso_id_seq', 6, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO turma (id, semestre, curso_id) VALUES (1, 'PRIMEIRO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (2, 'SEGUNDO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (3, 'TERCEIRO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (4, 'QUARTO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (5, 'QUINTO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (6, 'SEXTO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (7, 'SETIMO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (8, 'OITAVO', 1);
+INSERT INTO turma (id, semestre, curso_id) VALUES (9, 'PRIMEIRO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (10, 'SEGUNDO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (11, 'TERCEIRO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (12, 'QUARTO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (13, 'QUINTO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (14, 'SEXTO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (15, 'SETIMO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (16, 'OITAVO', 2);
+INSERT INTO turma (id, semestre, curso_id) VALUES (17, 'PRIMEIRO', 3);
+INSERT INTO turma (id, semestre, curso_id) VALUES (18, 'SEGUNDO', 3);
+INSERT INTO turma (id, semestre, curso_id) VALUES (19, 'TERCEIRO', 3);
+INSERT INTO turma (id, semestre, curso_id) VALUES (20, 'QUARTO', 3);
+INSERT INTO turma (id, semestre, curso_id) VALUES (21, 'QUINTO', 3);
+INSERT INTO turma (id, semestre, curso_id) VALUES (22, 'SEXTO', 3);
+INSERT INTO turma (id, semestre, curso_id) VALUES (23, 'PRIMEIRO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (24, 'SEGUNDO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (25, 'TERCEIRO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (26, 'QUARTO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (27, 'QUINTO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (28, 'SEXTO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (29, 'SETIMO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (30, 'OITAVO', 4);
+INSERT INTO turma (id, semestre, curso_id) VALUES (31, 'PRIMEIRO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (32, 'SEGUNDO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (33, 'TERCEIRO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (34, 'QUARTO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (35, 'QUINTO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (36, 'SEXTO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (37, 'SETIMO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (38, 'OITAVO', 5);
+INSERT INTO turma (id, semestre, curso_id) VALUES (39, 'PRIMEIRO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (40, 'SEGUNDO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (41, 'TERCEIRO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (42, 'QUARTO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (43, 'QUINTO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (44, 'SEXTO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (45, 'SETIMO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (46, 'OITAVO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (47, 'NONO', 6);
+INSERT INTO turma (id, semestre, curso_id) VALUES (48, 'DECIMO', 6);
+
+SELECT pg_catalog.setval('turma_id_seq', 48, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO periodo (id, ano, ativo, fim_periodo_ajuste, fim_periodo_coordenacao, fim_periodo_direcao, inicio_periodo_ajuste, inicio_periodo_coordenacao, inicio_periodo_direcao, semestre, status) VALUES (1, '2017', false, '2017-03-04 00:00:00', '2017-02-28 00:00:00', '2017-03-02 00:00:00', '2017-03-03 00:00:00', '2017-02-27 00:00:00', '2017-03-01 00:00:00', 'PRIMEIRO', 'CONSOLIDADO');
+INSERT INTO periodo (id, ano, ativo, fim_periodo_ajuste, fim_periodo_coordenacao, fim_periodo_direcao, inicio_periodo_ajuste, inicio_periodo_coordenacao, inicio_periodo_direcao, semestre, status) VALUES (2, '2018', true, '2017-12-08 00:00:00', '2017-10-15 00:00:00', '2017-11-20 00:00:00', '2017-11-23 00:00:00', '2017-10-02 00:00:00', '2017-10-16 00:00:00', 'PRIMEIRO', 'CONSOLIDADO');
+
+SELECT pg_catalog.setval('periodo_id_seq', 1, false);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (62, false, 0, 0, 'QXD0081', 4, 'INFORMATICA E ORGANIZAÇÃO DE COMPUTADORES', 'IOC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (83, false, 0, 0, 'QXD0115', 4, 'ESTRUTURA DE DADOS AVANÇADA', 'ED Avancada');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (4, false, 0, 0, 'QXD0005', 4, 'ARQUITETURA DE COMPUTADORES', 'Arq. de Computadores');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (16, false, 0, 0, 'QXD0018', 4, 'CONSTRUÇÃO DE SISTEMAS DE GERÊNCIA DE BANCO DE DADOS', 'CSGBD');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (5, false, 0, 0, 'QXD0006', 4, 'CÁLCULO DIFERENCIAL E INTEGRAL I', 'Calculo I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (23, false, 0, 0, 'QXD0025', 4, 'COMPILADORES', 'Compiladores');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (18, false, 0, 0, 'QXD0020', 4, 'DESENVOLVIMENTO DE SOFTWARE PARA WEB', 'Desenvolvimento Web');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (25, false, 0, 0, 'QXD0027', 4, 'E-BUSINESS', 'E-business');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (10, false, 0, 0, 'QXD0011', 4, 'FUNDAMENTOS DE BANCO DE DADOS', 'FBD');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (9, false, 0, 0, 'QXD0010', 4, 'ESTRUTURA DE DADOS', 'ED');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (27, false, 0, 0, 'QXD0029', 4, 'EMPREENDEDORISMO', 'Empreendedorismo');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (2, false, 0, 0, 'QXD0001', 6, 'FUNDAMENTOS DE PROGRAMAÇÃO', 'FUP');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (56, false, 0, 0, 'QXD0066', 4, 'GERÊNCIA DE CONFIGURAÇÃO', 'Ger. de Configuracao');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (30, false, 0, 0, 'QXD0033', 4, 'GERÊNCIA DE REDES', 'Gerencia de Redes');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (1, false, 0, 0, 'QXD0108', 4, 'INTRODUÇÃO À CIÊNCIA DA COMPUTAÇÃO', 'ICC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (45, false, 0, 0, 'QXD0055', 6, 'INTRODUÇÃO A COMPUTAÇÃO E ENGENHARIA DE SOFTWARE', 'ICES');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (8, false, 0, 0, 'QXD0009', 2, 'TEORIA GERAL DE SISTEMAS', 'TGS');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (32, false, 0, 0, 'QXD0035', 4, 'INGLÊS INSTRUMENTAL I', 'Ingles I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (33, false, 0, 0, 'QXD0036', 4, 'INGLÊS INSTRUMENTAL II', 'Ingles II');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (36, false, 0, 0, 'QXD0039', 4, 'INTRODUÇÃO A COMPUTAÇÃO GRAFICA', 'Int. a Comp. Grafica');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (64, false, 0, 0, 'QXD0085', 6, 'ADMINISTRAÇÃO DE SISTEMAS OPERACIONAIS WINDOWS', 'Windows');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (80, false, 0, 0, 'QXD0078', 4, 'INTRODUÇÃO AO DESENVOLVIMENTO DE JOGOS', 'Jogos');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (15, false, 0, 0, 'QXD0017', 4, 'LÓGICA PARA COMPUTAÇÃO', 'Logica');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (14, false, 0, 0, 'QXD0016', 4, 'LINGUAGENS DE PROGRAMAÇÃO', 'LIP');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (85, false, 0, 0, 'QXD0082', 4, 'MATEMÁTICA COMPUTACIONAL RC', 'Mat. Computacional RC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (46, false, 0, 0, 'QXD0056', 4, 'MATEMÁTICA BÁSICA', 'Matematica Basica');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (7, false, 0, 0, 'QXD0008', 4, 'MATEMÁTICA DISCRETA', 'Matematica Discreta');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (6, false, 0, 0, 'QXD0007', 4, 'PROGRAMAÇÃO ORIENTADA A OBJETOS', 'POO');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (84, false, 0, 0, 'QXD0110', 2, 'PROJETO DE PESQUISA CIENTÍFICA E TECNOLÓGICA', 'PPCeT');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (76, false, 0, 0, 'QXD0109', 2, 'PRÉ-CÁLCULO', 'Pre-calculo');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (48, false, 0, 0, 'QXD0058', 4, 'PROJETO DETALHADO DE SOFTWARE', 'PDS');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (38, false, 0, 0, 'QXD0041', 4, 'PROJETO E ANALISE DE ALGORITMOS', 'PAA');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (50, false, 0, 0, 'QXD0060', 4, 'PROCESSOS DE SOFTWARE', 'Processo de Software');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (82, false, 0, 0, 'QXD0114', 4, 'PROGRAMAÇÃO FUNCIONAL', 'Programacao Funcional');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (19, false, 0, 0, 'QXD0021', 4, 'REDES DE COMPUTADORES', 'Redes');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (51, false, 0, 0, 'QXD0061', 4, 'REQUISITOS DE SOFTWARE', 'Requisitos');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (12, false, 0, 0, 'QXD0013', 4, 'SISTEMAS OPERACIONAIS', 'SO');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (69, false, 0, 0, 'QXD0092', 4, 'SERVIÇOS DE REDES DE COMPUTADORES', 'Servicos de Rede');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (44, false, 0, 0, 'QXD0048', 4, 'TOPICOS AVANÇADOS EM REDES DE COMPUTADORES', 'Topicos em RC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (53, false, 0, 0, 'QXD0063', 4, 'VERIFICAÇÃO E VALIDAÇÃO', 'V e V');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (40, false, 0, 0, 'QXD0043', 4, 'SISTEMAS DISTRIBUIDOS', 'Sistemas Distribuidos');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (11, false, 0, 0, 'QXD0012', 4, 'PROBABILIDADE E ESTATÍSTICA', 'Estatistica');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (21, false, 0, 0, 'QXD0023', 4, 'GERÊNCIA DE PROJETOS DE SOFTWARE', 'Gerencia Prof. Soft');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (24, false, 0, 0, 'QXD0026', 4, 'CONTABILIDADE E CUSTOS', 'Contabilidade');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (26, false, 0, 0, 'QXD0028', 4, 'ECONOMIA E FINANÇAS', 'Economia');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (28, false, 0, 0, 'QXD0031', 4, 'FILOSOFIA DA CIÊNCIA', 'Filosofia da Ciencia');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (31, false, 0, 0, 'QXD0034', 4, 'GERÊNCIA DE PROJETOS', 'Gerencia de Projetos');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (29, false, 0, 0, 'QXD0032', 4, 'FUNÇÕES EMPRESARIAIS', 'Funcoes Empresariais');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (78, false, 0, 0, '1111111', 2, 'PRÁTICAS EM TECNOLOGIA DA INFORMAÇÃO I', '');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (66, false, 0, 0, 'QXD0087', 2, 'LABORATÓRIO EM INFRAESTRUTURA DE REDES DE COMPUTADORES', 'Lab. Infra');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (34, false, 0, 0, 'QXD0037', 4, 'INTELIGÊNCIA ARTIFICIAL', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (93, false, 0, 0, 'QXD0054', 4, 'ÉTICA NORMAS E POSTURA PROFISSIONAL ES', 'Etica ES');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (160, false, 0, 0, 'QXD0161', 4, 'SEMIOTICA', 'Semiotica');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (156, false, 0, 0, 'QXD0206', 4, 'MARKETING', 'Marketing');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (152, false, 0, 0, '9990000', 4, 'SISTEMAS EMBARCADOS', 'Sistemas Embarcados');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (108, false, 0, 0, 'QXD0116', 4, 'ÁLGEBRA LINEAR', 'Algebra Linear');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (165, false, 0, 0, 'QXD0134', 4, 'CÁLCULO DIFERENCIAL E INTEGRAL II', 'Calculo II');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (146, false, 0, 0, 'QXD0135', 4, 'CÁLCULO DIFERENCIAL E INTEGRAL III', 'Calculo III');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (126, false, 0, 0, 'QXD0117', 4, 'CIRCUITOS DIGITAIS', 'Circuitos Digitais');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (147, false, 0, 0, 'QXD0079', 4, 'COMPUTAÇÃO EM NUVEM', 'Comp. em Nuvem');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (109, false, 0, 0, 'QXD0119', 4, 'COMPUTAÇÃO GRÁFICA', 'Computacao Grafica');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (181, false, 0, 0, 'QXD0153', 4, 'DESAFIOS DE PROGRAMAÇÃO', 'Desafios de Prog.');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (110, false, 0, 0, 'QXD0121', 4, 'DESENHO I', 'Desenho A');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (117, false, 0, 0, 'QXD0128', 4, 'DESENHO II', 'Desenho B');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (138, false, 0, 0, 'QXD0139', 4, 'ENGENHARIA DE SOFTWARE EC', 'Eng. de Software EC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (111, false, 0, 0, 'QXD0122', 4, 'HISTÓRIA DA ARTE', 'Historia da Arte');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (90, false, 0, 0, 'QXD0015', 4, 'GESTÃO DA INFORMAÇÃO E DOS SISTEMAS DE INFORMAÇÃO E GESTÃO DA INF E CONHEC', 'Gestao da Inf e dos SI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (97, false, 0, 0, 'QXD0073', 4, 'EXPERIMENTAÇÃO EM ENGENHARIA DE SOFTWARE', 'ES Experimental');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (127, false, 0, 0, 'QXD0118', 2, 'INTRODUÇÃO À ENGENHARIA DE COMPUTAÇÃO', 'IEC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (171, false, 0, 0, 'QXD0172', 4, 'LÓGICA MODAL', 'Logica Modal');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (148, false, 0, 0, 'QXD0120', 4, 'MATEMÁTICA COMPUTACIONAL CC', 'Mat. Computacional CC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (120, false, 0, 0, 'QXD0159', 4, 'MODELAGEM TRIDIMENSIONAL', 'Mod. Tridimensional');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (113, false, 0, 0, 'QXD0124', 6, 'MULTIMÍDIA', 'Multimidia');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (118, false, 0, 0, 'QXD0129', 4, 'PROGRAMAÇÃO PARA DESIGN', 'Progr. para Design');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (115, false, 0, 0, 'QXD0126', 4, 'PSICOLOGIA E PERCEPÇÃO', 'Psicologia e Percepcao');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (130, false, 0, 0, 'QXD0147', 4, 'SISTEMAS OPERACIONAIS I', 'SO I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (121, false, 0, 0, 'QXD0162', 4, 'SOCIEDADE   CULTURA E TECNOLOGIAS', 'Soc. Culturas e Tecnol.');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (154, false, 0, 0, 'QXD0004', 4, 'TEORIA GERAL DA ADMINISTRAÇÃO INTROD ADM', 'TGA');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (125, false, 0, 0, 'QXD0191', 4, 'TIPOGRAFIA', 'Tipografia');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (131, false, 0, 0, 'QXD0149', 4, 'TÉCNICAS DE PROGRAMAÇÃO PARA SISTEMAS EMBARCADOS I', 'TPSE I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (157, false, 0, 0, 'QXD0030', 4, 'ÉTICA DIREITO E LEGISLAÇÃO SI', 'Etica Dir e Leg SI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (161, false, 0, 0, 'QXD0209', 4, 'REALIDADE VIRTUAL', 'Realidade Virtual');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (92, false, 0, 0, 'QXD0103', 2, 'ÉTICA DIREITO E LEGISLAÇÃO CC EC RC', 'Etica CC EC RC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (175, false, 0, 0, 'QXD0181', 4, 'PESQUISA OPERACIONAL', 'PO');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (166, false, 0, 0, 'QXD0176', 4, 'APRENDIZADO DE MÁQUINA', 'Aprendizado Maquina');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (129, false, 0, 0, 'QXD0132', 4, 'ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES I', 'Arq.  Comp. I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (91, false, 0, 0, 'QXD0106', 4, 'GOVERNANÇA ESTRATÉGICA DE TECNOLOGIA DA INFORMAÇÃO E GESTÃO DE TI', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (94, false, 0, 0, 'QXD0168', 4, 'ALGORITMOS PROBABILÍSTICOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (95, false, 0, 0, 'QXD0185', 4, 'ANALISE E DESEMPENHO DE SISTEMAS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (98, false, 0, 0, 'QXD0072', 4, 'INTEGRAÇÃO DE APLICAÇÕES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (101, false, 0, 0, 'QXD0051', 4, 'TOPICOS ESPECIAIS II SI', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (185, false, 0, 0, 'QXD0189', 4, 'AVALIAÇÃO DA INTERAÇÃO HUMANO COMPUTADOR', 'Avaliacao IHC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (198, false, 0, 0, 'QXD0207', 4, 'PRÁTICAS EM DESIGN I', 'Praticas em Design I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (212, false, 0, 0, 'QXD0173', 4, 'TOPICOS ESPECIAIS IV CC', 'Topicos IV CC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (209, false, 0, 0, 'QXD0187', 4, 'TOPICOS ESPECIAIS I CC', 'Top Especiais I CC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (193, false, 0, 0, 'QXD0194', 4, 'ÉTICA E LEGISLAÇÃO DD', 'Etica DD');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (150, false, 0, 0, 'QXD0201', 2, 'ENGENHARIA SEMIOTICA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (189, false, 0, 0, 'QXD0195', 4, 'DESIGN E INOVAÇÃO', 'Design e Inovacao');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (200, false, 0, 0, 'QXD0212', 2, 'SEMINARIOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (13, false, 0, 0, 'QXD0014', 4, 'ANÁLISE E PROJETO DE SISTEMAS', 'APS');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (136, false, 0, 0, 'QXD0131', 4, 'ANÁLISE DE CIRCUITOS', 'Analise de Circuitos');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (22, false, 0, 0, 'QXD0024', 4, 'AVALIAÇÃO DE SISTEMAS', 'Avaliacao de Sistemas');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (167, false, 0, 0, 'QXD0183', 4, 'COMPUTAÇÃO PARALELA', 'Computacao Paralela');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (137, false, 0, 0, 'QXD0136', 4, 'ELETRICIDADE E MAGNETISMO', 'Eletr. e Magnetismo');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (17, false, 0, 0, 'QXD0019', 4, 'ENGENHARIA DE SOFTWARE', 'Eng. de Software');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (188, false, 0, 0, 'QXD0198', 4, 'CONCEPÇÃO E DESENVOLVIMENTO DE PRODUTOS', 'Concepcao e Desenv. Prod');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (184, false, 0, 0, 'QXD0204', 4, 'CINEMA E ANIMAÇÃO', 'Cinema e Animacao');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (41, false, 0, 0, 'QXD0044', 4, 'SISTEMAS MULTIMIDIA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (42, false, 0, 0, 'QXD0046', 4, 'TEORIA DA COMPUTAÇÃO', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (219, false, 0, 0, 'QXD0104', 10, 'ESTÁGIO SUPERVISIONADO I', 'Estagio NPI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (207, false, 120, 40, 'QXD0155', 10, 'ESTÁGIO SUPERVISIONADO I - CC', 'Estagio NPI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (220, false, 0, 0, 'QXD0105', 10, 'ESTÁGIO SUPERVISIONADO II', 'Estagio NPI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (208, false, 120, 40, 'QXD0156', 10, 'ESTÁGIO SUPERVISIONADO II - CC', 'Estagio NPI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (3, false, 0, 0, 'QXD0002', 4, 'INTRODUÇÃO A CIÊNCIA DA COMPUTAÇÃO E SISTEMAS DE INFORMAÇÃO', 'ICCSI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (182, false, 0, 0, 'QXD0084', 6, 'ADMINISTRAÇÃO DE SISTEMAS OPERACIONAIS LINUX', 'Linux');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (37, false, 0, 0, 'QXD0040', 4, 'LINGUAGENS FORMAIS E AUTOMATOS', 'Linguagens Formais');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (63, false, 0, 0, 'QXD0083', 2, 'MÉTODOS E TÉCNICAS DE PESQUISA', 'Met. e Tec. de Pesquisa');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (201, false, 0, 0, 'QXD0160', 4, 'PROJETO INTEGRADO I', 'Projeto Integrado I');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (199, false, 0, 0, 'QXD0143', 2, 'MICROCONTROLADORES', 'Microcontroladores');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (176, false, 0, 0, 'QXD0188', 4, 'PROCESSAMENTO DE IMAGEM', 'Proc. de Imagens');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (202, false, 0, 0, 'QXD0165', 4, 'PROJETO INTEGRADO II', 'Projeto Integrado II');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (192, false, 0, 0, 'QXD0192', 4, 'PROCESSOS DE CRIAÇÃO', 'Processos de Criacao');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (203, false, 0, 0, 'QXD0190', 4, 'PROJETO INTEGRADO III', 'Projeto Integrado III');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (190, false, 0, 0, 'QXD0193', 4, 'PROJETO DE INTERFACES WEB', 'Proj. de Interfaces Web');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (204, false, 0, 0, 'QXD0196', 4, 'PROJETO INTEGRADO IV', 'Projeto Integrado IV');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (39, false, 0, 0, 'QXD0042', 4, 'QUALIDADE DE SOFTWARE', 'Qualidade de Software');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (139, false, 0, 0, 'QXD0146', 4, 'SISTEMAS DIGITAIS PARA COMPUTADORES', 'Sistemas Digitais');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (96, false, 0, 0, 'QXD0049', 4, 'TRABALHO COOPERATIVO BASEADO EM COMPUTADORES', 'Trabalho Cooperativo');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (225, false, 2, 2, 'QXD0000', 4, 'INTRODUCAO A SISTEMAS DE INFORMACAO', 'Introducao SI');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (20, false, 0, 0, 'QXD0022', 4, 'AUDITORIA DE SEGURANÇA DE SISTEMAS DE INFORMAÇÃO', 'Auditoria');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (65, false, 0, 0, 'QXD0086', 4, 'INTERNET E ARQUITETURA TCP/IP', 'Internet e TCP/IP');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (226, false, 0, 4, 'QXD1000', 4, 'INTRODUCAO A ADMINSTRACAO', 'Introducao ADM');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (197, false, 0, 0, 'QXD0211', 4, 'USER EXPERIENCE UX', 'UX');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (196, false, 0, 0, 'QXD0210', 4, 'SOCIOLOGIA E ANTROPOLOGIA', 'Sociologia');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (191, false, 0, 0, 'QXD0208', 4, 'PROTOTIPAÇÃO RÁPIDA', 'Prototipação');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (183, false, 0, 0, 'QXD0199', 4, 'ARQUITETURA DA INFORMAÇÃO', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (43, false, 0, 0, 'QXD0047', 4, 'TOPICOS AVANÇADOS EM BANCO DE DADOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (47, false, 0, 0, 'QXD0057', 4, 'INTRODUÇÃO A PROCESSO E REQUISITOS DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (49, false, 0, 0, 'QXD0059', 4, 'REDES E SISTEMAS DISTRIBUÍDOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (52, false, 0, 0, 'QXD0062', 4, 'MANUTENÇÃO DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (54, false, 0, 0, 'QXD0064', 4, 'ARQUITETURA DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (55, false, 0, 0, 'QXD0065', 4, 'ESPECIFICAÇÃO FORMAL DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (57, false, 0, 0, 'QXD0067', 4, 'LEITURA DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (58, false, 0, 0, 'QXD0068', 4, 'REUSO DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (59, false, 0, 0, 'QXD0074', 4, 'DESENVOLVIMENTO DE SOFTWARE CONCORRENTE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (60, false, 0, 0, 'QXD0075', 4, 'REDES SOCIAIS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (61, false, 0, 0, 'QXD0076', 4, 'SISTEMAS MULTIAGENTES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (67, false, 0, 0, 'QXD0089', 4, 'REDES DE ALTA VELOCIDADE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (68, false, 0, 0, 'QXD0090', 4, 'REDES DE COMUNICAÇÕES MÓVEIS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (186, false, 0, 0, 'QXD0197', 4, 'PROJETO DE INTERFACES PARA DISPOSITIVOS MÓVEIS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (187, false, 0, 0, 'QXD0203', 4, 'FOTOGRAFIA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (194, false, 0, 0, 'QXD0205', 4, 'JOGOS ELETRÔNICOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (195, false, 0, 0, 'QXD0200', 4, 'DESIGN DE SISTEMAS  COLABORATIVOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (206, false, 0, 0, 'QXD0088', 4, 'PROGRAMAÇÃO DE SCRIPTS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (210, false, 0, 0, 'QXD0175', 4, 'TOPICOS ESPECIAIS II CC', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (70, false, 0, 0, 'QXD0093', 4, 'ANÁLISE DE DESEMPENHO DE REDES DE COMPUTADORES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (71, false, 0, 0, 'QXD0094', 4, 'GESTÃO DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (73, false, 0, 0, 'QXD0099', 4, 'DESENVOLVIMENTO DE SOFTWARE PARA PERSISTÊNCIA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (74, false, 0, 0, 'QXD0102', 4, 'DESENVOLVIMENTO DE SOFTWARE PARA DISPOSITIVOS MÓVEIS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (75, false, 0, 0, 'QXD0107', 4, 'PROGRAMAÇÃO LINEAR', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (77, false, 0, 0, 'QXD0113', 4, 'LINGUA BRASILEIRA DE SINAIS - LIBRAS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (79, false, 0, 0, '1111112', 4, 'PRÁTICAS EM TECNOLOGIA DA INFORMAÇÃO II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (81, false, 0, 0, 'PRG0002', 4, 'RELAÇOES ETNICO-RACIAIS E AFRICANIDADES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (86, false, 0, 0, 'QXD0069', 4, 'SEGURANÇA ES CC', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (88, false, 0, 0, 'QXD0045', 4, 'SOCIOLOGIA SI', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (89, false, 0, 0, 'QXD0077', 4, 'MÉTODOS E FERRAMENTAS DA ENGENHARIA DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (35, false, 0, 0, 'QXD0038', 4, 'INTERFACE HUMANO-COMPUTADOR', 'IHC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (99, false, 0, 0, 'QXD0071', 4, 'ESTIMATIVA DE CUSTOS EM PROJETOS DE SOFTWARE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (102, false, 0, 0, 'QXD0053', 4, 'TOPICOS ESPECIAIS IV SI ES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (103, false, 0, 0, 'QXD0052', 4, 'TOPICOS ESPECIAIS III SI ES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (104, false, 0, 0, 'PRG0004', 4, 'EDUCAÇÃO EM DIREITOS HUMANOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (106, false, 0, 0, 'PRG0005', 4, 'DIFERENÇA E ENFRENTAMENTO PROFISSIONAL NAS DESIGUALDADES SOCIAIS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (107, false, 0, 0, 'QXD0170', 4, 'CRIPTOGRAFIA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (112, false, 0, 0, 'QXD0123', 4, 'EDIÇÃO DIGITAL DE IMAGENS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (116, false, 0, 0, 'QXD0127', 4, 'COMUNICAÇÃO VISUAL I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (119, false, 0, 0, 'QXD0130', 4, 'HISTÓRIA DO DESIGN', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (122, false, 0, 0, 'QXD0163', 4, 'COMUNICAÇÃO VISUAL II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (123, false, 0, 0, 'QXD0164', 4, 'LINGUAGENS DE MARCAÇÃO E SCRIPTS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (124, false, 0, 0, 'QXD0166', 4, 'DIREÇÃO DE ARTE', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (128, false, 0, 0, 'QXD0142', 4, 'INTRODUÇÃO À ARQUITETURA DE COMPUTADORES', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (132, false, 0, 0, 'QXD0133', 4, 'ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (133, false, 0, 0, 'QXD0140', 4, 'EQUAÇÕES DIFERENCIAIS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (134, false, 0, 0, 'QXD0148', 4, 'SISTEMAS OPERACIONAIS II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (135, false, 0, 0, 'QXD0150', 4, 'TÉCNICAS DE PROGRAMAÇÃO PARA SISTEMAS EMBARCADOS II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (140, false, 0, 0, 'QXD0137', 4, 'ELETRÔNICA FUNDAMENTAL I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (141, false, 0, 0, 'QXD0144', 4, 'SINAIS E SISTEMAS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (144, false, 0, 0, 'QXD0141', 4, 'INSTRUMENTAÇÃO', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (151, false, 0, 0, 'QXD0152', 4, 'TEORIA DOS GRAFOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (153, false, 0, 0, 'QXD0202', 4, 'ERGONOMIA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (168, false, 0, 0, 'QXD0186', 4, 'CÁLCULO NUMÉRICO', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (169, false, 0, 0, 'QXD0179', 4, 'ESTATÍSTICA MULTIVARIADA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (170, false, 0, 0, 'QXD0180', 4, 'FÍSICA I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (172, false, 0, 0, 'QXD0178', 4, 'MINERAÇÃO DE DADOS', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (173, false, 0, 0, 'QXD0169', 4, 'MODELAGEM E SIMULAÇÃO DISCRETA DE SISTEMA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (174, false, 0, 0, 'QXD0171', 4, 'OTIMIZAÇÃO COMBINATÓRIA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (177, false, 0, 0, 'QXD0184', 4, 'REALIDADE VIRTUAL CC', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (178, false, 0, 0, 'QXD0177', 4, 'RECUPERAÇÃO DE INFORMAÇÃO', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (179, false, 0, 0, 'QXD0167', 4, 'TEORIA DA PROVA', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (180, false, 0, 0, 'QXD0182', 4, 'VISÃO COMPUTACIONAL', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (114, false, 0, 0, 'QXD0125', 4, 'INTRODUÇÃO À PROGRAMAÇÃO PARA DESIGN', 'Introd. Prog. Design');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (211, false, 0, 0, 'QXD0174', 4, 'TOPICOS ESPECIAIS III CC', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (213, false, 48, 16, 'PRG0003', 4, 'EDUCAÇAO AMBIENTAL', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (100, false, 0, 0, 'QXD0050', 4, 'TOPICOS ESPECIAIS I SI', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (214, false, 0, 0, 'QXD0070', 4, 'TRABALHO DE CONCLUSÃO DE CURSO I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (215, false, 0, 0, 'QXD0097', 4, 'TRABALHO DE CONCLUSÃO DE CURSO I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (216, false, 0, 0, 'QXD0098', 4, 'TRABALHO DE CONCLUSÃO DE CURSO II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (218, false, 0, 0, 'QXD0100', 4, 'TRABALHO DE CONCLUSÃO DE CURSO I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (217, false, 0, 0, 'QXD0101', 4, 'TRABALHO DE CONCLUSÃO DE CURSO II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (221, false, 0, 0, 'QXD0111', 4, 'TRABALHO DE CONCLUSÃO DE CURSO I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (222, false, 0, 0, 'QXD0112', 4, 'TRABALHO DE CONCLUSÃO DE CURSO II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (223, false, 0, 0, 'QXD0158', 4, 'TRABALHO DE CONCLUSÃO DE CURSO II', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (224, false, 0, 0, 'QXD0157', 4, 'TRABALHO DE CONCLUSÃO DE CURSO I', NULL);
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (142, false, 0, 0, 'QXD0138', 4, 'ELETRÔNICA FUNDAMENTAL II', 'Eletronica II');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (143, false, 0, 0, 'QXD0151', 4, 'SISTEMAS DE AUTOMAÇÃO E CONTROLE', 'Automacao e Controle');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (145, false, 0, 0, 'QXD0145', 4, 'SISTEMAS DE TEMPO REAL', 'Tempo Real');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (87, false, 0, 0, 'QXD0091', 4, 'SEGURANÇA DA INFORMAÇÃO RC', 'Seguranca Inf RC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (149, false, 0, 0, 'QXD0096', 2, 'PROJETO DE PESQUISA CIENTÍFICA E TECNOLÓGICA RC', 'PPCT RC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (72, false, 0, 0, 'QXD0095', 4, 'PROJETO INTEGRADO EM REDES DE COMPUTADORES', 'Proj. Integrado RC');
+INSERT INTO disciplina (id, arquivada, carga_horaria_pratica, carga_horaria_teorica, codigo, creditos, nome, apelido) VALUES (105, false, 0, 0, 'QXD0154', 4, 'GESTÃO DE PROCESSOS DE NEGÓCIOS', 'Gest. Proc. Negocio');
+
+SELECT pg_catalog.setval('disciplina_id_seq', 226, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (331, 1, false, 1, NULL, 'TARDE', 30, 190, 2, 35, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (1, 0, false, 1, ' ', 'MANHA', 20, 4, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (102, 0, false, 1, ' ', 'NOITE', 1, 9, 1, 40, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (4, 0, false, 1, ' ', 'NOITE', 1, 7, 1, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (3, 0, false, 1, ' ', 'NOITE', 1, 6, 1, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (96, 0, false, 1, ' ', 'MANHA', 1, 76, 1, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (97, 0, false, 1, ' ', 'MANHA', 1, 2, 1, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (98, 0, false, 1, ' ', 'MANHA', 1, 46, 1, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (33, 0, false, 1, ' ', 'TARDE', 1, 2, 1, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (50, 0, false, 1, ' ', 'TARDE', 1, 84, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (104, 0, false, 1, ' ', 'NOITE', 1, 108, 1, 40, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (208, 2, false, 1, ' ', 'TARDE', 35, 18, 2, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (199, 0, false, 1, ' ', 'TARDE', 30, 84, 2, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (217, 0, false, 1, ' Turma de reprovados, pode ser compartilhada com o curso de SI ou CC.', 'NOITE', 15, 7, 2, 10, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (73, 0, false, 1, 'Disciplina = "FUP (Python)"', 'NOITE', 1, 2, 1, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (2, 0, false, 1, ' ', 'MANHA', 25, 46, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (115, 0, false, 1, ' ', 'MANHA', 1, 92, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (116, 0, false, 1, ' ', 'MANHA', 1, 1, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (117, 0, false, 1, ' ', 'MANHA', 1, 2, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (119, 0, false, 1, ' ', 'NOITE', 1, 76, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (118, 0, false, 1, ' ', 'TARDE', 1, 76, 1, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (120, 0, false, 1, ' ', 'NOITE', 1, 6, 1, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (121, 0, false, 1, ' ', 'MANHA', 1, 83, 1, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (122, 0, false, 1, ' ', 'MANHA', 1, 11, 1, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (123, 0, false, 1, ' ', 'MANHA', 1, 15, 1, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (124, 0, false, 1, ' ', 'MANHA', 1, 82, 1, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (125, 0, false, 1, ' ', 'MANHA', 1, 37, 1, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (126, 0, false, 1, ' ', 'MANHA', 1, 23, 1, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (127, 0, false, 1, ' ', 'MANHA', 1, 18, 1, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (128, 0, false, 1, ' ', 'MANHA', 1, 148, 1, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (129, 0, false, 1, ' ', 'MANHA', 1, 19, 1, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (130, 0, false, 1, ' ', 'MANHA', 1, 109, 1, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (131, 0, false, 1, ' ', 'MANHA', 1, 27, 1, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (132, 0, true, 1, ' ', 'MANHA', 1, 213, 1, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (133, 0, false, 1, ' ', 'MANHA', 1, 84, 1, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (134, 0, false, 1, ' ', 'NOITE', 1, 103, 1, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (135, 0, false, 1, ' ', 'MANHA', 1, 154, 1, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (136, 0, false, 1, ' ', 'MANHA', 1, 3, 1, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (137, 0, false, 1, ' ', 'MANHA', 1, 96, 1, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (138, 0, false, 1, ' ', 'MANHA', 1, 12, 1, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (139, 0, false, 1, ' ', 'MANHA', 1, 9, 1, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (140, 0, false, 1, ' ', 'MANHA', 1, 10, 1, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (141, 0, false, 1, ' ', 'MANHA', 1, 11, 1, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (142, 0, false, 1, ' ', 'MANHA', 1, 17, 1, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (143, 0, false, 1, ' ', 'MANHA', 1, 19, 1, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (144, 0, false, 1, ' ', 'MANHA', 1, 18, 1, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (145, 0, false, 1, ' ', 'MANHA', 1, 16, 1, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (146, 0, false, 1, ' ', 'MANHA', 1, 22, 1, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (147, 0, false, 1, ' ', 'MANHA', 1, 25, 1, 7, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (148, 0, false, 1, ' ', 'MANHA', 1, 84, 1, 7, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (149, 0, false, 1, ' ', 'TARDE', 1, 219, 1, 7, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (150, 0, false, 1, ' ', 'TARDE', 1, 45, 1, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (151, 0, false, 1, ' ', 'TARDE', 1, 93, 1, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (152, 0, false, 1, ' ', 'TARDE', 1, 46, 1, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (153, 0, false, 1, ' ', 'TARDE', 1, 27, 1, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (154, 0, false, 1, ' ', 'TARDE', 1, 14, 1, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (155, 0, false, 1, ' ', 'TARDE', 1, 12, 1, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (156, 0, false, 1, ' ', 'TARDE', 1, 9, 1, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (157, 0, false, 1, ' ', 'TARDE', 1, 13, 1, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (158, 0, false, 1, ' ', 'TARDE', 1, 18, 1, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (159, 0, false, 1, ' ', 'TARDE', 1, 51, 1, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (160, 0, false, 1, ' ', 'TARDE', 1, 53, 1, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (161, 0, false, 1, ' ', 'TARDE', 1, 38, 1, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (162, 0, false, 1, ' ', 'TARDE', 1, 50, 1, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (163, 0, false, 1, ' ', 'TARDE', 1, 147, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (164, 0, false, 1, ' ', 'TARDE', 1, 56, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (254, 0, false, 1, ' ', 'TARDE', 50, 76, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (255, 0, false, 1, ' ', 'TARDE', 50, 46, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (257, 0, false, 1, ' ', 'TARDE', 50, 11, 2, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (258, 0, false, 1, ' ', 'NOITE', 55, 154, 2, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (259, 0, false, 1, ' ', 'NOITE', 55, 85, 2, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (260, 0, false, 1, ' ', 'NOITE', 55, 63, 2, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (261, 0, false, 1, ' ', 'NOITE', 55, 62, 2, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (252, 0, false, 1, ' ', 'TARDE', 50, 130, 2, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (297, 0, false, 1, ' ', 'TARDE', 50, 15, 2, 43, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (253, 2, false, 2, ' ', 'TARDE', 50, 2, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (220, 2, false, 1, ' ', 'MANHA', 60, 2, 2, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (348, 1, false, 1, ' ', 'TARDE', 25, 126, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (324, 0, false, 1, ' ', 'TARDE', 50, 111, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (349, 2, false, 1, ' ', 'TARDE', 30, 2, 2, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (225, 0, false, 1, 'Turma de reprovados.', 'MANHA', 30, 5, 2, 2, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (165, 0, false, 1, ' ', 'TARDE', 1, 58, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (166, 0, false, 1, ' ', 'TARDE', 1, 80, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (167, 0, false, 1, ' ', 'MANHA', 1, 59, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (168, 0, false, 1, ' ', 'MANHA', 1, 219, 1, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (169, 0, false, 1, ' ', 'TARDE', 1, 2, 1, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (170, 0, false, 1, ' ', 'TARDE', 1, 46, 1, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (171, 0, false, 1, ' ', 'TARDE', 1, 126, 1, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (205, 0, false, 1, ' 5 vagas solicitadas no curso de SI.', 'TARDE', 55, 12, 2, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (197, 0, false, NULL, ' ', 'TARDE', 50, 11, 1, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (195, 0, false, 1, 'Disciplina = "Tópicos avançados em ED" ', 'MANHA', 1, 209, 1, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (194, 0, false, 1, ' ', 'TARDE', 1, 35, 1, 33, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (193, 0, false, 1, ' ', 'TARDE', 1, 113, 1, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (192, 0, false, 1, ' ', 'TARDE', 1, 2, 1, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (191, 0, false, 1, ' ', 'NOITE', 1, 149, 1, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (190, 0, false, 1, ' ', 'NOITE', 1, 30, 1, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (189, 0, false, 1, ' ', 'NOITE', 1, 69, 1, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (188, 0, false, 1, ' ', 'NOITE', 1, 44, 1, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (187, 0, false, 1, ' ', 'NOITE', 1, 87, 1, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (186, 0, false, 1, ' ', 'NOITE', 1, 10, 1, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (185, 0, false, 1, ' ', 'NOITE', 1, 65, 1, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (184, 0, false, 1, ' ', 'NOITE', 1, 182, 1, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (227, 1, false, 1, ' Turma de reprovados.', 'TARDE', 15, 6, 2, 2, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (283, 0, false, 1, ' ', 'TARDE', 50, 76, 2, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (285, 0, false, 1, ' ', 'MANHA', 20, 12, 2, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (256, 2, false, 1, ' ', 'TARDE', 50, 131, 2, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (203, 0, false, 1, ' ', 'TARDE', 50, 27, 2, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (289, 0, false, 1, ' ', 'MANHA', 45, 11, 2, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (272, 1, false, 1, ' ', 'MANHA', 40, 83, 2, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (183, 0, false, 1, ' ', 'NOITE', 1, 64, 1, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (182, 0, false, 1, ' ', 'NOITE', 1, 62, 1, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (180, 0, false, 1, ' ', 'NOITE', 1, 85, 1, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (292, 0, false, 1, ' ', 'MANHA', 20, 84, 2, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (181, 0, false, 1, ' ', 'NOITE', 1, 63, 1, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (179, 0, false, 1, ' ', 'NOITE', 1, 154, 1, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (178, 0, false, 1, ' ', 'TARDE', 1, 130, 1, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (177, 0, false, 1, ' ', 'TARDE', 1, 165, 1, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (176, 0, false, 1, ' ', 'TARDE', 1, 129, 1, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (175, 0, false, 1, ' ', 'TARDE', 1, 152, 1, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (174, 0, false, 1, ' ', 'TARDE', 1, 76, 1, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (173, 0, false, 1, ' ', 'TARDE', 1, 92, 1, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (172, 0, false, 1, ' ', 'TARDE', 1, 127, 1, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (307, 0, false, 1, ' ', 'TARDE', 40, 10, 2, 45, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (309, 0, false, 1, ' ', 'NOITE', 15, 32, 2, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (270, 2, false, 1, ' ', 'NOITE', 60, 2, 2, 17, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (222, 0, false, 1, ' ', 'MANHA', 60, 46, 2, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (262, 2, false, 1, ' ', 'NOITE', 35, 64, 2, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (230, 1, false, 1, ' ', 'MANHA', 50, 10, 2, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (229, 0, false, 1, ' ', 'MANHA', 45, 12, 2, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (228, 0, false, 1, ' ', 'MANHA', 45, 9, 2, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (350, 0, false, 1, ' ', 'TARDE', 10, 38, 2, 26, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (304, 1, false, 1, ' ', 'TARDE', 30, 142, 2, 45, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (306, 1, false, 1, ' ', 'TARDE', 30, 143, 2, 45, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (274, 1, false, 1, ' ', 'MANHA', 45, 82, 2, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (273, 0, false, 1, ' ', 'MANHA', 40, 15, 2, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (275, 0, false, 1, ' ', 'MANHA', 40, 37, 2, 25, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (293, 0, false, 1, ' ', 'MANHA', 25, 27, 2, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (303, 1, false, 1, ' ', 'TARDE', 30, 40, 2, 45, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (308, 1, false, 1, ' ', 'TARDE', 30, 14, 2, 45, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (351, 1, false, 1, ' ', 'NOITE', 25, 6, 2, 18, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (221, 0, false, 1, ' ', 'MANHA', 60, 76, 2, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (231, 0, false, 1, ' ', 'MANHA', 45, 11, 2, 3, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (214, 1, false, 1, ' Manhã na quinta e sexta. Devido ao estágio.', 'MANHA', 30, 56, 2, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (215, 0, false, 1, '  Manhã na quinta e sexta. Devido ao estágio.', 'MANHA', 30, 80, 2, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (325, 0, false, 1, ' ', 'TARDE', 50, 115, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (200, 0, false, 1, ' ', 'TARDE', 55, 45, 2, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (320, 0, false, 1, ' ', 'TARDE', 50, 35, 2, 33, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (202, 0, false, 1, ' ', 'TARDE', 55, 46, 2, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (207, 1, false, 1, ' ', 'TARDE', 45, 13, 2, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (206, 0, false, 1, ' ', 'TARDE', 45, 9, 2, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (210, 0, false, 1, ' ', 'TARDE', 40, 53, 2, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (209, 0, false, 1, ' ', 'TARDE', 40, 51, 2, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (212, 0, false, 1, ' ', 'TARDE', 40, 50, 2, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (216, 0, false, 1, ' ', 'MANHA', 30, 219, 2, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (213, 1, false, 1, ' ', 'TARDE', 30, 147, 2, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (328, 0, false, 1, ' ', 'TARDE', 50, 160, 2, 33, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (201, 0, false, 1, ' ', 'TARDE', 55, 93, 2, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (290, 1, false, 1, ' ', 'MANHA', 35, 19, 2, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (238, 0, false, 1, ' ', 'MANHA', 25, 84, 2, 7, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (291, 2, false, 1, ' ', 'MANHA', 35, 18, 2, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (223, 0, false, 1, ' Disciplina nova, equivalente a ICCSI.', 'MANHA', 60, 225, 2, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (224, 0, false, 1, ' Disciplina nova, equivalente a TGA.', 'MANHA', 60, 226, 2, 1, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (276, 1, false, 1, ' ', 'MANHA', 35, 23, 2, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (277, 0, false, 1, ' ', 'MANHA', 35, 148, 2, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (278, 2, false, 1, ' ', 'MANHA', 35, 109, 2, 27, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (239, 0, false, 1, ' ', 'MANHA', 30, 185, 2, 7, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (279, 2, false, 2, ' ', 'MANHA', 50, 2, 2, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (280, 0, false, 1, ' ', 'MANHA', 50, 4, 2, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (281, 0, false, 1, ' ', 'MANHA', 50, 46, 2, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (282, 0, false, 1, ' ', 'MANHA', 50, 92, 2, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (286, 1, false, 1, ' ', 'MANHA', 15, 9, 2, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (287, 0, false, 1, ' ', 'MANHA', 25, 5, 2, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (329, 0, true, 2, ' ', 'TARDE', 50, 201, 2, 33, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (330, 0, false, 1, ' ', 'TARDE', 50, 121, 2, 33, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (333, 0, false, 1, 'A professora Diana pediu para a aula não ser na sexta pois ela irá participar de um grupo de pesquisa em Fortaleza. ', 'TARDE', 40, 192, 2, 35, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (335, 0, false, 1, 'O professor pediu para as aulas não serem nem na terça nem na quinta, devido à sua participação na justiça. ', 'TARDE', 40, 125, 2, 35, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (336, 0, false, 1, ' ', 'TARDE', 40, 193, 2, 35, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (337, 0, false, 1, 'Coloquei essa disciplina apenas para ficar registrado na demanda, mas na verdade ela ainda está sendo regulamentada na PROGRAD. A disciplina de DD é Projeto Técnico-Científico em Design Digital ', 'TARDE', 30, 84, 2, 37, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (338, 0, false, 1, ' ', 'TARDE', 40, 189, 2, 37, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (204, 0, false, 1, ' ', 'TARDE', 50, 14, 2, 11, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (234, 1, false, 1, ' ', 'MANHA', 45, 19, 2, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (235, 2, false, 1, ' ', 'MANHA', 35, 18, 2, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (237, 0, false, 1, ' ', 'MANHA', 35, 17, 2, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (236, 1, false, 1, ' ', 'MANHA', 35, 16, 2, 5, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (242, 0, false, 1, ' ', 'MANHA', 24, 39, 2, 7, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (294, 0, false, 1, ' ', 'MANHA', 5, 108, 2, 26, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (271, 0, false, 1, ' ', 'MANHA', 50, 1, 2, 23, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (288, 0, false, 1, ' Empilhada com Lógica ou a noite', 'MANHA', 25, 7, 2, 24, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (321, 1, false, 1, 'O ideal seria fazer como foi em 2017.1:
+- uma aula teórica com os 50 alunos (à tarde)
+- uma aula prática com a turma dividida (caso necessário pode colocar de manhã)', 'TARDE', 50, 113, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (339, 0, false, 1, ' ', 'TARDE', 40, 188, 2, 37, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (342, 0, false, 1, ' ', 'MANHA', 30, 219, 2, 37, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (343, 2, false, 1, 'Duas turmas com o mesmo professor.
+
+Turma A', 'TARDE', 30, 114, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (326, 2, false, 1, 'Duas turmas com o mesmo professor.
+
+Turma B.', 'TARDE', 30, 114, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (332, 1, false, 1, 'Turma para repetentes.
+Pode ser de manhã ou à noite ', 'NOITE', 30, 118, 2, 32, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (327, 2, false, 1, 'O ideal seria realmente as duas aulas no laboratório.', 'TARDE', 40, 120, 2, 33, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (334, 1, false, 1, ' ', 'TARDE', 40, 203, 2, 35, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (341, 1, false, 1, ' ', 'TARDE', 30, 161, 2, 37, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (344, 1, false, 1, ' ', 'TARDE', 30, 184, 2, 37, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (345, 0, false, 1, ' ', 'NOITE', 10, 72, 2, 22, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (299, 0, false, 1, ' ', 'TARDE', 30, 137, 2, 43, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (317, 1, false, 1, 'Desafios de Programação 2 . Evitar conflito com APRENDIZADO DE MÁQUINA e PESQUISA OPERACIONAL Não seria o ideal, mas caso precise poderia ser a noite. Compartilhada com o 5o semestre.', 'TARDE', 15, 209, 2, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (247, 1, false, 2, ' ', 'TARDE', 50, 126, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (323, 0, false, 1, 'Duas turmas com a mesma professora.
+(as duas aulas são na sala de desenho)
+
+Turma B.', 'TARDE', 30, 110, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (250, 1, false, 1, ' ', 'TARDE', 50, 129, 2, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (305, 1, false, 1, ' ', 'TARDE', 30, 145, 2, 45, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (248, 0, false, 1, 'Se possível, alocar no início da semana.', 'TARDE', 55, 127, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (302, 1, false, 1, ' ', 'TARDE', 40, 139, 2, 43, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (315, 0, false, 1, 'Evitar conflito com APRENDIZADO DE MÁQUINA e TÓPICOS ESPECIAIS I', 'MANHA', 15, 175, 2, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (322, 0, false, 1, 'Duas turmas com a mesma professora
+(as duas aulas são na sala de desenho)
+
+Turma A', 'TARDE', 30, 110, 2, 31, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (300, 0, false, 1, ' ', 'TARDE', 30, 138, 2, 43, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (301, 1, false, 1, ' ', 'MANHA', 30, 199, 2, 43, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (249, 0, false, 1, ' ', 'TARDE', 50, 92, 2, 39, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (298, 1, false, 1, ' ', 'TARDE', 30, 136, 2, 43, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (198, 2, false, 1, ' São 2 disciplinas, cada uma com 30 alunos.', 'TARDE', 30, 2, 2, 9, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (318, 1, false, 1, ' ', 'NOITE', 30, 48, 2, 12, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (211, 1, false, 1, ' ', 'TARDE', 45, 38, 2, 13, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (264, 1, false, 1, ' ', 'NOITE', 45, 65, 2, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (268, 1, false, 1, ' Lab de Redes', 'NOITE', 35, 30, 2, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (263, 2, false, 1, ' ', 'NOITE', 35, 182, 2, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (295, 1, false, 1, ' ', 'NOITE', 45, 10, 2, 19, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (265, 1, false, 1, ' ', 'NOITE', 35, 87, 2, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (266, 0, false, 1, ' ', 'NOITE', 35, 44, 2, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (267, 1, false, 1, ' ', 'NOITE', 35, 69, 2, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (269, 0, false, 1, ' ', 'NOITE', 35, 149, 2, 21, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (296, 0, false, 1, ' ', 'TARDE', 30, 97, 2, 15, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (251, 0, false, 1, ' ', 'TARDE', 50, 165, 2, 41, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (314, 0, false, 2, ' O tema será lógica aplicada. Conteúdo programático será dividido entre os professores. Desejável uso eventual do laboratório. ', 'MANHA', 15, 212, 2, 29, false);
+INSERT INTO oferta (id, aulas_em_laboratorio, mesmo_dia, numero_professores, observacao, turno, vagas, disciplina_id, periodo_id, turma_id, horario_inicio) VALUES (316, 1, false, 1, 'Evitar conflito com PESQUISA OPERACIONAL e TÓPICOS ESPECIAIS I', 'MANHA', 15, 166, 2, 29, false);
+
+SELECT pg_catalog.setval('oferta_id_seq', 351, true);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (96, 16);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (209, 63);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (212, 63);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (98, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (135, 24);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (150, 10);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (136, 15);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (151, 28);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (137, 5);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (33, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (33, 56);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (138, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (139, 19);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (152, 23);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (140, 56);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (141, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (212, 67);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (142, 10);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (153, 24);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (143, 52);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (154, 51);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (144, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (155, 44);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (145, 58);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (156, 19);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (146, 9);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (147, 28);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (157, 30);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (148, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (149, 48);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (158, 13);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (159, 14);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (160, 35);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (97, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (97, 14);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (161, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (162, 3);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (163, 6);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (164, 15);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (165, 3);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (167, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (50, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (166, 35);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (73, 38);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (73, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (179, 8);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (180, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (168, 13);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (181, 53);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (182, 31);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (183, 32);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (184, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (185, 6);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (186, 58);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (1, 16);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (2, 39);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (187, 31);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (115, 53);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (188, 32);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (116, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (189, 11);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (190, 46);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (117, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (117, 56);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (191, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (119, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (118, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (4, 39);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (3, 30);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (120, 30);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (121, 22);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (122, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (123, 51);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (124, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (125, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (126, 51);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (127, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (192, 29);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (193, 53);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (128, 22);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (194, 5);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (129, 11);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (130, 38);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (195, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (131, 8);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (132, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (133, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (134, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (169, 29);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (169, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (170, 23);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (171, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (171, 44);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (172, 16);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (173, 24);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (174, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (102, 22);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (104, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (175, 52);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (176, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (177, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (178, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (197, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (288, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (288, 39);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (288, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (288, 68);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (289, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (289, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (289, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (289, 65);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (294, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (294, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (294, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (290, 11);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (290, 31);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (290, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (291, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (291, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (277, 22);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (277, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (298, 65);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (248, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (248, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (302, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (203, 26);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (203, 69);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (318, 64);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (222, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (221, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (318, 35);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (318, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (214, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (215, 35);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (283, 52);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (231, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (283, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (283, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (283, 23);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (238, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (283, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (285, 27);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (224, 24);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (322, 57);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (323, 57);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (225, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (239, 9);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (200, 10);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (202, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (234, 27);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (235, 13);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (235, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (237, 10);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (237, 63);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (236, 41);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (230, 58);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (229, 27);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (228, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (242, 67);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (242, 3);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (242, 63);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (227, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (227, 58);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (227, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (317, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (304, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (304, 44);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (306, 65);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (303, 31);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (303, 46);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (308, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (351, 30);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (213, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (220, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (201, 24);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (201, 26);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (201, 69);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (217, 39);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (204, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (205, 16);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (205, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (207, 48);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (207, 64);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (207, 67);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (206, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (206, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (206, 62);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (254, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (255, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (257, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (258, 26);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (259, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (260, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (261, 31);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (280, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (282, 69);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (272, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (274, 27);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (274, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (273, 62);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (273, 66);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (275, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (275, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (276, 27);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (247, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (278, 38);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (292, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (292, 41);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (293, 26);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (247, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (271, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (247, 44);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (348, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (348, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (348, 44);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (295, 41);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (295, 58);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (295, 60);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (265, 31);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (266, 6);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (266, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (267, 11);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (269, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (210, 35);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (208, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (208, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (199, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (199, 41);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (216, 13);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (216, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (216, 65);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (296, 63);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (249, 69);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (256, 52);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (256, 29);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (250, 4);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (281, 23);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (281, 39);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (281, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (281, 47);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (250, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (305, 52);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (305, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (279, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (279, 19);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (279, 30);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (279, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (279, 38);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (286, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (286, 19);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (286, 22);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (287, 20);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (287, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (251, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (252, 61);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (297, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (297, 66);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (198, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (307, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (307, 41);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (198, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (198, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (198, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (349, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (309, 42);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (349, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (349, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (349, 50);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (211, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (211, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (350, 12);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (350, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (350, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (350, 43);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (325, 42);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (329, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (329, 54);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (315, 17);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (315, 34);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (335, 49);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (336, 24);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (336, 26);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (336, 69);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (337, 40);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (314, 62);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (339, 49);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (314, 66);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (314, 2);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (342, 64);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (316, 36);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (321, 59);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (321, 15);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (321, 54);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (343, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (343, 48);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (326, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (326, 48);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (332, 60);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (324, 59);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (324, 57);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (327, 59);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (328, 5);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (328, 42);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (320, 5);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (320, 9);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (320, 63);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (330, 42);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (330, 54);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (331, 60);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (333, 49);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (333, 54);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (333, 57);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (334, 64);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (338, 49);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (338, 54);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (341, 38);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (344, 59);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (344, 54);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (270, 38);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (262, 70);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (264, 6);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (264, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (263, 27);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (268, 70);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (345, 33);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (223, 7);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (299, 45);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (300, 67);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (301, 44);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (253, 67);
+INSERT INTO professor_oferta (oferta_id, professor_id) VALUES (253, 52);
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (1, 1, 134, 27, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (2, 1, 138, 24, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (3, 1, 140, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (4, 1, 142, 28, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (5, 1, 145, 29, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (6, 1, 149, 29, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (7, 1, 154, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (8, 1, 155, 24, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (9, 1, 156, 24, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (10, 1, 157, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (11, 1, 159, 27, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (12, 1, 160, 27, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (13, 1, 161, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (14, 1, 166, 29, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (15, 1, 102, 24, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (16, 1, 104, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (17, 1, 188, 27, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (18, 1, 188, 29, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (19, 1, 194, 28, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (20, 1, 119, 9, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (21, 1, 4, 10, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (22, 1, 3, 10, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (23, 1, 120, 10, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (24, 1, 132, 13, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (25, 1, 137, 13, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (26, 1, 146, 13, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (27, 1, 119, 1, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (28, 1, 4, 2, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (29, 1, 120, 2, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (30, 1, 102, 2, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (31, 1, 123, 4, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (32, 1, 125, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (33, 1, 131, 7, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (34, 1, 137, 7, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (35, 1, 153, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (36, 1, 154, 4, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (37, 1, 157, 4, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (38, 1, 159, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (39, 1, 161, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (40, 1, 161, 7, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (41, 1, 167, 7, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (42, 1, 188, 7, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (43, 1, 190, 6, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (44, 1, 194, 3, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (45, 1, 3, 18, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (46, 1, 120, 18, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (47, 1, 155, 18, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (48, 1, 123, 42, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (49, 1, 125, 42, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (50, 1, 129, 42, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (51, 1, 132, 42, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (52, 1, 139, 40, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (53, 1, 131, 33, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (54, 1, 132, 33, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (55, 1, 142, 33, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (56, 10, 213, 8, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (57, 5, 203, 6, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (59, 5, 209, 4, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (60, 5, 257, 18, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (63, 15, 254, 1, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (64, 10, 268, 6, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (65, 5, 266, 7, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (67, 5, 237, 28, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (68, 5, 230, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (69, 5, 204, 26, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (71, 10, 252, 18, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (72, 10, 290, 18, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (73, 20, 293, 6, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (74, 15, 286, 3, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (75, 5, 275, 6, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (76, 5, 208, 22, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (77, 5, 273, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (78, 20, 288, 2, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (79, 5, 230, 12, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (80, 5, 228, 11, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (81, 5, 229, 11, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (83, 5, 227, 24, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (85, 15, 294, 40, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (86, 10, 275, 44, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (89, 15, 227, 10, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (90, 10, 280, 2, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (91, 15, 309, 3, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (93, 5, 215, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (98, 5, 281, 33, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (102, 10, 309, 33, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (99, 5, 230, 33, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (101, 10, 293, 35, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (100, 5, 237, 35, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (103, 10, 239, 35, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (106, 10, 296, 37, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (82, 10, 274, 13, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (108, 5, 350, 5, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (96, 5, 213, 29, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (95, 10, 215, 29, FALSE);
+INSERT INTO compartilhamento (id, vagas, oferta_id, turma_id, disjunto) VALUES (109, 5, 350, 45, FALSE);

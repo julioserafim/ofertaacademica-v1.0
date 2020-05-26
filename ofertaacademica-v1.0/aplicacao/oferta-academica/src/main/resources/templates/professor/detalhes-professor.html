@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	th:with="professorActive='active'">
+
+<head>
+<title>Detalhes do Professor | Alocação Professores</title>
+</head>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Informações do(a) professor(a)</h3>
+					<div class="row">
+						<div class="col-md-3">
+							<label class="font-weight-bold">Nome</label>
+							<p th:text="${professor.nome}"></p>
+						</div>
+						<div class="col-md-3">
+							<label class="font-weight-bold">Apelido</label>
+							<p th:text="${professor.apelido}"></p>
+						</div>
+						<div class="col-md-3">
+							<label class="font-weight-bold">Email</label>
+							<p th:text="${professor.email}"></p>
+						</div>
+						<div class="col-md-3">
+							<label class="font-weight-bold">CPF</label>
+							<p th:text="${professor.cpf}"></p>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<label class="font-weight-bold">Relacionamento</label>
+							<p th:if="${professor.relacionamento}"
+								th:text="${professor.relacionamento.nome}"></p>
+							<p th:unless="${professor.relacionamento}">Nenhum</p>
+						</div>
+						<div class="col-md-3">
+							<label class="font-weight-bold">CH mínima</label>
+							<p th:text="${professor.cargaHorariaMinima}"></p>
+						</div>
+						<div class="col-md-3">
+							<label class="font-weight-bold">CH máxima</label>
+							<p th:text="${professor.cargaHorariaMaxima}"></p>
+						</div>
+						<div class="col-md-3">
+							<label class="font-weight-bold">Status</label>
+							<p th:if="${professor.ativo}"><span class="badge badge-success">ativo</span></p>
+							<p class="text-center" th:unless="${professor.ativo}"><span class="badge badge-danger">inativo</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Horários bloqueados</h3>
+					<h6 class="card-subtitle">
+						Nos horários indicados, este(a) professor(a) não pode ser alocado(a) em disciplinas ou reuniões
+					</h6>
+
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th class="text-center">Segunda</th>
+								<th class="text-center">Terça</th>
+								<th class="text-center">Quarta</th>
+								<th class="text-center">Quinta</th>
+								<th class="text-center">Sexta</th>
+							</tr>
+						</thead>
+						<tbody class="text-center">
+							<tr>
+								<td>Manhã AB</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEGUNDA','MANHAAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEGUNDA/MANHAAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i></a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('TERCA','MANHAAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/TERCA/MANHAAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i></a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUARTA','MANHAAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUARTA/MANHAAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUINTA','MANHAAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUINTA/MANHAAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEXTA','MANHAAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEXTA/MANHAAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Manhã CD</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEGUNDA','MANHACD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEGUNDA/MANHACD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('TERCA','MANHACD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/TERCA/MANHACD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUARTA','MANHACD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUARTA/MANHACD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUINTA','MANHACD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUINTA/MANHACD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEXTA','MANHACD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEXTA/MANHACD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Tarde AB</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEGUNDA','TARDEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEGUNDA/TARDEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('TERCA','TARDEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/TERCA/TARDEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUARTA','TARDEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUARTA/TARDEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUINTA','TARDEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUINTA/TARDEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEXTA','TARDEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEXTA/TARDEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Tarde CD</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEGUNDA','TARDECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEGUNDA/TARDECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('TERCA','TARDECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/TERCA/TARDECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUARTA','TARDECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUARTA/TARDECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUINTA','TARDECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUINTA/TARDECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEXTA','TARDECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEXTA/TARDECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Noite AB</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEGUNDA','NOITEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEGUNDA/NOITEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('TERCA', 'NOITEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/TERCA/NOITEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUARTA','NOITEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUARTA/NOITEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUINTA','NOITEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUINTA/NOITEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEXTA','NOITEAB')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEXTA/NOITEAB(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Noite CD</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEGUNDA','NOITECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEGUNDA/NOITECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('TERCA', 'NOITECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/TERCA/NOITECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUARTA','NOITECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUARTA/NOITECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('QUINTA','NOITECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/QUINTA/NOITECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+										data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+								<td>
+									<a th:if="${professor.contemHorarioBloqueado('SEXTA','NOITECD')}"
+										th:href="@{/professores/excluir-horario-bloqueado/{id}/SEXTA/NOITECD(id=${professor.id})}"
+										class="btn btn-info btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao btn-excluir-horario"
+							data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+							<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h4 class="card-title">Adicionar horário bloqueado</h4>
+		
+					<form id="horarioBloqueadoForm" th:action="@{/professores/cadastrar-horario-bloqueado}" method="POST" th:object="${horarioBloqueado}">
+						<input type="hidden" th:name="professor" th:value="${professor.id}" />
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label>* Dia da semana</label>
+								<select class="form-control" th:field="*{dia}" required="required">
+									<option value="">Selecione...</option>
+									<option th:value="SEGUNDA">Segunda</option>
+									<option th:value="TERCA">Terça</option>
+									<option th:value="QUARTA">Quarta</option>
+									<option th:value="QUINTA">Quinta</option>
+									<option th:value="SEXTA">Sexta</option>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<label>* Horário</label>
+								<select class="form-control" th:field="*{horario}" required="required">
+									<option value="">Selecione...</option>
+									<option th:value="MANHAAB">Manhã AB</option>
+									<option th:value="MANHACD">Manhã CD</option>
+									<option th:value="TARDEAB">Tarde AB</option>
+									<option th:value="TARDECD">Tarde CD</option>
+									<option th:value="NOITEAB">Noite AB</option>
+									<option th:value="NOITECD">Noite CD</option>
+								</select>
+							</div>
+						</div>
+						<button type="submit" name="action" class="btn btn-success pull-right waves-effect waves-light">
+						Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Preferências de disciplinas</h3>
+					<div th:if="${not professor.preferencias.isEmpty()}" class="table-responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Disciplina</th>
+									<th>Nível de Preferência</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="preferencia : ${professor.preferencias}">
+									<td th:text="${preferencia.disciplina.nome}"></td>
+									<td th:text="${preferencia.nivel}"></td>
+									<td>
+									<a th:href="@{/professores/detalhes-professor/{id}/excluir/{idp}(id=${preferencia.disciplina.id},idp=${professor.id})}"
+										class="btn btn-outline-danger btn-circle waves-effect waves-light sa-warning sa-btn-excluir confirmacao"
+										data-toggle="modal" title="Excluir" data-target="#responsive-modal">
+										<i class="fa fa-trash"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div th:if="${professor.preferencias.isEmpty()}" class="col-md-12">
+						<div class="alert alert-warning">
+							Não foram cadastradas preferências de disciplinas para este(a) professor(a)
+						</div>
+					</div>
+					<h4 class="card-title">Adicionar preferência</h4>
+
+					<form id="preferenciaForm" th:action="@{/professores/detalhes-professor/{id}/cadastrar(id=${professor.id})}"
+							th:object="${preferencia}" method="POST">
+						<input type="hidden" th:field="*{professor}" />
+						<div class="row">
+							<div class="col-md-8">
+								<div class="form-group">
+									<label for="disciplina">* Disciplina</label>
+									<select id="disciplina" th:field="*{disciplina}" class="select2 form-control" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="disciplina : ${disciplinas}" th:value="${disciplina.id}" th:text="${disciplina.nome}"></option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="nivel">* Nível</label>
+									<select id="nivel" th:field="*{nivel}"
+										class="form-control" required="required">
+										<option value="">Selecione...</option>
+										<option th:each="nivel : ${niveis}" th:text="${nivel.descricao}" th:value="${nivel}"></option>
+									</select>
+								</div>
+							</div>
+							</div>
+						<button type="submit" name="action" class="btn btn-success pull-right waves-effect waves-light">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<!-- JS Horário Bloqueado -->
+	<script th:src="@{/js/professor/excluir_objeto.js}"></script>
+	<!-- Select2 Tradução Português Brasileiro -->
+	<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+
+	<script type="text/javascript">
+        $(".select2").select2({
+            "language" : "pt-BR"
+        });
+		$(".btn-excluir-horario").mouseover(function(){
+			$(this).removeClass("btn-info").addClass("btn-outline-danger");
+			$("i", this).removeClass("fa-times").addClass("fa-trash");
+		}).mouseout(function() {
+			$(this).removeClass("btn-outline-danger").addClass("btn-info");
+			$("i", this).removeClass("fa-trash").addClass("fa-times");
+		});
+
+        // Validação do formulário
+        $(document).ready(function() {
+            $("#horarioBloqueadoForm").bootstrapValidator({
+                row : {
+                    valid : 'has-success',
+                    invalid : 'error'
+                }
+            });
+        });
+
+        // Validação do formulário
+        $(document).ready(function() {
+            $("#preferenciaForm").bootstrapValidator({
+                row : {
+                    valid : 'has-success',
+                    invalid : 'error'
+                }
+            });
+        });
+	</script>
+</section>
+</html>

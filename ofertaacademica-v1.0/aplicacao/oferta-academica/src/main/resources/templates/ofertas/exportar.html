@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base" th:with="ofertaCursoActive='active'">
+
+<head>
+<title>Exportar | Alocação Professores</title>
+</head>
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Exportar</h3>
+					<div class="row">
+						<div class="col-12">
+							<ul class="nav nav-tabs customtab" role="tablist">
+								<li role="presentation" class="nav-item m-l-10 m-r-10"><a
+									class="nav-link active show" href="#tab-ofertas" role="tab"
+									data-toggle="tab"> <span>Ofertas</span> <span
+										class="label label-success m-l-10"></span>
+								</a></li>
+								<li role="presentation" class="nav-item m-l-10 m-r-10"><a
+									class="nav-link" href="#tab-empilhamentos" role="tab"
+									data-toggle="tab"><span>Empilhamentos</span> <span
+										class="label label-success m-l-10"></span> </a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="tab-pane active table-responsive" id="tab-ofertas">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>ofertada_por</th>
+										<th>nome</th>
+										<th>tipo_slot</th>
+										<th>compartilha1</th>
+										<th>disjunto1</th>
+										<th>compartilha2</th>
+										<th>disjunto2</th>
+										<th>compartilha3</th>
+										<th>disjunto3</th>
+										<th>num_aula_lab</th>
+										<th>num_profs</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="oferta : ${ofertas}">
+										<th th:inline="text"><a
+											th:href="@{/ofertas/{id}/editar(id=${oferta.id})}"
+											class="label label-info"><i class="fa fa-pencil"></i>
+												[[${oferta.turma.curso.sigla}]]-[[${oferta.turma.semestre.numero}]]</a></th>
+										<th th:if="${oferta.disciplina.apelido ==  null}"
+											th:inline="text"><a
+											th:href="@{/disciplinas/{id}/editar(id=${oferta.disciplina.id})}"
+											class="label label-danger"><i class="fa fa-pencil"></i>
+												[[${oferta.disciplina.nome}]]</a></th>
+										<th th:unless="${oferta.disciplina.apelido ==  null}"
+											th:inline="text"><a
+											th:href="@{/disciplinas/{id}/editar(id=${oferta.disciplina.id})}"
+											class="label label-info"><i class="fa fa-pencil"></i>
+												[[${oferta.disciplina.apelido}]]</a></th>
+										<th th:inline="text">[[${oferta.slot}]]</th>
+										<th th:inline="text">[[${oferta.getCompartilhamentoIndice(0)}]]</th>
+										<th th:text="${oferta.getCompartilhamentoIndice(0)} ? 'TRUE' : 'FALSE'"></th>
+										<th th:inline="text">[[${oferta.getCompartilhamentoIndice(1)}]]</th>
+										<th th:inline="text">[[${oferta.getCompartilhamentoIndice(1)} ? 'TRUE' : 'FALSE' ]]</th>
+										<th th:inline="text">[[${oferta.getCompartilhamentoIndice(2)}]]</th>
+										<th th:inline="text">[[${oferta.getCompartilhamentoIndice(2)} ? 'TRUE' : 'FALSE' ]]</th>
+										<th th:inline="text">[[${oferta.aulasEmLaboratorio}]]</th>
+										<th th:inline="text">[[${oferta.numeroProfessores}]]</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-pane fade" id="tab-empilhamentos">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Primeira Turma</th>
+										<th>Primeira Disciplina</th>
+										<th>Segunda Turma</th>
+										<th>Segunda Disciplina</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="empilhamento : ${empilhamentos}">
+										<td th:inline="text">[[${empilhamento.primeiraOferta.turma.curso.sigla}]]-[[${empilhamento.primeiraOferta.turma.semestre.numero}]]</td>
+										<td
+											th:if="${empilhamento.primeiraOferta.disciplina.apelido ==  null}"
+											th:inline="text"><a
+											th:href="@{/disciplinas/{id}/editar(id=${empilhamento.primeiraOferta.disciplina.id})}"
+											class="label label-danger"><i class="fa fa-pencil"></i>
+												[[${empilhamento.primeiraOferta.disciplina.nome}]]</a></td>
+										<td
+											th:unless="${empilhamento.primeiraOferta.disciplina.apelido ==  null}"
+											th:inline="text"><a
+											th:href="@{/disciplinas/{id}/editar(id=${empilhamento.primeiraOferta.disciplina.id})}"
+											class="label label-info"><i class="fa fa-pencil"></i>
+												[[${empilhamento.primeiraOferta.disciplina.apelido}]]</a></td>
+										<td th:inline="text">[[${empilhamento.segundaOferta.turma.curso.sigla}]]-[[${empilhamento.segundaOferta.turma.semestre.numero}]]</td>
+										<td th:if="${empilhamento.segundaOferta.disciplina.apelido ==  null}"
+											th:inline="text"><a
+											th:href="@{/disciplinas/{id}/editar(id=${empilhamento.segundaOferta.disciplina.id})}"
+											class="label label-danger"><i class="fa fa-pencil"></i>
+												[[${empilhamento.segundaOferta.disciplina.nome}]]</a></td>
+										<td
+											th:unless="${empilhamento.segundaOferta.disciplina.apelido ==  null}"
+											th:inline="text"><a
+											th:href="@{/disciplinas/{id}/editar(id=${empilhamento.segundaOferta.disciplina.id})}"
+											class="label label-info"><i class="fa fa-pencil"></i>
+												[[${empilhamento.segundaOferta.disciplina.apelido}]]</a></td>
+
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function (){
+		    var table =  $('table').DataTable( {
+				"iDisplayLength": 200,
+		        "language": {
+		            "emptyTable":     "Nenhum registro encontrado",
+		            "info":           "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+		            "infoEmpty":      "Mostrando 0 até 0 de 0 registros",
+		            "infoFiltered":   "(Filtrados de _MAX_ registros)",
+		            "infoPostFix":    "",
+		            "thousands":      ".",
+		            "lengthMenu":     "Mostrar _MENU_ resultados por página",
+		            "loadingRecords": "Carregando...",
+		            "processing":     "Processando...",
+		            "search":         "Search:",
+		            "zeroRecords":    "Nenhum registro encontrado",
+		            "paginate": {
+		                "first":      "Primeiro",
+		                "last":       "Último",
+		                "next":       "Próximo",
+		                "previous":   "Anterior"
+		            },
+		            "aria": {
+		                "sortAscending":  ": Ordenar colunas de forma crescente",
+		                "sortDescending": ": Ordenar colunas de forma descrescente"
+		            }
+		        },
+	            dom: 'Bfrtip',
+	            buttons: [
+	                'csv'
+	            ]
+	        } );
+
+		});
+		</script>
+</section>
+</html>

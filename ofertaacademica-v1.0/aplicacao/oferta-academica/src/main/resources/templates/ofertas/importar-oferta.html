@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorator="base/base"
+  	th:with="ofertaCursoActive='active'">
+
+<head>
+<title>Importar Oferta | Alocação Professores</title>
+
+<link th:href="@{/plugins/sweetalert/sweetalert.css}" rel="stylesheet" type="text/css"></link>
+<link th:href="@{/css/alocacao_professores.css}" rel="stylesheet" type="text/css"></link>
+
+<meta name="ctx" th:content="${#httpServletRequest.getRequestURL()}"></meta>
+</head>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<form id="formImportarOfertas" th:action="@{/ofertas/importar}" method="POST">
+						<input type="hidden" name="periodo" th:value="${periodo?.id}"/>
+						<div class="row">
+							<div class="col-12">
+								<h3 class="card-title">Importar Ofertas</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3">
+								<select id="select-periodo" class="form-control">
+									<option th:value="0">Selecione o período...</option>
+									<option th:each="p : ${periodos}" th:text="${p.ano} +'.' + ${p.semestre.numero}"
+											th:selected="${p.id == periodo?.id}" th:value="${p.id}"></option>
+								</select>
+							</div>
+							<div class="col-9">
+								<button th:if="${periodoAtual.isCoordenacao() or periodoAtual.isAjuste()}" type="submit"
+								   sec:authorize="hasAnyAuthority('COORDENACAO')"
+								   class="btn btn-success pull-right hidden-xs hidden-sm waves-effect waves-light">
+									<i class="fa fa-history" aria-hidden="true"></i> Importar ofertas selecionadas
+								</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<ul class="nav nav-tabs customtab" role="tablist">
+									<li role="presentation" class="nav-item m-l-10 m-r-10">
+										<a class="nav-link active show" href="#nav-ofertas"
+										   aria-controls="nav-ofertas"  role="tab" data-toggle="tab">
+											<span>Ofertas a importar</span>
+											<span class="label label-danger m-l-10" th:text="${ofertas.size()}"></span>
+										</a>
+									</li>
+									<!--<li role="presentation" class="nav-item m-l-10 m-r-10">
+										<a class="nav-link" href="#nav-compartilhamentos"
+										   aria-controls="nav-compartilhamentos"  role="tab" data-toggle="tab">
+											<span>Compartilhamentos a importar</span>
+											<span class="label label-danger m-l-10" th:text="${compartilhamentos.size()}"></span>
+										</a>
+									</li>-->
+									<li role="presentation" class="nav-item m-l-10 m-r-10">
+										<a class="nav-link" href="#nav-ofertas-importadas"
+										   aria-controls="nav-ofertas-importadas"  role="tab" data-toggle="tab">
+											<span>Ofertas importadas</span>
+											<span class="label label-success m-l-10" th:text="${ofertasImportadas.size()}"></span>
+										</a>
+									</li>
+									<!--<li role="presentation" class="nav-item m-l-10 m-r-10">
+										<a class="nav-link" href="#nav-compartilhamentos-importados"
+										   aria-controls="nav-compartilhamentos-importados"  role="tab" data-toggle="tab">
+											<span>Compartilhamentos importados</span>
+											<span class="label label-success m-l-10" th:text="${compartilhamentosImportados.size()}"></span>
+										</a>
+									</li>-->
+								</ul>
+
+								<!-- Tab Content -->
+
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="nav-ofertas">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th></th>
+													<th>Nome</th>
+													<th>Turma</th>
+													<th>Turno</th>
+													<th>Vagas</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="oferta : ${ofertas}">
+													<td class="text-center"><input type="checkbox" name="ofertas" th:value="${oferta.id}"/></td>
+													<td th:text="${oferta.disciplina.nome}"></td>
+													<td th:text="'__${oferta.turma.curso.sigla}__-__${oferta.turma.semestre.descricao}__'"></td>
+													<td th:text="${oferta.turno.descricao}"></td>
+													<td th:text="${oferta.vagas}"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--<div role="tabpanel" class="tab-pane" id="nav-compartilhamentos">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>Selecione</th>
+													<th>Nome</th>
+													<th>Turma</th>
+													<th>Turno</th>
+													<th>Vagas</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="compartilhamento : ${compartilhamentos}">
+													<td><input type="checkbox" name="compartilhamentos" th:value="${compartilhamento.id}"/></td>
+													<td th:text="${compartilhamento.oferta.disciplina.nome}"></td>
+													<td th:text="'__${compartilhamento.turma.curso.sigla}__-__${compartilhamento.turma.semestre.descricao}__'"></td>
+													<td th:text="${compartilhamento.oferta.turno.descricao}"></td>
+													<td th:text="${compartilhamento.vagas}"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>-->
+									<div role="tabpanel" class="tab-pane" id="nav-ofertas-importadas">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>Nome</th>
+													<th>Turma</th>
+													<th>Turno</th>
+													<th>Vagas</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="oferta : ${ofertasImportadas}">
+													<td th:text="${oferta.disciplina.nome}"></td>
+													<td th:text="'__${oferta.turma.curso.sigla}__-__${oferta.turma.semestre.descricao}__'"></td>
+													<td th:text="${oferta.turno.descricao}"></td>
+													<td th:text="${oferta.vagas}"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--<div role="tabpanel" class="tab-pane" id="nav-compartilhamentos-importados">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>Nome</th>
+													<th>Turma</th>
+													<th>Turno</th>
+													<th>Vagas</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="compartilhamento : ${compartilhamentosImportados}">
+													<td th:text="${compartilhamento.oferta.disciplina.nome}"></td>
+													<td th:text="'__${compartilhamento.turma.curso.sigla}__-__${compartilhamento.turma.semestre.descricao}__'"></td>
+													<td th:text="${compartilhamento.oferta.turno.descricao}"></td>
+													<td th:text="${compartilhamento.vagas}"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</form>
+									<!--<div id="resultados" class="row">
+										<ul class="nav nav-tabs custom-tab" role="tablist">
+											<li role="presentation" class="nav-item m-l-10 m-r-10">
+												<a href="#tab-ofertas" class="nav-link" role="tab"
+												data-toggle="tab"> <span>Ofertas</span> <span
+													class="label label-success m-l-10"></span>
+											</a>
+											</li>
+
+											<li role="presentation" class="nav-item m-l-10 m-r-10">
+												<a href="#tab-ofertas-compartilhadas" class="nav-link"
+												role="tab" data-toggle="tab"> <span>Ofertas
+														Compartilhadas</span> <span class="label label-success m-l-10"></span>
+											</a>
+											</li>
+
+											<li role="presentation" class="nav-item m-l-10 m-r-10">
+												<a href="#tab-ofertas-importadas" class="nav-link"
+												role="tab" data-toggle="tab"> <span>Ofertas
+														Importadas</span> <span class="label label-success m-l-10"></span>
+											</a>
+											</li>
+
+											<li role="presentation" class="nav-item m-l-10 m-r-10">
+												<a href="#tab-ofertas-compartilhadas-importadas"
+												class="nav-link" role="tab" data-toggle="tab"> <span>Ofertas
+														Compartilhadas Importadas</span> <span
+													class="label label-success m-l-10"></span>
+											</a>
+											</li>
+										</ul>
+
+										<div class="tab-content">
+											<div id="tab-ofertas"
+												class="table-responsive tab-pane fade active">
+												<table id="resultado-ofertas"
+													class="table table-striped table-ofertas">
+													<thead>
+														<tr>
+															<th class="col-md-9">Nome</th>
+															<th class="col-md-1">Turma</th>
+															<th class="col-md-1">Turno</th>
+															<th class="col-md-1">Vagas</th>
+														</tr>
+													</thead>
+													<tbody>	
+														<tr th:each="oferta : ${ofertas}">
+															<td>
+																<ul>																
+																	<li>																	
+																		<input type="checkbox" name="checkbox" th:checked=""/>
+																		<label th:text="${oferta.disciplina.nome}"></label>																
+																	</li>																	
+																</ul>
+																	
+															</td>
+															<td th:text="${oferta.turma.curso.nome}"></td>
+															<td th:text="${oferta.turno.descricao}"></td>	
+															<td th:text="${oferta.vagas}"></td>																																											
+														</tr>
+																																						
+													</tbody>
+												</table>
+												<div class="col-md-12 text-right">
+													<a th:href="@{/ofertas/}"
+														class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+														<a th:href="@{/ofertas/buscar-ofertas/${periodoAtivo.id}}"
+														class="btn btn-sucess waves-effect waves-light">Importar</a>
+													<button type="button" class="btn btn-success"
+														id="btn-importar-ofertas2">Importar</button>
+														
+												</div>
+											</div>
+											<div id="tab-ofertas-compartilhadas"
+												class="table-responsive tab-pane fade">
+
+												<table id="resultado-ofertas-compartilhadas"
+													class="table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th class="col-md-7">Nome</th>
+															<th class="col-md-1">Turma original</th>
+															<th class="col-md-1">Turma do curso</th>
+															<th class="col-md-1">Turno</th>
+															<th class="col-md-1">Vagas</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr th:each="ofertaCompartilhada : ${ofertasCompartilhadasImportadas}">
+															<td th:text="${ofertaCompartilhada.oferta.disciplina.nome}"></td>
+															<td th:text="${ofertaCompartilhada.oferta.turma.curso.sigla} - ${ofertaCompartilhada.oferta.turma..descricao}"></td>
+															<td th:text="${ofertaCompartilhada.turma.curso.sigla} - ${ofertaCompartilhada.turma.semestre.descricao}"></td>
+															<td th:text="${ofertaCompartilhada.oferta.turno.descricao}"></td>
+															<td th:text="${ofertaCompartilhada.oferta.vagas}"></td>
+														</tr>	
+													
+													</tbody>
+												</table>
+												<div class="col-md-12 text-right">
+													<a th:href="@{/ofertas/}"
+														class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+													<button type="button" class="btn btn-success"
+														id="btn-importar-ofertas-compartilhadas">Importar
+														Compartilhamentos</button>
+												</div>
+											</div>
+											<div id="tab-ofertas-importadas"
+												class="table-responsive tab-pane fade">
+												<table id="resultado-ofertas-importadas"
+													class="table table-ofertas">
+													<thead>
+														<tr>
+															<th class="col-md-9">Nome</th>
+															<th class="col-md-1">Turma</th>
+															<th class="col-md-1">Turno</th>
+															<th class="col-md-1">Vagas</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr th:each="oferta : ${ofertasImportadas}">
+															<td th:text="${oferta.disciplina.nome}"></td>
+															<td th:text="${oferta.turma.curso.nome}"></td>
+															<td th:text="${oferta.turno.descricao}"></td>
+															<td th:text="${oferta.vagas}"></td>														
+														</tr>													
+													</tbody>
+												</table>
+											</div>
+											<div id="tab-ofertas-compartilhadas-importadas"
+												class="table-responsive tab-pane fade">
+												<table id="resultado-ofertas-compartilhadas-importadas"
+													class="table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th class="col-md-8">Nome</th>
+															<th class="col-md-1">Turma original</th>
+															<th class="col-md-1">Turma do curso</th>
+															<th class="col-md-1">Turno</th>
+															<th class="col-md-1">Vagas</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr th:each="ofertaCompartilhadaImportada : ${ofertasCompartilhadasImportadas}">
+															<td th:text="${ofertaCompartilhadaImportada.oferta.disciplina.nome}"></td>
+															<td th:text="${ofertaCompartilhadaImportada.oferta.turma.curso.sigla} - ${ofertaCompartilhadaImportada.oferta.turma.semestre.descricao}" ></td>
+															<td th:text="${ofertaCompartilhadaImportada.turma.curso.sigla} - ${ofertaCompartilhadaImportada.turma.semestre.descricao}"></td>
+															<td th:text="${ofertaCompartilhadaImportada.oferta.turno.descricao}"></td>
+															<td th:text="${ofertaCompartilhadaImportada.oferta.vagas}"></td>
+														</tr>																									
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	 <script type="text/javascript"
+		th:src="@{/js/oferta/importar.js}"></script>
+
+	<!-- Select2 Tradução Português Brasileiro -->
+	<script th:src="@{/plugins/select2/js/i18n/pt-BR.js}"></script>
+	<script type="text/javascript">
+        $("table").DataTable({
+            "language" : {
+                url : _context + '/js/Portuguese-Brasil.json'
+            },
+            "info": false,
+            "order" : [ 1, 'asc' ],
+            "columnDefs": [ {
+                "targets": 0,
+                "orderable": false
+            } ],
+            paging : false,
+            searching : false
+        });
+		$(".select2").select2({
+			"language" : "pt-BR"
+		});
+
+        $("#select-periodo").change(function() {
+            var id = $(this).val();
+            var _context = $("meta[name='_context']").attr("content");
+            if(_context == null){
+                _context = "";
+            }
+            window.location.href = _context + "/ofertas/importar/" + id;
+
+        });
+	</script>
+</section>
+</html>

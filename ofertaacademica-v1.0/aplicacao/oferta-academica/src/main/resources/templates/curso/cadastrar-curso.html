@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base/base"
+	th:with="cursoActive='active'">
+
+<head>
+    <title>Cadastrar Curso | Cursos do Campus</title>
+</head>
+
+<section layout:fragment="conteudo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Cadastrar Curso</h3>
+					<form id="cadastrarCursoForm" class="form-horizontal" data-toggle="validator" th:action="@{/cursos/cadastrar}" th:object="${curso}" method="POST">
+						<div class="row">
+							<div class="col-md-4" th:classappend="${#fields.hasErrors('codigo')} ? has-error">
+								<div class="form-group">
+									<label for="codigo">* Código</label>
+									<input id ="codigo" name="codigo" type="text" th:field="*{codigo}" class="form-control"  maxlength="3" placeholder = "ex: 411" required="required"/>
+									<span th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-4" th:classappend="${#fields.hasErrors('sigla')} ? has-error">
+								<div class="form-group">
+									<label for="sigla">* Sigla</label>
+									<input id ="sigla" name ="sigla" type="text" th:field="*{sigla}" placeholder = "ex: ABC" class="form-control" required="required"></input>
+									<span th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-4" th:classappend="${#fields.hasErrors('nome')} ? has-error">
+								<div class="form-group">
+									<label for="nome">* Nome</label>
+									<input id ="nome" name="nome" type="text" th:field="*{nome}" class="form-control" required="required"></input>
+									<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6" th:classappend="${#fields.hasErrors('coordenador')} ? has-error">
+								<div class="form-group">
+									<label for="coordenador">* Coordenador(a)</label>
+									<select id ="coordenador" class="form-control select2" th:field="*{coordenador}" required="required">
+										<option value = "">Selecione...</option>
+										<option th:each = "professor : ${professores}" th:value = "${{professor.id}}" th:inline="text">[[${professor.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('coordenador')}" th:errors="*{coordenador}" class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="col-md-6" th:classappend="${#fields.hasErrors('viceCoordenador')} ? has-error"> 
+								<div class="form-group">
+									<label for="viceCoordenador">* Vice-Coordenador(a)</label>
+									<select id="viceCoordenador" class="form-control select2" th:field="*{viceCoordenador}" required="required">
+										<option value = "">Selecione...</option>
+										<option th:each = "professor : ${professores}" th:value = "${{professor.id}}" th:inline="text">[[${professor.nome}]]</option>
+									</select>
+									<span th:if="${#fields.hasErrors('viceCoordenador')}" th:errors="*{viceCoordenador}" class="help-block with-errors"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="turno">* Turno</label>
+									<select id ="turno" class="form-control" th:field="*{turno}" required="required">
+										<option value = "">Selecione...</option>
+										<option th:each="turno : ${turnos}" th:text="${turno.descricao}" th:value="${turno}"></option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">							
+									<label for="semestres">* Quantidade de semestres</label>
+									<select id ="semestres" class="form-control" th:field="*{semestres}" required="required">
+										<option value = "">Selecione...</option>
+										<option value = "4">4 semestres</option>
+										<option value = "6">6 semestres</option>
+										<option value = "8">8 semestres</option>
+										<option value = "12">12 semestres</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="text-right">
+							<a th:href="@{/cursos/}" class="btn btn-secondary waves-effect waves-light">Cancelar</a>
+							<button type="submit" class="btn btn-success waves-effect waves-light">Cadastrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>	
+<section layout:fragment="js">
+	<script th:inline="javascript">
+        $(".select2").select2({
+            "language" : "pt-BR"
+        });
+		// Validação do formulário
+		$(document).ready(function() {
+			$("#cadastrarCursoForm")
+				.bootstrapValidator(
+						{
+							row : {
+								valid : 'has-success',
+								invalid : 'error'
+							},
+							fields : {
+								codigo : {
+									validators : {
+										regexp : {
+											regexp : /^[0-9]{3}/,
+											message : 'Não está de acordo com o modelo'
+										}
+									}
+								},
+								sigla : {
+									validators : {
+										regexp : {
+											regexp : /^[A-Z]/,
+											message : 'Não está de acordo com o modelo'
+										}
+									}
+								},
+								nome : {
+									validators : {
+										regexp : {
+											regexp : /^[A-Z]|[a-z][^\d]/,
+											message : 'Somente caracteres alfabéticos'
+										}
+									}
+								}
+							}
+						});
+				});
+	</script>
+</section>
+</html>

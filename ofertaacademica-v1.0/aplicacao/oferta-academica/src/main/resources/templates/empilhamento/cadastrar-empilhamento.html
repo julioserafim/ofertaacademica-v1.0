@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="base/base"
+    th:with="empilhamentoActive='active'">
+
+<head>
+    <title>Cadastrar Empilhamento | Alocação Professores</title>
+</head>
+
+<section layout:fragment="conteudo">
+	<div class="row bg-title">
+		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<h4 class="page-title">Cadastrar Empilhamento</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="white-box">
+				<div class="table-responsive">
+					<form th:action="@{${'/empilhamentos/cadastrar'}}" method="POST"
+						th:object="${restricaoHorario}">
+						<div class="form-group">
+							<label>Primeira Oferta</label>
+							<div class="col-md-12">
+								<select th:field="*{primeiraOferta.id}" id="disciplinaASelect" class="js-example-basic-multiple"
+									name="primeiraDisciplina">
+									<option th:each="oferta : ${ofertas}"
+										th:value="${oferta.id}" th:inline="text">[[${oferta.turma.curso.sigla}]]-[[${oferta.turma.semestres.numero}]]
+										[[${oferta.disciplina.nome}]]</option>
+								</select> <span th:if="${#fields.hasErrors('primeiraOferta.id')}"
+									th:error="*{primeiraOferta.id}"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Segunda Oferta</label>
+							<div class="col-md-12">
+								<select th:field="*{segundaOferta.id}"
+									id="disciplinaBSelect" name="segundaDisciplina"
+									class="js-example-basic-multiple">
+									<option th:each="oferta : ${ofertas}"
+										th:value="${oferta.id}" th:inline="text">[[${oferta.turma.curso.sigla}]]-[[${oferta.turma.semestres.numero}]]
+										[[${oferta.disciplina.nome}]]</option>
+								</select> <span th:if="${#fields.hasErrors('segundaOferta.id')}"
+									th:error="*{segundaOferta.id}"></span>
+							</div>
+						</div>
+						<div class="text-right">
+							<a th:href="@{/empilhamentos/}"><button type="button" th:href="@{/empilhamentos/}"
+								class="btn btn-inverse waves-effect waves-light">Cancelar</button></a>
+							<button type="submit"
+								class="btn btn-success waves-effect waves-light">Cadastrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="js">
+	<script type="text/javascript">		
+		$("#disciplinaASelect").select2();
+		$("#disciplinaBSelect").select2();
+		$("#turmaASelect").select2();
+		$("#turmaBSelect").select2();
+	</script>
+</section>
+</html>
