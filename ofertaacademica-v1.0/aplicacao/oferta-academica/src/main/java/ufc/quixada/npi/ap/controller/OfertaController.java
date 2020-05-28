@@ -1,6 +1,5 @@
 package ufc.quixada.npi.ap.controller;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +51,7 @@ import static ufc.quixada.npi.ap.util.Constants.*;
 public class OfertaController {
 
 	@Autowired
-	CursoRepository crepo; 
+	CursoRepository crepo;
 
 	@Autowired
 	private OfertaService ofertaService;
@@ -81,7 +80,6 @@ public class OfertaController {
 	@Autowired
 	private CompartilhamentoValidator compartilhamentoValidator;
 
-
 	@ModelAttribute("professores")
 	public List<Professor> todosProfessores() {
 		return professorService.buscarTodosProfessores();
@@ -92,27 +90,22 @@ public class OfertaController {
 		return cursoService.buscarTodosCursos();
 	}
 
-	@RequestMapping(value = {"", "/", "/{id}"}, method = RequestMethod.GET)
-	public ModelAndView listarOfertasIndex(Authentication auth, @PathVariable(name="id", required=false) Curso cursoAtual) {
+	@RequestMapping(value = { "", "/", "/{id}" }, method = RequestMethod.GET)
+	public ModelAndView listarOfertasIndex(Authentication auth,
+			@PathVariable(name = "id", required = false) Curso cursoAtual) {
 		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_LISTAR);
 
-		if(cursoAtual == null) {
-			Professor professor = (Professor) auth.getPrincipal();
-			cursoAtual = cursoService.buscarCursoPorCoordenadorOuVice(professor);
-			if(cursoAtual == null){
-				cursoAtual = cursoService.buscarPorSigla("SI");
-			}
-		}
-
+		cursoAtual = cursoAtual(auth, cursoAtual);
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
-		
+
 		modelAndView.addObject("cursoAtual", cursoAtual);
 		modelAndView.addObject("turmas", cursoAtual.getTurmas());
 		modelAndView.addObject("periodo", periodoAtivo);
 		modelAndView.addObject("periodos", periodoService.buscarPeriodosConsolidados());
 
 		List<Oferta> ofertasDoCurso = ofertaService.buscarPorPeriodoAndCurso(periodoAtivo, cursoAtual);
-		List<Compartilhamento> compartilhamentosDoCurso = compartilhamentoService.buscarCompartilhamentosPorPeriodoAndCurso(periodoAtivo, cursoAtual);
+		List<Compartilhamento> compartilhamentosDoCurso = compartilhamentoService
+				.buscarCompartilhamentosPorPeriodoAndCurso(periodoAtivo, cursoAtual);
 
 		Map<Semestre, List<Oferta>> mapOfertasPorSemestre = mapearOfertasPorCursoESemestre(ofertasDoCurso,
 				cursoAtual.getTurmas());
@@ -123,6 +116,10 @@ public class OfertaController {
 		modelAndView.addObject("compartilhamentos", mapCompartilhamentosPorSemestre);
 
 		return modelAndView;
+	}
+
+	private Curso cursoAtual(Authentication auth, Curso cursoAtual) {
+		return null;
 	}
 
 	public Map<Semestre, List<Oferta>> mapearOfertasPorCursoESemestre(List<Oferta> ofertasDoCurso,
@@ -148,10 +145,10 @@ public class OfertaController {
 
 		Map<Semestre, List<Compartilhamento>> mapCompartilhamentosPorSemestre = new HashMap<>();
 
-		for(Turma turma : turmasDoCurso){
+		for (Turma turma : turmasDoCurso) {
 			List<Compartilhamento> compartilhamentosPorSemestre = new ArrayList<>();
-			for(Compartilhamento compartilhamento : compartilhamentosDoCurso){
-				if(turma.getSemestre().equals(compartilhamento.getTurma().getSemestre())){
+			for (Compartilhamento compartilhamento : compartilhamentosDoCurso) {
+				if (turma.getSemestre().equals(compartilhamento.getTurma().getSemestre())) {
 					compartilhamentosPorSemestre.add(compartilhamento);
 				}
 			}
@@ -169,24 +166,24 @@ public class OfertaController {
 		modelAndView.addObject("action", "cadastrar");
 		modelAndView.addObject("cursoAtual", cursoService.buscarCursoPorCoordenadorOuVice(professor));
 		modelAndView.addObject("periodoAtivo", periodoService.buscarPeriodoAtivo());
-		modelAndView.addObject("disciplinas", disciplinaService.buscarDisciplinasNaoArquivadas());		
+		modelAndView.addObject("disciplinas", disciplinaService.buscarDisciplinasNaoArquivadas());
 		modelAndView.addObject("turmas", turmaService.buscarTodasTurmas());
 
 		return modelAndView;
 	}
 
-    @RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public ModelAndView cadastrarOferta(@ModelAttribute("oferta") @Valid Oferta oferta,BindingResult bindingResult, 
-			ModelAndView modelAndView,RedirectAttributes redirectAttributes, Authentication auth) {
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public ModelAndView cadastrarOferta(@ModelAttribute("oferta") @Valid Oferta oferta, BindingResult bindingResult,
+			ModelAndView modelAndView, RedirectAttributes redirectAttributes, Authentication auth) {
 
 		ofertaValidator.validate(oferta, bindingResult);
 		Professor professor = (Professor) auth.getPrincipal();
 		Periodo periodo = periodoService.buscarPeriodoAtivo();
-		if(professor.isCoordenacao() && (periodo.isCoordenacao() || periodo.isAjuste())){
+		if (professor.isCoordenacao() && (periodo.isCoordenacao() || periodo.isAjuste())) {
 			oferta.setPeriodo(periodo);
 		}
-		if(professor.isDirecao() && (periodo.isDirecao() || periodo.isAjuste())){
+		if (professor.isDirecao() && (periodo.isDirecao() || periodo.isAjuste())) {
 			oferta.setPeriodo(periodo);
 		}
 		if (bindingResult.hasErrors()) {
@@ -211,9 +208,10 @@ public class OfertaController {
 
 	@RequestMapping(value = "/{id}/editar", method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public ModelAndView editarOferta(@PathVariable("id") Oferta oferta, Authentication auth, RedirectAttributes redirectAttributes) {
-        ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_CADASTRAR);
-		if (((Professor)auth.getPrincipal()).isDirecao() || oferta.canChange(auth.getName())) {
+	public ModelAndView editarOferta(@PathVariable("id") Oferta oferta, Authentication auth,
+			RedirectAttributes redirectAttributes) {
+		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_CADASTRAR);
+		if (((Professor) auth.getPrincipal()).isDirecao() || oferta.canChange(auth.getName())) {
 
 			modelAndView.addObject("action", "editar");
 			modelAndView.addObject("oferta", oferta);
@@ -221,11 +219,11 @@ public class OfertaController {
 			modelAndView.addObject("periodoAtivo", periodoService.buscarPeriodoAtivo());
 			modelAndView.addObject("disciplinas", disciplinaService.buscarDisciplinasNaoArquivadas());
 			modelAndView.addObject("turmas", turmaService.buscarTodasTurmas());
-        } else {
+		} else {
 			redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_ERROR, Constants.MSG_PERMISSAO_NEGADA);
 			modelAndView.setViewName(Constants.OFERTA_REDIRECT_LISTAR);
 		}
-        return modelAndView;
+		return modelAndView;
 	}
 
 	@RequestMapping(value = "/editar", method = RequestMethod.POST)
@@ -276,63 +274,58 @@ public class OfertaController {
 	@RequestMapping(value = "/{id}/excluir", method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView excluirOferta(@PathVariable(name = "id", required = true) Oferta oferta, Authentication auth,
-                                      RedirectAttributes redirectAttributes, ModelAndView modelAndView){
-		if (((Professor)auth.getPrincipal()).isDirecao() || oferta.canChange(auth.getName())) {
-	        ofertaService.excluir(oferta.getId());
-		    redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_SUCCESS, Constants.MSG_OFERTA_EXCLUIR);
+			RedirectAttributes redirectAttributes, ModelAndView modelAndView) {
+		if (((Professor) auth.getPrincipal()).isDirecao() || oferta.canChange(auth.getName())) {
+			ofertaService.excluir(oferta.getId());
+			redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_SUCCESS, Constants.MSG_OFERTA_EXCLUIR);
 		} else {
-            redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_ERROR, Constants.MSG_PERMISSAO_NEGADA);
-        }
+			redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_ERROR, Constants.MSG_PERMISSAO_NEGADA);
+		}
 		modelAndView.setViewName(Constants.OFERTA_REDIRECT_LISTAR);
 		return modelAndView;
 	}
 
-	@RequestMapping(path = {"/{idOferta}/solicitar-compartilhamento"}, method = RequestMethod.GET)
+	@RequestMapping(path = { "/{idOferta}/solicitar-compartilhamento" }, method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamento(@PathVariable("idOferta") Oferta oferta,
-			@ModelAttribute("compartilhamento") Compartilhamento compartilhamento, Authentication auth){
+			@ModelAttribute("compartilhamento") Compartilhamento compartilhamento, Authentication auth) {
 
 		ModelAndView modelAndView = new ModelAndView(Constants.COMPARTILHAMENTO_CADASTRAR);
-        modelAndView.addObject("action", "cadastrar");
-        modelAndView.addObject("cursoAtual", cursoService.buscarCursoPorCoordenadorOuVice((Professor) auth.getPrincipal()));
+		modelAndView.addObject("action", "cadastrar");
+		modelAndView.addObject("cursoAtual",
+				cursoService.buscarCursoPorCoordenadorOuVice((Professor) auth.getPrincipal()));
 		modelAndView.addObject("turmas", turmaService.buscarTodasTurmas());
 		modelAndView.addObject("oferta", oferta);
 
 		return modelAndView;
 	}
 
-	@RequestMapping(path = {"/{idOferta}/solicitar-compartilhamento"}, method = RequestMethod.POST)
+	@RequestMapping(path = { "/{idOferta}/solicitar-compartilhamento" }, method = RequestMethod.POST)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamentoCoordenacao(@PathVariable("idOferta") Oferta oferta,
 			@ModelAttribute("compartilhamento") @Valid Compartilhamento compartilhamento,
-            @RequestParam(value = "curso", required = false) Curso curso,
-			BindingResult bindingResult, ModelAndView modelAndView, RedirectAttributes redirectAttributes,
-			Authentication auth){
-		/*Map<String, Object> mapa = new HashMap<>();
-		if(curso == null){
-			curso = compartilhamento.getOferta().getTurma().getCurso();
-		}
-		mapa.put("cursoCoordenador", curso);
-		mapa.put("compartilhamento", compartilhamento);
-
-		compartilhamentoValidator.validate(mapa, bindingResult);
-
-		if (bindingResult.hasErrors()){
-			modelAndView.setViewName(Constants.COMPARTILHAMENTO_CADASTRAR);
-
-			Professor professor = (Professor) auth.getPrincipal();
-			Curso turmas = cursoService.buscarCursoPorCoordenadorOuVice(professor);
-			if(turmas!=null){
-				modelAndView.addObject("turmas", turmas.getTurmas());
-			}else{
-                modelAndView.addObject("turmas", curso.getTurmas());
-			}
-			modelAndView.addObject("oferta", oferta);
-            return modelAndView;
-
-		}
-
-		*/
+			@RequestParam(value = "curso", required = false) Curso curso, BindingResult bindingResult,
+			ModelAndView modelAndView, RedirectAttributes redirectAttributes, Authentication auth) {
+		/*
+		 * Map<String, Object> mapa = new HashMap<>(); if(curso == null){ curso =
+		 * compartilhamento.getOferta().getTurma().getCurso(); }
+		 * mapa.put("cursoCoordenador", curso); mapa.put("compartilhamento",
+		 * compartilhamento);
+		 * 
+		 * compartilhamentoValidator.validate(mapa, bindingResult);
+		 * 
+		 * if (bindingResult.hasErrors()){
+		 * modelAndView.setViewName(Constants.COMPARTILHAMENTO_CADASTRAR);
+		 * 
+		 * Professor professor = (Professor) auth.getPrincipal(); Curso turmas =
+		 * cursoService.buscarCursoPorCoordenadorOuVice(professor); if(turmas!=null){
+		 * modelAndView.addObject("turmas", turmas.getTurmas()); }else{
+		 * modelAndView.addObject("turmas", curso.getTurmas()); }
+		 * modelAndView.addObject("oferta", oferta); return modelAndView;
+		 * 
+		 * }
+		 * 
+		 */
 		compartilhamentoService.salvar(compartilhamento);
 
 		redirectAttributes.addFlashAttribute(SWAL_STATUS_SUCCESS, MSG_COMPARTILHAMENTO_SOLICITADO);
@@ -342,32 +335,32 @@ public class OfertaController {
 		return modelAndView;
 	}
 
-    @RequestMapping(path = {"/{id}/editar-compartilhamento"}, method = RequestMethod.GET)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-    public ModelAndView editarCompartilhamentoForm(@PathVariable("id") Compartilhamento compartilhamento, Authentication auth, RedirectAttributes redirectAttributes){
+	@RequestMapping(path = { "/{id}/editar-compartilhamento" }, method = RequestMethod.GET)
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public ModelAndView editarCompartilhamentoForm(@PathVariable("id") Compartilhamento compartilhamento,
+			Authentication auth, RedirectAttributes redirectAttributes) {
 
-        Professor professor = (Professor) auth.getPrincipal();
+		Professor professor = (Professor) auth.getPrincipal();
 		ModelAndView modelAndView = new ModelAndView(Constants.COMPARTILHAMENTO_CADASTRAR);
-	    if (professor.isDirecao() || compartilhamento.canChange(auth.getName())) {
-            modelAndView.addObject("action", "editar");
-            modelAndView.addObject("cursoAtual", compartilhamento.getTurma().getCurso());
-            modelAndView.addObject("turmas", turmaService.buscarTodasTurmas());
-            modelAndView.addObject("oferta", compartilhamento.getOferta());
-            modelAndView.addObject("compartilhamento", compartilhamento);
-        } else {
-            redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_ERROR, Constants.MSG_PERMISSAO_NEGADA);
-            modelAndView.setViewName(Constants.OFERTA_REDIRECT_LISTAR);
-        }
-        return modelAndView;
-    }
+		if (professor.isDirecao() || compartilhamento.canChange(auth.getName())) {
+			modelAndView.addObject("action", "editar");
+			modelAndView.addObject("cursoAtual", compartilhamento.getTurma().getCurso());
+			modelAndView.addObject("turmas", turmaService.buscarTodasTurmas());
+			modelAndView.addObject("oferta", compartilhamento.getOferta());
+			modelAndView.addObject("compartilhamento", compartilhamento);
+		} else {
+			redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_ERROR, Constants.MSG_PERMISSAO_NEGADA);
+			modelAndView.setViewName(Constants.OFERTA_REDIRECT_LISTAR);
+		}
+		return modelAndView;
+	}
 
-	@RequestMapping(path = {"/{idOferta}/solicitar-compartilhamento-direcao"}, method = RequestMethod.POST)
+	@RequestMapping(path = { "/{idOferta}/solicitar-compartilhamento-direcao" }, method = RequestMethod.POST)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamentoDirecao(@PathVariable("idOferta") Integer id,
 			@ModelAttribute("compartilhamento") @Valid Compartilhamento compartilhamento,
-			@RequestParam("turma") @Valid Turma turma,
-			BindingResult bindingResult, ModelAndView modelAndView, RedirectAttributes redirectAttributes,
-			Authentication auth){
+			@RequestParam("turma") @Valid Turma turma, BindingResult bindingResult, ModelAndView modelAndView,
+			RedirectAttributes redirectAttributes, Authentication auth) {
 		Map<String, Object> mapa = new HashMap<>();
 
 		mapa.put("cursoCoordenador", turma.getCurso());
@@ -376,7 +369,7 @@ public class OfertaController {
 
 		compartilhamentoValidator.validate(mapa, bindingResult);
 
-		if (bindingResult.hasErrors()){
+		if (bindingResult.hasErrors()) {
 			modelAndView.setViewName(Constants.COMPARTILHAMENTO_CADASTRAR);
 
 			modelAndView.addObject("turma", cursoService.buscarTodosCursos());
@@ -394,18 +387,25 @@ public class OfertaController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = {"/importar", "/importar/{idPeriodo}"}, method = RequestMethod.GET)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	@RequestMapping(value = { "/importar", "/importar/{idPeriodo}" }, method = RequestMethod.GET)
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	@PreAuthorize("hasAnyAuthority('COORDENACAO')")
-	public ModelAndView importarOfertas(@PathVariable(value = "idPeriodo", required = false) Periodo periodo, Authentication auth) {
+	public ModelAndView importarOfertas(@PathVariable(value = "idPeriodo", required = false) Periodo periodo,
+			Authentication auth) {
 		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_IMPORTAR);
 		Professor professor = (Professor) auth.getPrincipal();
 		Curso curso = cursoService.buscarCursoPorCoordenadorOuVice(professor);
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
-		List<Oferta> ofertas = ofertaService.buscarOfertasNaoImportadasPeriodoAtivoPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Oferta> ofertasImportadas =  ofertaService.buscarOfertasImportadasPeriodoAtivoPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		//List<Compartilhamento> ofertasCompartilhadas = compartilhamentoService.buscarCompartilhamentosNaoImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		//List<Compartilhamento> ofertasCompartilhadasImportadas = compartilhamentoService.buscarCompartilhamentosImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
+		List<Oferta> ofertas = ofertaService.buscarOfertasNaoImportadasPeriodoAtivoPorPeriodoAndCurso(periodo,
+				periodoAtivo, curso);
+		List<Oferta> ofertasImportadas = ofertaService.buscarOfertasImportadasPeriodoAtivoPorPeriodoAndCurso(periodo,
+				periodoAtivo, curso);
+		// List<Compartilhamento> ofertasCompartilhadas =
+		// compartilhamentoService.buscarCompartilhamentosNaoImportadosPorPeriodoAndCurso(periodo,
+		// periodoAtivo, curso);
+		// List<Compartilhamento> ofertasCompartilhadasImportadas =
+		// compartilhamentoService.buscarCompartilhamentosImportadosPorPeriodoAndCurso(periodo,
+		// periodoAtivo, curso);
 		List<Periodo> periodos = periodoService.buscarTodosPeriodos();
 		periodos.remove(periodoAtivo);
 
@@ -414,24 +414,28 @@ public class OfertaController {
 		modelAndView.addObject("periodoAtual", periodoAtivo);
 		modelAndView.addObject("ofertas", ofertas);
 		modelAndView.addObject("ofertasImportadas", ofertasImportadas);
-		//modelAndView.addObject("compartilhamentos", ofertasCompartilhadas);
-		//modelAndView.addObject("compartilhamentosImportados", ofertasCompartilhadasImportadas);
+		// modelAndView.addObject("compartilhamentos", ofertasCompartilhadas);
+		// modelAndView.addObject("compartilhamentosImportados",
+		// ofertasCompartilhadasImportadas);
 
 		return modelAndView;
 	}
 
 	@RequestMapping(value = "/importar", method = RequestMethod.POST)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public ModelAndView importarOfertas(@RequestParam(value = "ofertas", required = false) List<Oferta> ofertas, @RequestParam("periodo") Periodo periodo, RedirectAttributes redirectAttributes) {
-		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_REDIRECT_IMPORTAR + "/" + (periodo == null ? "" : periodo.getId()));
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public ModelAndView importarOfertas(@RequestParam(value = "ofertas", required = false) List<Oferta> ofertas,
+			@RequestParam("periodo") Periodo periodo, RedirectAttributes redirectAttributes) {
+		ModelAndView modelAndView = new ModelAndView(
+				Constants.OFERTA_REDIRECT_IMPORTAR + "/" + (periodo == null ? "" : periodo.getId()));
 		ofertaService.importarOfertas(ofertas);
 		redirectAttributes.addFlashAttribute(SWAL_STATUS_SUCCESS, MSG_IMPORTACAO_REALIZADA);
 		return modelAndView;
 	}
 
 	@RequestMapping(value = "/importar-ofertas-compartilhadas", method = RequestMethod.GET)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public @ResponseBody Map<String, Object> importarOfertasCompartilhadas(@RequestParam("compartilhamentos") List<Integer> compartilhamentos, Authentication auth) {
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public @ResponseBody Map<String, Object> importarOfertasCompartilhadas(
+			@RequestParam("compartilhamentos") List<Integer> compartilhamentos, Authentication auth) {
 		Professor coordenador = (Professor) auth.getPrincipal();
 		Curso curso = cursoService.buscarCursoPorCoordenadorOuVice(coordenador);
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
@@ -448,11 +452,15 @@ public class OfertaController {
 		Periodo periodo = periodoService.buscarPeriodo(idPeriodo);
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
 
-		List<Oferta> ofertas = ofertaService.buscarOfertasNaoImportadasPeriodoAtivoPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Oferta> ofertasImportadas =  ofertaService.buscarOfertasImportadasPeriodoAtivoPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Compartilhamento> ofertasCompartilhadas = compartilhamentoService.buscarCompartilhamentosNaoImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Compartilhamento> ofertasCompartilhadasImportadas = compartilhamentoService.buscarCompartilhamentosImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		
+		List<Oferta> ofertas = ofertaService.buscarOfertasNaoImportadasPeriodoAtivoPorPeriodoAndCurso(periodo,
+				periodoAtivo, curso);
+		List<Oferta> ofertasImportadas = ofertaService.buscarOfertasImportadasPeriodoAtivoPorPeriodoAndCurso(periodo,
+				periodoAtivo, curso);
+		List<Compartilhamento> ofertasCompartilhadas = compartilhamentoService
+				.buscarCompartilhamentosNaoImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
+		List<Compartilhamento> ofertasCompartilhadasImportadas = compartilhamentoService
+				.buscarCompartilhamentosImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
+
 		modelAndView.addObject("ofertas", ofertas);
 		modelAndView.addObject("ofertasImportadas", ofertasImportadas);
 		modelAndView.addObject("ofertasCompartilhadas", ofertasCompartilhadas);
@@ -468,7 +476,8 @@ public class OfertaController {
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
 
 		List<Oferta> ofertas = ofertaService.buscarPorPeriodoAndCurso(periodoAtivo, curso);
-		List<Compartilhamento> compartilhamentos = compartilhamentoService.buscarCompartilhamentosPorPeriodoAndCurso(periodoAtivo, curso);
+		List<Compartilhamento> compartilhamentos = compartilhamentoService
+				.buscarCompartilhamentosPorPeriodoAndCurso(periodoAtivo, curso);
 
 		Professor pessoa = (Professor) auth.getPrincipal();
 		model.addAttribute("papelDirecao", pessoa.isDirecao());
@@ -487,12 +496,13 @@ public class OfertaController {
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
 		Curso cursoCoordenador = cursoService.buscarCursoPorCoordenadorOuVice(coordenador);
 
-		if(cursoCoordenador == null) {
+		if (cursoCoordenador == null) {
 			cursoCoordenador = cursoService.buscarPorSigla("SI");
-		} 
+		}
 
 		List<Oferta> ofertasCurso = ofertaService.buscarPorPeriodoAndCurso(periodoAtivo, cursoCoordenador);
-		List<Compartilhamento> compartilhamentos = compartilhamentoService.buscarCompartilhamentosPorPeriodoAndCurso(periodoAtivo, cursoCoordenador);
+		List<Compartilhamento> compartilhamentos = compartilhamentoService
+				.buscarCompartilhamentosPorPeriodoAndCurso(periodoAtivo, cursoCoordenador);
 
 		model.addAttribute("papelDirecao", coordenador.isDirecao());
 		model.addAttribute("curso", cursoCoordenador);
@@ -500,8 +510,7 @@ public class OfertaController {
 		model.addAttribute("compartilhamentos", compartilhamentos);
 
 		return model;
-	}	
-
+	}
 
 	@RequestMapping(value = "/buscar-ofertas/{periodo}", method = RequestMethod.GET)
 	public @ResponseBody ModelMap buscarOfertas(@PathVariable("periodo") Periodo periodo, Authentication auth) {
@@ -511,10 +520,14 @@ public class OfertaController {
 		Curso curso = cursoService.buscarCursoPorCoordenadorOuVice(coordenador);
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
 
-		List<Oferta> ofertas = ofertaService.buscarOfertasNaoImportadasPeriodoAtivoPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Oferta> ofertasImportadas =  ofertaService.buscarOfertasImportadasPeriodoAtivoPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Compartilhamento> ofertasCompartilhadas = compartilhamentoService.buscarCompartilhamentosNaoImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
-		List<Compartilhamento> ofertasCompartilhadasImportadas = compartilhamentoService.buscarCompartilhamentosImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
+		List<Oferta> ofertas = ofertaService.buscarOfertasNaoImportadasPeriodoAtivoPorPeriodoAndCurso(periodo,
+				periodoAtivo, curso);
+		List<Oferta> ofertasImportadas = ofertaService.buscarOfertasImportadasPeriodoAtivoPorPeriodoAndCurso(periodo,
+				periodoAtivo, curso);
+		List<Compartilhamento> ofertasCompartilhadas = compartilhamentoService
+				.buscarCompartilhamentosNaoImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
+		List<Compartilhamento> ofertasCompartilhadasImportadas = compartilhamentoService
+				.buscarCompartilhamentosImportadosPorPeriodoAndCurso(periodo, periodoAtivo, curso);
 
 		model.addAttribute("ofertas", ofertas);
 		model.addAttribute("ofertasImportadas", ofertasImportadas);
@@ -525,7 +538,7 @@ public class OfertaController {
 	}
 
 	@RequestMapping(value = "/substituicao-ofertas", method = RequestMethod.GET)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public @ResponseBody boolean substituirOfertas(@RequestParam("ofertas") List<Integer> ofertas) {
 		ofertaService.substituirOferta(ofertas);
 		return true;
