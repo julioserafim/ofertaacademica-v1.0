@@ -144,21 +144,33 @@ public class OfertaController {
 	}
 
 	public Map<Semestre, List<Compartilhamento>> mapearCompartilhamentosPorCursoESemestre(
-			List<Compartilhamento> compartilhamentosDoCurso, List<Turma> turmasDoCurso) {
-
+			List<Compartilhamento> compartilhamentosDoCurso,
+			List<Turma> turmasDoCurso
+	){
 		Map<Semestre, List<Compartilhamento>> mapCompartilhamentosPorSemestre = new HashMap<>();
 
 		for(Turma turma : turmasDoCurso){
-			List<Compartilhamento> compartilhamentosPorSemestre = new ArrayList<>();
-			for(Compartilhamento compartilhamento : compartilhamentosDoCurso){
-				if(turma.getSemestre().equals(compartilhamento.getTurma().getSemestre())){
-					compartilhamentosPorSemestre.add(compartilhamento);
-				}
-			}
-			mapCompartilhamentosPorSemestre.put(turma.getSemestre(), compartilhamentosPorSemestre);
+			mapCompartilhamentosPorSemestre.putAll(adicionarCompartilhamentos(compartilhamentosDoCurso, turma));
 		}
 
 		return mapCompartilhamentosPorSemestre;
+	}
+
+	private Map<Semestre, List<Compartilhamento>> adicionarCompartilhamentos(
+			List<Compartilhamento> compartilhamentosDoCurso,
+			Turma turma
+	){
+		List<Compartilhamento> compartilhamentosPorSemestre = new ArrayList<>();
+		Map<Semestre, List<Compartilhamento>> mapComp = new HashMap<>();
+
+		for(Compartilhamento compartilhamento : compartilhamentosDoCurso){
+			if(turma.getSemestre().equals(compartilhamento.getTurma().getSemestre())){
+				compartilhamentosPorSemestre.add(compartilhamento);
+			}
+		}
+
+		mapComp.put(turma.getSemestre(), compartilhamentosPorSemestre);
+		return mapComp;
 	}
 
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
