@@ -96,14 +96,7 @@ public class OfertaController {
 	public ModelAndView listarOfertasIndex(Authentication auth, @PathVariable(name="id", required=false) Curso cursoAtual) {
 		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_LISTAR);
 
-		if(cursoAtual == null) {
-			Professor professor = (Professor) auth.getPrincipal();
-			cursoAtual = cursoService.buscarCursoPorCoordenadorOuVice(professor);
-			if(cursoAtual == null){
-				cursoAtual = cursoService.buscarPorSigla("SI");
-			}
-		}
-
+		cursoAtual = cursoAtual(auth, cursoAtual);
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
 		
 		modelAndView.addObject("cursoAtual", cursoAtual);
@@ -123,6 +116,17 @@ public class OfertaController {
 		modelAndView.addObject("compartilhamentos", mapCompartilhamentosPorSemestre);
 
 		return modelAndView;
+	}
+
+	private Curso cursoAtual(Authentication auth, Curso cursoAtual) {
+		if (cursoAtual == null) {
+			Professor professor = (Professor) auth.getPrincipal();
+			cursoAtual = cursoService.buscarCursoPorCoordenadorOuVice(professor);
+			if (cursoAtual == null) {
+				cursoAtual = cursoService.buscarPorSigla("SI");
+			}
+		}
+		return cursoAtual;
 	}
 
 	public Map<Semestre, List<Oferta>> mapearOfertasPorCursoESemestre(List<Oferta> ofertasDoCurso,
