@@ -172,12 +172,15 @@ public class DirecaoController {
 
 		Oferta oferta = ofertaService.buscarOferta(id);
 
+		return this.construirOferta(modelAndView, oferta);
+	}
+
+	private ModelAndView construirOferta(ModelAndView modelAndView, Oferta oferta) {
 		modelAndView.addObject("oferta", oferta);
 		if(oferta.getTurma().getCurso()!=null){
 			modelAndView.addObject("cursoAtual", oferta.getTurma().getCurso());
 		}
 		modelAndView.addObject("disciplinas", disciplinaService.buscarDisciplinasNaoArquivadas());
-
 		return modelAndView;
 	}
 
