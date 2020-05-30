@@ -205,5 +205,18 @@ public class OfertaServiceImpl implements OfertaService {
 		}
 	}
 
+	@Override
+	public boolean disciplinaAndTurmaIsEquals(Periodo periodoAtivo, Compartilhamento compartilhamento) {
+		
+		for (Oferta oferta : buscarOfertaPorPeriodo(periodoAtivo)) {
+			if (oferta.getDisciplina().equals(compartilhamento.getOferta().getDisciplina()) 
+					&& oferta.getTurma().equals(compartilhamento.getTurma())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
 }
 
