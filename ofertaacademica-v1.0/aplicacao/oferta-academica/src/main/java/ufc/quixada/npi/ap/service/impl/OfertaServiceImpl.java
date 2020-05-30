@@ -1,10 +1,7 @@
 package ufc.quixada.npi.ap.service.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -171,22 +168,31 @@ public class OfertaServiceImpl implements OfertaService {
 		List<Oferta> novasOfertas = new ArrayList<>();
 		
 		for (Integer id : idOfertas) {
-			Oferta oferta = ofertaRepository.findOne(id);
+			Oferta oferta = this.buscarOferta(id);
 			
 			if (oferta != null) {
-				for (Oferta o : ofertaRepository.findOfertaByPeriodo(periodoAtivo)){
-					if (o.getDisciplina().equals(oferta.getDisciplina())) {
-						ofertaRepository.delete(o);
-						
-						Oferta novaOferta = clonarOferta(o);
-						novaOferta.setPeriodo(periodoAtivo);
-						novasOfertas.add(novaOferta);
-					}
-				}
+				this.adicionarNovasOfertas(novasOfertas, oferta, periodoAtivo);
 			}
 		}
 
 		ofertaRepository.save(novasOfertas);
+	}
+
+	private void adicionarNovasOfertas(List<Oferta> novasOfertas, Oferta oferta, Periodo periodoAtivo) {
+		List<Oferta> ofertas = this.buscarOfertaPorPeriodo(periodoAtivo);
+		for (Oferta o : ofertas){
+			if (o.getDisciplina().equals(oferta.getDisciplina())) {
+				this.excluirOferta(o);
+
+				Oferta novaOferta = clonarOferta(o);
+				novaOferta.setPeriodo(periodoAtivo);
+				novasOfertas.add(novaOferta);
+			}
+		}
+	}
+
+	private void excluirOferta(Oferta oferta) {
+		ofertaRepository.delete(oferta);
 	}
 
 	@Override
