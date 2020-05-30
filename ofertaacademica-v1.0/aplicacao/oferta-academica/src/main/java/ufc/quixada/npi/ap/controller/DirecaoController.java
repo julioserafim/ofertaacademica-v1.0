@@ -92,7 +92,6 @@ public class DirecaoController {
 		Periodo periodoAtivo = periodoService.buscarPeriodoAtivo();
 		modelAndView.addObject("empilhamentos", restricaoHorarioService.buscarTodasRestricoesHorario());
 		modelAndView.addObject("ofertas", ofertaService.buscarPorPeriodo(periodoAtivo));
-		//System.err.println(ofertaService.buscarOfertaPorPeriodo(periodoAtivo).size());
 		return modelAndView;
 	}
 
@@ -142,27 +141,17 @@ public class DirecaoController {
 
 	@RequestMapping(value = "/atualizar-professores", method = RequestMethod.GET)
 	public ModelAndView atualizarProfessores() throws AlocacaoProfessorException {
-		ModelAndView modelAndView = new ModelAndView(Constants.PROFESSOR_REDIRECT_LISTAR);
-
+	
 		List<Usuario> usuarios = usuarioService.getByAffiliation(Constants.AFFILIATION_DOCENTE);
-
 		for (Usuario usuario : usuarios) {
-			Professor professor = professorService.buscarProfessorCpf(usuario.getCpf());
-
-			if (professor == null) {
-				Professor professor1 = new Professor();
 			
-				professor1.setCpf(usuario.getCpf());
-				professor1.setEmail(usuario.getEmail());
-				professor1.setNome(usuario.getNome());
-				professor1.setApelido(usuario.getNome());
-				
-				professorService.salvar(professor1);
+			Professor professor = professorService.buscarProfessorCpf(usuario.getCpf());
+			if (professor == null) {		
+				professorService.criar(usuario);
 			}
-
 		}
 
-		return modelAndView;
+		return new ModelAndView(Constants.PROFESSOR_REDIRECT_LISTAR);
 	}	
 	
 	@RequestMapping(value = "/editar-oferta/{id}", method = RequestMethod.GET)
@@ -172,12 +161,15 @@ public class DirecaoController {
 
 		Oferta oferta = ofertaService.buscarOferta(id);
 
+		return this.construirOferta(modelAndView, oferta);
+	}
+
+	private ModelAndView construirOferta(ModelAndView modelAndView, Oferta oferta) {
 		modelAndView.addObject("oferta", oferta);
 		if(oferta.getTurma().getCurso()!=null){
 			modelAndView.addObject("cursoAtual", oferta.getTurma().getCurso());
 		}
 		modelAndView.addObject("disciplinas", disciplinaService.buscarDisciplinasNaoArquivadas());
-
 		return modelAndView;
 	}
 
