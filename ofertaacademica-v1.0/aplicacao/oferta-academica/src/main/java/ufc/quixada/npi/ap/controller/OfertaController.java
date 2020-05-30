@@ -1,6 +1,5 @@
 package ufc.quixada.npi.ap.controller;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,6 +70,8 @@ public class OfertaController {
 
 	@RequestMapping(value = {"", "/", "/{id}"}, method = RequestMethod.GET)
 	public ModelAndView listarOfertasIndex(Authentication auth, @PathVariable(name="id", required=false) Curso cursoAtual) {
+
+
 		return ofertaControllerProduct.listarOfertasIndex(auth, cursoAtual, this);
 	}
 
@@ -97,10 +98,10 @@ public class OfertaController {
 
 		Map<Semestre, List<Compartilhamento>> mapCompartilhamentosPorSemestre = new HashMap<>();
 
-		for(Turma turma : turmasDoCurso){
+		for (Turma turma : turmasDoCurso) {
 			List<Compartilhamento> compartilhamentosPorSemestre = new ArrayList<>();
-			for(Compartilhamento compartilhamento : compartilhamentosDoCurso){
-				if(turma.getSemestre().equals(compartilhamento.getTurma().getSemestre())){
+			for (Compartilhamento compartilhamento : compartilhamentosDoCurso) {
+				if (turma.getSemestre().equals(compartilhamento.getTurma().getSemestre())) {
 					compartilhamentosPorSemestre.add(compartilhamento);
 				}
 			}
@@ -116,10 +117,12 @@ public class OfertaController {
 		return ofertaControllerProduct.cadastrarOferta(oferta, auth);
 	}
 
+
     @RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
     @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView cadastrarOferta(@ModelAttribute("oferta") @Valid Oferta oferta,BindingResult bindingResult, 
 			ModelAndView modelAndView,RedirectAttributes redirectAttributes, Authentication auth) {
+
 
 		return ofertaControllerProduct.cadastrarOferta(oferta, bindingResult, modelAndView, redirectAttributes, auth);
 	}
@@ -128,6 +131,7 @@ public class OfertaController {
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView editarOferta(@PathVariable("id") Oferta oferta, Authentication auth, RedirectAttributes redirectAttributes) {
         return ofertaControllerProduct.editarOferta(oferta, auth, redirectAttributes);
+
 	}
 
 	@RequestMapping(value = "/editar", method = RequestMethod.POST)
@@ -147,22 +151,24 @@ public class OfertaController {
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView excluirOferta(@PathVariable(name = "id", required = true) Oferta oferta, Authentication auth,
                                       RedirectAttributes redirectAttributes, ModelAndView modelAndView){
+
 		return ofertaControllerProduct.excluirOferta(oferta, auth, redirectAttributes, modelAndView);
 	}
 
-	@RequestMapping(path = {"/{idOferta}/solicitar-compartilhamento"}, method = RequestMethod.GET)
+	@RequestMapping(path = { "/{idOferta}/solicitar-compartilhamento" }, method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamento(@PathVariable("idOferta") Oferta oferta,
-			@ModelAttribute("compartilhamento") Compartilhamento compartilhamento, Authentication auth){
+			@ModelAttribute("compartilhamento") Compartilhamento compartilhamento, Authentication auth) {
 
 		return ofertaControllerProduct.solicitarCompartilhamento(oferta, compartilhamento, auth);
 	}
 
-	@RequestMapping(path = {"/{idOferta}/solicitar-compartilhamento"}, method = RequestMethod.POST)
+	@RequestMapping(path = { "/{idOferta}/solicitar-compartilhamento" }, method = RequestMethod.POST)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamentoCoordenacao(@PathVariable("idOferta") Oferta oferta,
 			@ModelAttribute("compartilhamento") @Valid Compartilhamento compartilhamento,
-            @RequestParam(value = "curso", required = false) Curso curso,
+
+                                                           @RequestParam(value = "curso", required = false) Curso curso,
 			BindingResult bindingResult, ModelAndView modelAndView, RedirectAttributes redirectAttributes,
 			Authentication auth){
 		return ofertaControllerProduct.solicitarCompartilhamentoCoordenacao(oferta, compartilhamento, curso,
@@ -183,14 +189,16 @@ public class OfertaController {
 			@RequestParam("turma") @Valid Turma turma,
 			BindingResult bindingResult, ModelAndView modelAndView, RedirectAttributes redirectAttributes,
 			Authentication auth){
+
 		return ofertaControllerProduct.solicitarCompartilhamentoDirecao(id, compartilhamento, turma, bindingResult,
 				modelAndView, redirectAttributes, auth);
 	}
 
-	@RequestMapping(value = {"/importar", "/importar/{idPeriodo}"}, method = RequestMethod.GET)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	@RequestMapping(value = { "/importar", "/importar/{idPeriodo}" }, method = RequestMethod.GET)
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	@PreAuthorize("hasAnyAuthority('COORDENACAO')")
 	public ModelAndView importarOfertas(@PathVariable(value = "idPeriodo", required = false) Periodo periodo, Authentication auth) {
+
 		return ofertaControllerProduct.importarOfertas(periodo, auth);
 	}
 
@@ -198,6 +206,12 @@ public class OfertaController {
     @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView importarOfertas(@RequestParam(value = "ofertas", required = false) List<Oferta> ofertas, @RequestParam("periodo") Periodo periodo, RedirectAttributes redirectAttributes) {
 		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_REDIRECT_IMPORTAR + "/" + (periodo == null ? "" : periodo.getId()));
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public ModelAndView importarOfertas(@RequestParam(value = "ofertas", required = false) List<Oferta> ofertas,
+			@RequestParam("periodo") Periodo periodo, RedirectAttributes redirectAttributes) {
+		ModelAndView modelAndView = new ModelAndView(
+				Constants.OFERTA_REDIRECT_IMPORTAR + "/" + (periodo == null ? "" : periodo.getId()));
+
 		ofertaControllerProduct.getOfertaService().importarOfertas(ofertas);
 		redirectAttributes.addFlashAttribute(SWAL_STATUS_SUCCESS, MSG_IMPORTACAO_REALIZADA);
 		return modelAndView;
@@ -206,6 +220,9 @@ public class OfertaController {
 	@RequestMapping(value = "/importar-ofertas-compartilhadas", method = RequestMethod.GET)
     @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public @ResponseBody Map<String, Object> importarOfertasCompartilhadas(@RequestParam("compartilhamentos") List<Integer> compartilhamentos, Authentication auth) {
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public @ResponseBody Map<String, Object> importarOfertasCompartilhadas(
+			@RequestParam("compartilhamentos") List<Integer> compartilhamentos, Authentication auth) {
 		return ofertaControllerProduct.importarOfertasCompartilhadas(compartilhamentos, auth);
 	}
 
@@ -225,13 +242,14 @@ public class OfertaController {
 	}	
 
 
+
 	@RequestMapping(value = "/buscar-ofertas/{periodo}", method = RequestMethod.GET)
 	public @ResponseBody ModelMap buscarOfertas(@PathVariable("periodo") Periodo periodo, Authentication auth) {
 		return ofertaControllerProduct.buscarOfertas(periodo, auth);
 	}
 
 	@RequestMapping(value = "/substituicao-ofertas", method = RequestMethod.GET)
-    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public @ResponseBody boolean substituirOfertas(@RequestParam("ofertas") List<Integer> ofertas) {
 		ofertaControllerProduct.getOfertaService().substituirOferta(ofertas);
 		return true;

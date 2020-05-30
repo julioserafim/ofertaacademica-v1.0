@@ -36,5 +36,7 @@ public interface OfertaService {
 	
 	boolean hasCompartilhamentoOuRestricaoHorario(Oferta oferta);
 	
+	boolean disciplinaAndTurmaIsEquals(Periodo periodoAtivo, Compartilhamento compartilhamento);
+	
 }
 

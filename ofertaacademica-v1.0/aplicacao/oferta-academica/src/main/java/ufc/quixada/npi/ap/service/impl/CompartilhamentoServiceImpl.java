@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,40 +63,21 @@ public class CompartilhamentoServiceImpl implements CompartilhamentoService {
 	
 	@Override
 	public Map<String, Object> importarOfertasCompartilhadas(List<Integer> compartilhamentos, Periodo periodoAtivo, Curso cursoCoordenador) {
-		boolean contem;
-		boolean adicionado = true;
 		
 		Map<String, Object> resultado = new HashMap<String, Object>();
-
+		resultado.put("importada", false);			
+		
 		for (Integer id : compartilhamentos) {
 			Compartilhamento compartilhamento = compartilhamentoRepository.findOne(id);
 			
-			if (compartilhamento != null) {
-				contem = false;
-				
-				for (Oferta o : ofertaService.buscarOfertaPorPeriodo(periodoAtivo)) {
-					if (o.getDisciplina().equals(compartilhamento.getOferta().getDisciplina()) 
-							&& o.getTurma().equals(compartilhamento.getTurma())) {
-						contem = true;
-						break;
-					}
-				}
-				
-				if (!contem) {
+			if (Objects.nonNull(compartilhamento)) {
+				if (!ofertaService.disciplinaAndTurmaIsEquals(periodoAtivo, compartilhamento)) {
 					Oferta novaOferta = this.clonarOfertaCompartilhada(compartilhamento);
-					
 					ofertaService.salvarOfertaPeriodoAtivo(novaOferta);
-					
-					if (adicionado)
-						resultado.put("importada", true);
-					
-					adicionado = false;
+					resultado.put("importada", true);
 				}
 			}
 		}
-		
-		if (adicionado) 
-			resultado.put("importada", false);
 		
 		return resultado;
 	}
