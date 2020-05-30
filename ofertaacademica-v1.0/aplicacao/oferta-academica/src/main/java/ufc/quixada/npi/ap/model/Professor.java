@@ -7,23 +7,21 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-
 import org.hibernate.validator.constraints.Email;
-
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 import ufc.quixada.npi.ap.model.HorarioBloqueado.Dia;
 import ufc.quixada.npi.ap.model.HorarioBloqueado.Horario;
 
-
 @Entity
-//@EntityListeners(ProfessorEntityListener.class)
-public class Professor implements UserDetails{
+// @EntityListeners(ProfessorEntityListener.class)
+public class Professor implements UserDetails {
+
+	private ProfessorProduct professorProduct = new ProfessorProduct();
 
 	private static final long serialVersionUID = 1L;
 
@@ -39,11 +37,11 @@ public class Professor implements UserDetails{
 	private String email;
 
 	private String cpf;
-	
+
 	private String siape;
 
 	private String password;
-	
+
 	@Min(0)
 	@Max(20)
 	private Integer cargaHorariaMinima;
@@ -53,7 +51,7 @@ public class Professor implements UserDetails{
 	private Integer cargaHorariaMaxima;
 
 	private boolean ativo;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "professor", cascade = CascadeType.MERGE)
 	private List<HorarioBloqueado> horariosBloqueados;
@@ -68,11 +66,7 @@ public class Professor implements UserDetails{
 	@JsonIgnore
 	@OneToMany(mappedBy = "professor", cascade = CascadeType.MERGE)
 	private List<Preferencia> preferencias;
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "papel_pessoa", joinColumns = @JoinColumn(name = "pessoa_id"), inverseJoinColumns = @JoinColumn(name = "papel_id"))
-	private List<Papel> papeis;
-	
+
 	public Professor() {
 	}
 
@@ -81,9 +75,9 @@ public class Professor implements UserDetails{
 		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;
-		this.papeis = papeis;
+		professorProduct.setPapeis(papeis);
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -91,7 +85,7 @@ public class Professor implements UserDetails{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public String getNome() {
 		return nome == null ? nome : nome.toUpperCase();
 	}
@@ -99,7 +93,7 @@ public class Professor implements UserDetails{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public String getApelido() {
 		return apelido == null ? apelido : apelido.toUpperCase();
 	}
@@ -107,7 +101,7 @@ public class Professor implements UserDetails{
 	public void setApelido(String apelido) {
 		this.apelido = apelido;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -115,7 +109,7 @@ public class Professor implements UserDetails{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getCpf() {
 		return cpf;
 	}
@@ -131,7 +125,7 @@ public class Professor implements UserDetails{
 	public void setSiape(String siape) {
 		this.siape = siape;
 	}
-	
+
 	public Integer getCargaHorariaMinima() {
 		return cargaHorariaMinima;
 	}
@@ -187,7 +181,7 @@ public class Professor implements UserDetails{
 	public void setPreferencias(List<Preferencia> preferencias) {
 		this.preferencias = preferencias;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
@@ -195,7 +189,7 @@ public class Professor implements UserDetails{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -237,7 +231,7 @@ public class Professor implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.papeis;
+		return this.professorProduct.getPapeis();
 	}
 
 	@Override
@@ -266,28 +260,21 @@ public class Professor implements UserDetails{
 	}
 
 	public boolean isDirecao() {
-		for (Papel p : papeis) {
-			if (p.papelDirecao()) {
-				return true;
-			}
-		}
-		return false;
+
+		return professorProduct.isDirecao();
 	}
-	
+
 	public boolean isCoordenacao() {
-		for (Papel p : papeis) {
-			if (p.papelCoordenacao()) {
-				return true;
-			}
-		}
-		return false;
+		return professorProduct.isCoordenacao();
+
+
 	}
 
 	public List<Papel> getPapeis() {
-		return papeis;
+		return professorProduct.getPapeis();
 	}
 
 	public void setPapeis(List<Papel> papeis) {
-		this.papeis = papeis;
+		professorProduct.setPapeis(papeis);
 	}
 }
