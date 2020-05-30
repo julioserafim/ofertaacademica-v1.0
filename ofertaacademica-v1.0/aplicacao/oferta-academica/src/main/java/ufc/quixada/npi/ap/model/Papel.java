@@ -64,6 +64,14 @@ public class Papel implements GrantedAuthority {
 		}
 	}
 
+	public boolean papelDirecao() {
+		return this.nome == Tipo.DIRECAO;
+	}
+	
+	public boolean papelCoordenacao() {
+		return this.nome == Tipo.COORDENACAO;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

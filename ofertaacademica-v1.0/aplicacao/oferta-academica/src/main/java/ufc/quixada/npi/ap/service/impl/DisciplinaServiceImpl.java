@@ -50,19 +50,23 @@ public class DisciplinaServiceImpl implements DisciplinaService {
 
 	@Override
 	public boolean arquivarDisciplina(Integer id) {
-		Disciplina disciplina = disciplinaRepository.findOne(id);
+		Disciplina disciplina = disciplina(id);
 		if (disciplina == null) {
 			return false;
 		}
-		if (disciplina.getArquivada() == false){
-			disciplina.setArquivada(true);
-		}else{
-			disciplina.setArquivada(false);
-		}
-		
 		disciplinaRepository.save(disciplina);
 
 		return true;
+	}
+
+	private Disciplina disciplina(Integer id) {
+		Disciplina disciplina = disciplinaRepository.findOne(id);
+		if (disciplina.getArquivada() == false) {
+			disciplina.setArquivada(true);
+		} else {
+			disciplina.setArquivada(false);
+		}
+		return disciplina;
 	}
 
 	@Override

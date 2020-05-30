@@ -2,6 +2,7 @@ package ufc.quixada.npi.ap.service;
 
 import java.util.List;
 
+import br.ufc.quixada.npi.ldap.model.Usuario;
 import ufc.quixada.npi.ap.exception.AlocacaoProfessorException;
 import ufc.quixada.npi.ap.model.Professor;
 import ufc.quixada.npi.ap.model.RelatorioCargaHorariaProfessor;
@@ -22,7 +23,7 @@ public interface ProfessorService {
 
 	public RelatorioCargaHorariaProfessor gerarRelatorioCargaHorariaProfessores();
 	
-	
+	public void criar(Usuario usuario) throws AlocacaoProfessorException;
 	
 }
 

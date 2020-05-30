@@ -38,30 +38,20 @@ import ufc.quixada.npi.ap.validation.CompartilhamentoValidator;
 @RequestMapping(path = "/compartilhamentos")
 public class CompartilhamentoController {
 	
+	private CompartilhamentoControllerProduct compartilhamentoControllerProduct = new CompartilhamentoControllerProduct();
+
 	@Autowired
 	private CompartilhamentoValidator compartilhamentoValidator;
 	
-	@Autowired
-	private CompartilhamentoService compartilhamentoService;
-	
-	@Autowired
-	private TurmaService turmaService;
-	
-	@Autowired
-	private CursoService cursoService;
-	
 	@ModelAttribute("cursos")
 	public List<Curso> todosCursos() {
-		return cursoService.buscarTodosCursos();
+		return compartilhamentoControllerProduct.getCursoService().buscarTodosCursos();
 	}
 	
 	@RequestMapping(path = {"/cadastrar"}, method = RequestMethod.GET)
     @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView cadastrarCompartilhamento(@ModelAttribute("compartilhamento") Compartilhamento compartilhamento, Authentication auth){
-		ModelAndView modelAndView = new ModelAndView(Constants.COMPARTILHAMENTO_CADASTRAR);
-		modelAndView.addObject("turmas", turmaService.buscarTodasTurmas());
-        modelAndView.addObject("cursoAtual", cursoService.buscarCursoPorCoordenadorOuVice((Professor) auth.getPrincipal()));
-		return modelAndView;
+		return compartilhamentoControllerProduct.cadastrarCompartilhamento(compartilhamento, auth);
 	}
 	
 	@RequestMapping(path = {"/cadastrar"}, method = RequestMethod.POST)
@@ -78,10 +68,8 @@ public class CompartilhamentoController {
 			return modelAndView;
 		}*/
 		
-		compartilhamentoService.salvar(compartilhamento);
-		redirectAttributes.addFlashAttribute(SWAL_STATUS_SUCCESS, MSG_COMPARTILHAMENTO_SOLICITADO);
-		modelAndView.setViewName(Constants.COMPARTILHAMENTO_REDIRECT_LISTAR);
-		return modelAndView;
+		return compartilhamentoControllerProduct.cadastrarCompartilhamento(compartilhamento, bindingResult,
+				modelAndView, redirectAttributes);
 	}
 
 	@RequestMapping(path = {"/{id}/detalhar"}, method = RequestMethod.GET)
@@ -96,23 +84,7 @@ public class CompartilhamentoController {
 												@ModelAttribute("compartilhamento") Compartilhamento compartilhamento,
 												Authentication auth){
 		
-		ModelAndView modelAndView = new ModelAndView(Constants.COMPARTILHAMENTO_EDITAR);
-		
-		compartilhamento = compartilhamentoService.buscarCompartilhamento(id);
-		Professor professor = (Professor) auth.getPrincipal();
-		
-		if(professor.isCoordenacao()){
-			modelAndView.addObject("turmas", cursoService.buscarCursoPorCoordenadorOuVice(professor).getTurmas());
-		}else{
-			modelAndView.addObject("turma", cursoService.buscarTodosCursos());
-		}
-		
-		if (compartilhamento == null){
-			modelAndView.setViewName(Constants.COMPARTILHAMENTO_REDIRECT_LISTAR);
-			return modelAndView;
-		}
-		modelAndView.addObject("compartilhamento", compartilhamento);
-		return modelAndView;
+		return compartilhamentoControllerProduct.editarCompartilhamento(id, compartilhamento, auth);
 	}
 	
 	@RequestMapping(path = {"/{id}/editar"}, method = RequestMethod.POST)
@@ -122,35 +94,16 @@ public class CompartilhamentoController {
 												@RequestParam(value="disjunto", required = false) boolean disjunto,
 												ModelAndView modelAndView, RedirectAttributes redirectAttributes){
 
-		try{						
-			compartilhamento.setTurma(turma);
-			compartilhamento.setVagas(vagas);
-			compartilhamento.setDisjunto(disjunto);
-			compartilhamentoService.salvar(compartilhamento);
-		} catch(Exception e){
-			modelAndView.setViewName(Constants.PAGINA_ERRO_403);
-			return modelAndView;
-		} 
-		
-		compartilhamentoService.salvar(compartilhamento);
-		modelAndView.setViewName(Constants.OFERTA_REDIRECT_LISTAR);
-		redirectAttributes.addFlashAttribute(SWAL_STATUS_SUCCESS, MSG_COMPARTILHAMENTO_EDITADO);
-		return modelAndView;
+		return compartilhamentoControllerProduct.editarCompartilhamento(compartilhamento, turma, vagas, disjunto,
+				modelAndView, redirectAttributes);
 	}
 	
 	@RequestMapping(path = {"/{id}/excluir"}, method = RequestMethod.GET)
     @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView excluirCompartilhamento(@PathVariable(name = "id") Compartilhamento compartilhamento,
             RedirectAttributes redirectAttributes, ModelAndView modelAndView, Authentication auth){
-        if (((Professor)auth.getPrincipal()).isDirecao() || compartilhamento.canChange(auth.getName())) {
-            compartilhamentoService.excluir(compartilhamento.getId());
-            redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_SUCCESS, Constants.MSG_COMPARTILHAMENTO_EXCLUIR);
-        } else {
-            redirectAttributes.addFlashAttribute(Constants.SWAL_STATUS_ERROR, Constants.MSG_PERMISSAO_NEGADA);
-        }
-
-		modelAndView.setViewName(Constants.OFERTA_REDIRECT_LISTAR);
-		return modelAndView;
+        return compartilhamentoControllerProduct.excluirCompartilhamento(compartilhamento, redirectAttributes,
+				modelAndView, auth);
 	}
 	
 	

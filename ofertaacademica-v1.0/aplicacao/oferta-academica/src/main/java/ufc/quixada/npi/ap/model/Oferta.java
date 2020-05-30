@@ -25,6 +25,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Oferta {
 
+	private OfertaProduct ofertaProduct = new OfertaProduct();
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -73,10 +75,6 @@ public class Oferta {
 	@ManyToMany
 	@JoinTable(name = "professor_oferta", joinColumns = @JoinColumn(name = "oferta_id"), inverseJoinColumns = @JoinColumn(name = "professor_id"))
 	private List<Professor> professores;
-
-	@OneToMany(mappedBy = "oferta", cascade = {CascadeType.REMOVE, CascadeType.MERGE})
-	@JsonIgnore
-	private List<Compartilhamento> compartilhamentos;
 
 	@OneToMany(mappedBy = "primeiraOferta", cascade = CascadeType.REMOVE)
 	@JsonIgnore
@@ -187,31 +185,19 @@ public class Oferta {
 	}
 
 	public List<Compartilhamento> getCompartilhamentos() {
-		if (null == this.compartilhamentos) {
-			this.compartilhamentos = new ArrayList<>();
-		}
-		return this.compartilhamentos;
+		return ofertaProduct.getCompartilhamentos();
 	}
 
 	public void setCompartilhamentos(List<Compartilhamento> compartilhamentos) {
-		this.compartilhamentos = compartilhamentos;
+		ofertaProduct.setCompartilhamentos(compartilhamentos);
 	}
 	
 	public Compartilhamento getCompartilhamentoPorCurso(String sigla) {
-		for (Compartilhamento compartilhamento : this.compartilhamentos) {
-			if (compartilhamento.getTurma().getCurso().getSigla().equals(sigla)) {
-				return compartilhamento;
-			}
-		}
-
-		return null;
+		return ofertaProduct.getCompartilhamentoPorCurso(sigla);
 	}
 	
 	public String getCompartilhamentoIndice(int indice) {
-		if(getCompartilhamentos().size() == indice + 1) {
-			return "" + getCompartilhamentos().get(indice).getTurma().getCurso().getSigla() + "-" + getCompartilhamentos().get(indice).getTurma().getSemestre().getNumero();
-		}
-		return "";
+		return ofertaProduct.getCompartilhamentoIndice(indice);
 	}
 	
 	public String getSlot() {
@@ -221,7 +207,7 @@ public class Oferta {
 	public int getTotalVagas() {
 		int totalVagas = this.vagas;
 
-		for (Compartilhamento compartilhamento : getCompartilhamentos()) {
+		for (Compartilhamento compartilhamento : ofertaProduct.getCompartilhamentos()) {
 			totalVagas += compartilhamento.getVagas();
 		}
 
