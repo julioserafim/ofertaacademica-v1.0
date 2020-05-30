@@ -1,5 +1,6 @@
 package ufc.quixada.npi.ap.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import ufc.quixada.npi.ap.service.OfertaService;
 import ufc.quixada.npi.ap.service.TurmaService;
@@ -22,7 +23,6 @@ import ufc.quixada.npi.ap.model.Oferta;
 import ufc.quixada.npi.ap.model.Compartilhamento;
 import java.util.Map;
 import ufc.quixada.npi.ap.model.Turma;
-import ufc.quixada.npi.ap.model.Turma.Semestre;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.ModelMap;

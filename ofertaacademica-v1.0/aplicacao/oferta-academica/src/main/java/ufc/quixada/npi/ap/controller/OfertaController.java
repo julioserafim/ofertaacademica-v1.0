@@ -53,7 +53,7 @@ public class OfertaController {
 	private OfertaControllerProduct ofertaControllerProduct = new OfertaControllerProduct();
 
 	@Autowired
-	CursoRepository crepo;
+	CursoRepository crepo; 
 
 	@Autowired
 	private ProfessorService professorService;
@@ -68,9 +68,10 @@ public class OfertaController {
 		return ofertaControllerProduct.getCursoService().buscarTodosCursos();
 	}
 
-	@RequestMapping(value = { "", "/", "/{id}" }, method = RequestMethod.GET)
-	public ModelAndView listarOfertasIndex(Authentication auth,
-			@PathVariable(name = "id", required = false) Curso cursoAtual) {
+	@RequestMapping(value = {"", "/", "/{id}"}, method = RequestMethod.GET)
+	public ModelAndView listarOfertasIndex(Authentication auth, @PathVariable(name="id", required=false) Curso cursoAtual) {
+
+
 		return ofertaControllerProduct.listarOfertasIndex(auth, cursoAtual, this);
 	}
 
@@ -116,19 +117,21 @@ public class OfertaController {
 		return ofertaControllerProduct.cadastrarOferta(oferta, auth);
 	}
 
-	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
-	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public ModelAndView cadastrarOferta(@ModelAttribute("oferta") @Valid Oferta oferta, BindingResult bindingResult,
-			ModelAndView modelAndView, RedirectAttributes redirectAttributes, Authentication auth) {
+
+    @RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public ModelAndView cadastrarOferta(@ModelAttribute("oferta") @Valid Oferta oferta,BindingResult bindingResult, 
+			ModelAndView modelAndView,RedirectAttributes redirectAttributes, Authentication auth) {
+
 
 		return ofertaControllerProduct.cadastrarOferta(oferta, bindingResult, modelAndView, redirectAttributes, auth);
 	}
 
 	@RequestMapping(value = "/{id}/editar", method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public ModelAndView editarOferta(@PathVariable("id") Oferta oferta, Authentication auth,
-			RedirectAttributes redirectAttributes) {
-		return ofertaControllerProduct.editarOferta(oferta, auth, redirectAttributes);
+	public ModelAndView editarOferta(@PathVariable("id") Oferta oferta, Authentication auth, RedirectAttributes redirectAttributes) {
+        return ofertaControllerProduct.editarOferta(oferta, auth, redirectAttributes);
+
 	}
 
 	@RequestMapping(value = "/editar", method = RequestMethod.POST)
@@ -147,7 +150,8 @@ public class OfertaController {
 	@RequestMapping(value = "/{id}/excluir", method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView excluirOferta(@PathVariable(name = "id", required = true) Oferta oferta, Authentication auth,
-			RedirectAttributes redirectAttributes, ModelAndView modelAndView) {
+                                      RedirectAttributes redirectAttributes, ModelAndView modelAndView){
+
 		return ofertaControllerProduct.excluirOferta(oferta, auth, redirectAttributes, modelAndView);
 	}
 
@@ -163,26 +167,29 @@ public class OfertaController {
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamentoCoordenacao(@PathVariable("idOferta") Oferta oferta,
 			@ModelAttribute("compartilhamento") @Valid Compartilhamento compartilhamento,
-			@RequestParam(value = "curso", required = false) Curso curso, BindingResult bindingResult,
-			ModelAndView modelAndView, RedirectAttributes redirectAttributes, Authentication auth) {
+
+                                                           @RequestParam(value = "curso", required = false) Curso curso,
+			BindingResult bindingResult, ModelAndView modelAndView, RedirectAttributes redirectAttributes,
+			Authentication auth){
 		return ofertaControllerProduct.solicitarCompartilhamentoCoordenacao(oferta, compartilhamento, curso,
 				bindingResult, modelAndView, redirectAttributes, auth);
 	}
 
-	@RequestMapping(path = { "/{id}/editar-compartilhamento" }, method = RequestMethod.GET)
-	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
-	public ModelAndView editarCompartilhamentoForm(@PathVariable("id") Compartilhamento compartilhamento,
-			Authentication auth, RedirectAttributes redirectAttributes) {
+    @RequestMapping(path = {"/{id}/editar-compartilhamento"}, method = RequestMethod.GET)
+    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+    public ModelAndView editarCompartilhamentoForm(@PathVariable("id") Compartilhamento compartilhamento, Authentication auth, RedirectAttributes redirectAttributes){
 
-		return ofertaControllerProduct.editarCompartilhamentoForm(compartilhamento, auth, redirectAttributes);
-	}
+        return ofertaControllerProduct.editarCompartilhamentoForm(compartilhamento, auth, redirectAttributes);
+    }
 
-	@RequestMapping(path = { "/{idOferta}/solicitar-compartilhamento-direcao" }, method = RequestMethod.POST)
+	@RequestMapping(path = {"/{idOferta}/solicitar-compartilhamento-direcao"}, method = RequestMethod.POST)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView solicitarCompartilhamentoDirecao(@PathVariable("idOferta") Integer id,
 			@ModelAttribute("compartilhamento") @Valid Compartilhamento compartilhamento,
-			@RequestParam("turma") @Valid Turma turma, BindingResult bindingResult, ModelAndView modelAndView,
-			RedirectAttributes redirectAttributes, Authentication auth) {
+			@RequestParam("turma") @Valid Turma turma,
+			BindingResult bindingResult, ModelAndView modelAndView, RedirectAttributes redirectAttributes,
+			Authentication auth){
+
 		return ofertaControllerProduct.solicitarCompartilhamentoDirecao(id, compartilhamento, turma, bindingResult,
 				modelAndView, redirectAttributes, auth);
 	}
@@ -190,23 +197,29 @@ public class OfertaController {
 	@RequestMapping(value = { "/importar", "/importar/{idPeriodo}" }, method = RequestMethod.GET)
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	@PreAuthorize("hasAnyAuthority('COORDENACAO')")
-	public ModelAndView importarOfertas(@PathVariable(value = "idPeriodo", required = false) Periodo periodo,
-			Authentication auth) {
+	public ModelAndView importarOfertas(@PathVariable(value = "idPeriodo", required = false) Periodo periodo, Authentication auth) {
+
 		return ofertaControllerProduct.importarOfertas(periodo, auth);
 	}
 
 	@RequestMapping(value = "/importar", method = RequestMethod.POST)
+    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public ModelAndView importarOfertas(@RequestParam(value = "ofertas", required = false) List<Oferta> ofertas, @RequestParam("periodo") Periodo periodo, RedirectAttributes redirectAttributes) {
+		ModelAndView modelAndView = new ModelAndView(Constants.OFERTA_REDIRECT_IMPORTAR + "/" + (periodo == null ? "" : periodo.getId()));
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public ModelAndView importarOfertas(@RequestParam(value = "ofertas", required = false) List<Oferta> ofertas,
 			@RequestParam("periodo") Periodo periodo, RedirectAttributes redirectAttributes) {
 		ModelAndView modelAndView = new ModelAndView(
 				Constants.OFERTA_REDIRECT_IMPORTAR + "/" + (periodo == null ? "" : periodo.getId()));
+
 		ofertaControllerProduct.getOfertaService().importarOfertas(ofertas);
 		redirectAttributes.addFlashAttribute(SWAL_STATUS_SUCCESS, MSG_IMPORTACAO_REALIZADA);
 		return modelAndView;
 	}
 
 	@RequestMapping(value = "/importar-ofertas-compartilhadas", method = RequestMethod.GET)
+    @RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
+	public @ResponseBody Map<String, Object> importarOfertasCompartilhadas(@RequestParam("compartilhamentos") List<Integer> compartilhamentos, Authentication auth) {
 	@RestricaoDePeriodo(Constants.OFERTA_REDIRECT_LISTAR)
 	public @ResponseBody Map<String, Object> importarOfertasCompartilhadas(
 			@RequestParam("compartilhamentos") List<Integer> compartilhamentos, Authentication auth) {
@@ -226,7 +239,9 @@ public class OfertaController {
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public @ResponseBody ModelMap listarOfertas(Authentication auth) {
 		return ofertaControllerProduct.listarOfertas(auth);
-	}
+	}	
+
+
 
 	@RequestMapping(value = "/buscar-ofertas/{periodo}", method = RequestMethod.GET)
 	public @ResponseBody ModelMap buscarOfertas(@PathVariable("periodo") Periodo periodo, Authentication auth) {
