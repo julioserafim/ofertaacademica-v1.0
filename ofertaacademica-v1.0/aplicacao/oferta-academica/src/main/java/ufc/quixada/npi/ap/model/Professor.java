@@ -260,11 +260,14 @@ public class Professor implements UserDetails {
 	}
 
 	public boolean isDirecao() {
+
 		return professorProduct.isDirecao();
 	}
 
 	public boolean isCoordenacao() {
 		return professorProduct.isCoordenacao();
+
+
 	}
 
 	public List<Papel> getPapeis() {
