@@ -77,25 +77,36 @@ public class ProfessorServiceImpl implements ProfessorService {
 
 		for (Professor professor : professores) {
 			List<Oferta> ofertasProfessor = ofertaService.buscarOfertasPeriodoAtivoPorProfessor(professor);
+			
+			int cargaHorariaAtual = 0;
 
-			Integer cargaHorariaAtual = 0;
-
-			for (Oferta o : ofertasProfessor) {
-				cargaHorariaAtual += o.getDisciplina().getCreditos();
-			}
-
+			this.incrementarCargaHoraria(ofertasProfessor, cargaHorariaAtual);
+			
 			professor.setCargaHorariaAtual(cargaHorariaAtual);
 
-			if (cargaHorariaAtual < professor.getCargaHorariaMinima()) {
-				relatorio.adicionarProfessorCargaHorariaInsuficiente(professor);
-			} else if (cargaHorariaAtual > professor.getCargaHorariaMaxima()) {
-				relatorio.adicionarProfessorCargaHorariaExcedida(professor);
-			} else {
-				relatorio.adicionarProfessorCargaHorariaNormal(professor);
-			}
+			this.verificarCargaHorariaDoProfessor(cargaHorariaAtual, professor, relatorio);
+
 		}
 
 		return relatorio;
+	}
+
+	private void incrementarCargaHoraria(List<Oferta> ofertasProfessor, int cargaHorariaAtual) {
+		for (Oferta o : ofertasProfessor){
+			cargaHorariaAtual += o.getDisciplina().getCreditos();
+		}
+	}
+
+	private void verificarCargaHorariaDoProfessor(int cargaHorariaAtual, Professor professor, RelatorioCargaHorariaProfessor relatorio){
+		if (cargaHorariaAtual < professor.getCargaHorariaMinima()){
+			relatorio.adicionarProfessorCargaHorariaInsuficiente(professor);
+		}
+		else if (cargaHorariaAtual > professor.getCargaHorariaMaxima()){
+			relatorio.adicionarProfessorCargaHorariaExcedida(professor);
+		}
+		else{
+			relatorio.adicionarProfessorCargaHorariaNormal(professor);
+		}
 	}
 
 	@Override
