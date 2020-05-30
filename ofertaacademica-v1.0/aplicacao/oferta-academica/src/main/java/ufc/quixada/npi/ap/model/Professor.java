@@ -276,7 +276,7 @@ public class Professor implements UserDetails{
 	
 	public boolean isCoordenacao() {
 		for (Papel p : papeis) {
-			if (p.getNome() == Papel.Tipo.COORDENACAO) {
+			if (p.papelCoordenacao()) {
 				return true;
 			}
 		}
