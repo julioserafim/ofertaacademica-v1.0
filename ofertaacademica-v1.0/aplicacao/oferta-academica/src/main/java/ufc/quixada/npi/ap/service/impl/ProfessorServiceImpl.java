@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import br.ufc.quixada.npi.ldap.model.Usuario;
 import ufc.quixada.npi.ap.exception.AlocacaoProfessorException;
 import ufc.quixada.npi.ap.model.Oferta;
 import ufc.quixada.npi.ap.model.Professor;
@@ -101,5 +102,19 @@ public class ProfessorServiceImpl implements ProfessorService{
 	@Override
 	public Professor buscarProfessorCpf(String cpf) {
 		return professorRepository.findProfessorByCpf(cpf);
+	}
+
+	@Override
+	public void criar(Usuario usuario) throws AlocacaoProfessorException {
+		
+		Professor professor1 = new Professor();
+		
+		professor1.setCpf(usuario.getCpf());
+		professor1.setEmail(usuario.getEmail());
+		professor1.setNome(usuario.getNome());
+		professor1.setApelido(usuario.getNome());
+		
+		salvar(professor1);
+		
 	}
 }
